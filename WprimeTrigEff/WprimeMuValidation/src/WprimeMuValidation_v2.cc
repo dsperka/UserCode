@@ -56,6 +56,9 @@
 
 #include "DataFormats/MuonReco/interface/MuonCocktails.h"
 
+#include "DataFormats/RecoCandidate/interface/IsoDeposit.h"
+#include "DataFormats/RecoCandidate/interface/IsoDepositFwd.h"
+
 #include "FWCore/Utilities/interface/RegexMatch.h"
 #include <boost/foreach.hpp>
 
@@ -172,6 +175,12 @@ class WprimeMuValidation_v2 : public edm::EDAnalyzer {
     const reco::TrackToTrackMap * tevMap_1stHit;
     const reco::TrackToTrackMap * tevMap_picky;
     const reco::TrackToTrackMap * tevMap_dyt;
+
+ 
+    double pstum_cone;
+    double ecetsum_cone;
+    double hcetsum_cone;
+    double CombRelIso;
 
 };
 
@@ -318,6 +327,15 @@ WprimeMuValidation_v2::analyze(const edm::Event& iEvent, const edm::EventSetup& 
    iEvent.getByLabel(tevMuonLabel_, "dyt", tevMapH_dyt);
    tevMap_dyt = tevMapH_dyt.product();
 
+   edm::Handle<reco::IsoDepositMap> tkMapH;
+   edm::Handle<reco::IsoDepositMap> ecalMapH;
+   edm::Handle<reco::IsoDepositMap> hcalMapH;
+
+   iEvent.getByLabel("muIsoDepositTk", tkMapH);
+   iEvent.getByLabel("muIsoDepositCalByAssociatorTowers","ecal", ecalMapH);
+   iEvent.getByLabel("muIsoDepositCalByAssociatorTowers","hcal", hcalMapH);
+
+
    //Handle<TriggerResults> hltresults;
    //iEvent.getByLabel(HLTTag_,hltresults);
 
@@ -328,9 +346,12 @@ WprimeMuValidation_v2::analyze(const edm::Event& iEvent, const edm::EventSetup& 
 
    if (recomuons.isValid() && l1Muons.isValid() && aodTriggerEvent.isValid() && beamSpotHandle.isValid() ) {
 
-       for(MuonCollection::const_iterator mu=recomuons->begin(); mu!=recomuons->end(); mu++ ) {
+       //for(MuonCollection::const_iterator mu=recomuons->begin(); mu!=recomuons->end(); mu++ ) {
+       for (unsigned i=0; i!=recomuons->size(); i++) {
 
-           if (!mu->isGlobalMuon()) continue;
+           reco::MuonRef mu(recomuons, i);
+
+           if (!(mu->isGlobalMuon())) continue;
            TrackRef gm = mu->globalTrack();
 
            // Build the Cocktail
@@ -347,19 +368,29 @@ WprimeMuValidation_v2::analyze(const edm::Event& iEvent, const edm::EventSetup& 
            TrackRef cocktail = muon::tevOptimized(mu->combinedMuon(), mu->track(), 
 			   *tevMap_default, *tevMap_1stHit, *tevMap_picky);
            
+           // Isolation
+           const reco::IsoDeposit tkDep((*tkMapH)[mu]);
+           const reco::IsoDeposit ecalDep((*ecalMapH)[mu]);
+           const reco::IsoDeposit hcalDep((*hcalMapH)[mu]);
+           double ptsum_cone=tkDep.depositWithin(0.3);
+           double ecetsum_cone=ecalDep.depositWithin(0.3); 
+           double hcetsum_cone=hcalDep.depositWithin(0.3); 
+
+           double CombRelIso = (ptsum_cone+ecetsum_cone+hcetsum_cone)/(mu->innerTrack()->pt());
+
+
            // Make some quality cuts on the offline muon/cocktail
            // Exotica Muon ID Reccomended cuts
-           if (!mu->isTrackerMuon()) continue;
+           if (!(mu->isTrackerMuon())) continue;
            if (!(mu->numberOfMatches()>1)) continue;
            if (!(gm->hitPattern().numberOfValidTrackerHits()>10)) continue;
            if (!(gm->hitPattern().numberOfValidPixelHits()>0)) continue; 
            if (!(gm->hitPattern().numberOfValidMuonHits()>0)) continue;
            if (!(gm->normalizedChi2()<10)) continue;
-           if (!(fabs(gm->dxy(beamSpotHandle->position()))<0.2)) continue;  
-           // This isolation is different than our analysis, but its the simplest
-           // and should be enough for the purpose of trigger efficiency.
-           if (!(mu->isolationR03().sumPt<3)) continue;
-
+           if (!(fabs(gm->dxy(beamSpotHandle->position()))<0.02)) continue;  
+           //if (!(mu->isolationR03().sumPt<3)) continue;
+           if (!CombRelIso < 0.15 ) continue; 
+ 
            TrajectoryStateOnSurface prop = propagator_.extrapolate(*mu);
            if (!prop.isValid()) continue; 
        
@@ -450,7 +481,7 @@ WprimeMuValidation_v2::analyze(const edm::Event& iEvent, const edm::EventSetup& 
                        //loop over the triggers used for the analysis
                        for(std::map<unsigned int,std::string>::const_iterator itinfo = m_triggers.begin(), itinfoend = m_triggers.end(); 
                            itinfo != itinfoend;++itinfo) {
-                           string muTrigName = itinfo->second; 
+                          string muTrigName = itinfo->second; 
                            if (pathName.compare(muTrigName) != 0 ) continue;
                            // This path matches one of the paths we want!!!
                            unsigned int hlt_prescale = hltConfig.prescaleValue(iEvent, iSetup, pathName);
