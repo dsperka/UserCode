@@ -213,18 +213,18 @@ WprimeMuValidation_v2::WprimeMuValidation_v2(const edm::ParameterSet& iConfig) :
     l1andhltmuFinalOR_pt = fs->make<TH1D>("l1andhltmuFinalOR_pt", "",34, ptbins);
 
     // Pt > 25 GeV
-    reco_eta_25 = fs->make<TH1D>("reco_eta_25", "", 12, etabins);
-    l1mu7_eta_25 = fs->make<TH1D>("l1mu7_eta_25", "", 12, etabins);
-    hltmu9_eta_25 = fs->make<TH1D>("hltmu9_eta_25", "", 12, etabins);
-    hltmu11_eta_25 = fs->make<TH1D>("hltmu11_eta_25", "", 12, etabins);
-    hltmu13_eta_25 = fs->make<TH1D>("hltmu13_eta_25", "", 12, etabins);
-    hltmu15_eta_25 = fs->make<TH1D>("hltmu15_eta_25", "", 12, etabins);
-    hltmuFinalOR_eta_25 = fs->make<TH1D>("hltmuFinalOR_eta_25", "", 12, etabins);
-    l1andhltmu9_eta_25 = fs->make<TH1D>("l1andhltmu9_eta_25", "", 12, etabins);
-    l1andhltmu11_eta_25 = fs->make<TH1D>("l1andhltmu11_eta_25", "", 12, etabins);
-    l1andhltmu13_eta_25 = fs->make<TH1D>("l1andhltmu13_eta_25", "", 12, etabins);
-    l1andhltmu15_eta_25 = fs->make<TH1D>("l1andhltmu15_eta_25", "", 12, etabins);
-    l1andhltmuFinalOR_eta_25 = fs->make<TH1D>("1landhltmuFinalOR_eta_25", "", 12, etabins);
+    reco_eta_25 = fs->make<TH1D>("reco_eta_25", "", 14, etabins);
+    l1mu7_eta_25 = fs->make<TH1D>("l1mu7_eta_25", "", 14, etabins);
+    hltmu9_eta_25 = fs->make<TH1D>("hltmu9_eta_25", "", 14, etabins);
+    hltmu11_eta_25 = fs->make<TH1D>("hltmu11_eta_25", "", 14, etabins);
+    hltmu13_eta_25 = fs->make<TH1D>("hltmu13_eta_25", "", 14, etabins);
+    hltmu15_eta_25 = fs->make<TH1D>("hltmu15_eta_25", "", 14, etabins);
+    hltmuFinalOR_eta_25 = fs->make<TH1D>("hltmuFinalOR_eta_25", "", 14, etabins);
+    l1andhltmu9_eta_25 = fs->make<TH1D>("l1andhltmu9_eta_25", "", 14, etabins);
+    l1andhltmu11_eta_25 = fs->make<TH1D>("l1andhltmu11_eta_25", "", 14, etabins);
+    l1andhltmu13_eta_25 = fs->make<TH1D>("l1andhltmu13_eta_25", "", 14, etabins);
+    l1andhltmu15_eta_25 = fs->make<TH1D>("l1andhltmu15_eta_25", "", 14, etabins);
+    l1andhltmuFinalOR_eta_25 = fs->make<TH1D>("l1andhltmuFinalOR_eta_25", "", 14, etabins);
 
     // Barrel
     reco_pt_b = fs->make<TH1D>("reco_pt_b", "",34, ptbins);
