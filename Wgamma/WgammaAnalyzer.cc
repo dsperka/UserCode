@@ -61,6 +61,7 @@ WgammaAnalyzer::WgammaAnalyzer(const edm::ParameterSet& cfg,WPrimeUtil * wprimeU
   assert( muReconstructor_ < Num_trkAlgos);
 
   setupCutOrderMuons();
+  setupCutOrderPhotons();
 
 }
 
