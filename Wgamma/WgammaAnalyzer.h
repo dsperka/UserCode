@@ -5,6 +5,7 @@
 #include "DataFormats/PatCandidates/interface/MET.h"
 #include "DataFormats/PatCandidates/interface/Photon.h"
 
+#include "UserCode/CMGWPrimeGroup/interface/MuMETAnalyzer.h"
 #include "UserCode/CMGWPrimeGroup/interface/WPrimeUtil.h"
 #include "UserCode/CMGWPrimeGroup/interface/wgamma_histo_constants.h"
 
@@ -15,8 +16,9 @@ typedef math::XYZTLorentzVector LorentzVector;
 
 class TH1F;
 
-#define debugme 0
-#define dumpHighPtMuons 0
+
+#define debugmepho 0
+//#define dumpHighPtMuons 0
 
 class WgammaAnalyzer;
 // function signature: flag indicating whether particular muon satisfies the 
@@ -24,10 +26,10 @@ class WgammaAnalyzer;
 // of selection cuts should be skipped based on some event property 
 // (e.g. when the trigger has failed the event, or there are more than 
 // one muons in the event, etc)
-typedef bool (WgammaAnalyzer::*funcPtr)(bool *, int, edm::EventBase const &, pat::Photon & pho);
+typedef bool (WgammaAnalyzer::*funcPtrPho)(bool *, int, edm::EventBase const &, pat::Photon & pho);
 
 // key: cuts_desc_short[i], value: function pointer corresponding to selection cut
-typedef std::map<std::string, funcPtr> selection_map;
+typedef std::map<std::string, funcPtrPho> selection_map_wgamma;
 
 class WgammaAnalyzer
 {
@@ -131,7 +133,7 @@ class WgammaAnalyzer
   void setupCutOrderMuons();
   void setupCutOrderPhotons();
 
-  selection_map cuts;
+  selection_map_wgamma cuts;
 
   // Get the hardest muon (based on tracker-pt) in event
   // (returns index in pat::MuonCollection)
@@ -139,7 +141,7 @@ class WgammaAnalyzer
   int getTheHardestPhoton();
 
   void setMuLorentzVector(TLorentzVector& P, const reco::TrackRef & trk);
-  LorentzVector calculateNeutrinoP4(LorentzVector muonP4, LorentzVector metP4);
+  LorentzVector calculateNeutrinoP4(LorentzVector muonP4, TVector2 met);
  
 
   // fill histograms for muon if fill_entry=true; update book-keeping 

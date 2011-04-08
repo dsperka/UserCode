@@ -21,7 +21,6 @@ WgammaAnalyzer::WgammaAnalyzer(const edm::ParameterSet& cfg,WPrimeUtil * wprimeU
 
   muons_       = cfg.getParameter<edm::InputTag>("muons"  );
   met_       = cfg.getParameter<edm::InputTag>("mets"  );
-  metLabel_ = cfg.getParameter<edm::InputTag>("patMET" );
   particleFlow_ = cfg.getParameter<edm::InputTag>("particleFlow" );
   photons_ = cfg.getParameter<edm::InputTag>("photons" );
   muReconstructor_   = cfg.getParameter<int>("muonReconstructor");
@@ -116,14 +115,6 @@ void WgammaAnalyzer::eventLoop(edm::EventBase const & event)
   event.getByLabel(met_, met);
   //event.getByLabel(photons_, photons);
 
-  edm::Handle< edm::View<pat::MET> > metHandle;
-  event.getByLabel (metLabel_, metHandle);
-  edm::View<pat::MET> PatMETs = *metHandle;
-
-  pat::MET patMET;
-  patMET = PatMETs[0];
-  recMet = MetStruct (&patMET);
-
   edm::Handle< edm::View<pat::Photon> >  photonHandle;
   event.getByLabel(photons_, photonHandle);
   edm::View<pat::Photon> photons = *photonHandle;
@@ -190,7 +181,7 @@ void WgammaAnalyzer::eventLoop(edm::EventBase const & event)
 
       for(int cut_index = 0; cut_index != Num_mumet_cuts; ++cut_index) { // loop over selection cuts
           
-          // call to function [as implemented in setupCutOder]
+          // call to funcxtion [as implemented in setupCutOder]
           string arg = mumet_cuts_desc_short[cut_index];
           pat::Photon dummyPhoton = photons.at(iPhotonMin);
           bool survived_cut = (this->*cuts[arg])(&fill_entry, theMu, event,dummyPhoton);
@@ -206,7 +197,7 @@ void WgammaAnalyzer::eventLoop(edm::EventBase const & event)
                  && (*muons)[theMu].innerTrack()->pt() > dumpHighPtMuonThreshold_ ) printHighPtMuon(event);
               
               // Start looking at photons if the muon passed all the cuts
-              if (cut_index == Num_photon_cuts-1) {
+              if (cut_index == Num_mumet_cuts-1) {
                   //loop over photons
                   for (int thePhoton = iPhotonMin; thePhoton != iPhotonMax; ++thePhoton){
                       
@@ -222,7 +213,7 @@ void WgammaAnalyzer::eventLoop(edm::EventBase const & event)
                           if (!survived_cut) break; // skip rest of selection cuts
                           double invMass = -999.999;
                           if (fill_entry) {
-                              LorentzVector neutrinoP4 = calculateNeutrinoP4((*muons)[theMu].p4(), patMET.p4() );
+                              LorentzVector neutrinoP4 = calculateNeutrinoP4((*muons)[theMu].p4(), getNewMET(event,mu4D) );
                               if (neutrinoP4.E() > 0) {
                                   LorentzVector wP4   =  (*muons)[theMu].p4() + neutrinoP4;
                                   LorentzVector totalP4 = wP4+PhotonP4;
@@ -287,16 +278,16 @@ void WgammaAnalyzer::setMuonMomentum(int theMu)
 }
 
 LorentzVector
-WgammaAnalyzer::calculateNeutrinoP4(LorentzVector mu4D, LorentzVector metP4) 
+WgammaAnalyzer::calculateNeutrinoP4(LorentzVector mu4D, TVector2 met) 
 {
 
-  double dPhi         = kinem::delta_phi (mu4D.phi(), metP4.phi());
+  double dPhi         = kinem::delta_phi (mu4D.phi(), met.Phi());
   double wMass        = 80.398;
   double g            = wMass * wMass / 2. + 
-                        mu4D.Pt() * metP4.Pt() * cos (dPhi);
+                        mu4D.Pt() * met.Mod() * cos (dPhi);
   double a            = - pow (mu4D.Pt(), 2);
   double b            = 2 * g * mu4D.Pz();
-  double c            = pow (g,2) - pow (mu4D.P(),2) * pow (metP4.Pt(),2);
+  double c            = pow (g,2) - pow (mu4D.P(),2) * pow (met.Mod(),2);
 
   double discriminant = (b * b) - (4 * a * c);
   double neutrinoPz   = 0;
@@ -306,18 +297,18 @@ WgammaAnalyzer::calculateNeutrinoP4(LorentzVector mu4D, LorentzVector metP4)
   TVector3 leptonP3(mu4D.px(), mu4D.py(), mu4D.pz());
 
   double   pz1     = -b/(2*a) + sqrt (discriminant)/(2*a);
-  TVector3 p1      (metP4.px(), metP4.py(), pz1);
+  TVector3 p1      (met.Px(), met.Py(), pz1);
   double   deltaR1 = p1.DeltaR (leptonP3);
 
   double   pz2     = -b/(2*a) + sqrt (discriminant)/(2*a);
-  TVector3 p2      (metP4.px(), metP4.py(), pz2);
+  TVector3 p2      (met.Px(), met.Py(), pz2);
   double   deltaR2 = p2.DeltaR (leptonP3);
   
   // Choose the smaller opening angle between the lepton and neutrino
   neutrinoPz = (deltaR1 < deltaR2 ) ? pz1 : pz2;
   
-  double E = sqrt (pow (metP4.px(),2) + pow (metP4.py(),2) + pow (neutrinoPz,2));
-  LorentzVector neutrinoP4(metP4.px(), metP4.py(), neutrinoPz, E);
+  double E = sqrt (pow (met.Px(),2) + pow (met.Py(),2) + pow (neutrinoPz,2));
+  LorentzVector neutrinoP4(met.Px(), met.Py(), neutrinoPz, E);
   
   return neutrinoP4;
   
@@ -613,14 +604,14 @@ void WgammaAnalyzer::defineHistos_MWgamma(TFileDirectory & dir)
 void WgammaAnalyzer::setupCutOrderMuons()
 {
   cuts.clear();
-#if debugme
+#if debugmepho
   cout << "\n Mu+MET cuts will be applied in this order: " << endl;
 #endif
 
   for(int cut_i = 0; cut_i != Num_mumet_cuts; ++cut_i)
     { // loop over selection cuts
       string arg = mumet_cuts_desc_short[cut_i];
-#if debugme
+#if debugmepho
       cout << " Cut #" << (cut_i+1) << ": " << mumet_cuts_desc_long[cut_i]
 	   << " (" << arg << ") " << endl;
 #endif
@@ -639,7 +630,7 @@ void WgammaAnalyzer::setupCutOrderMuons()
 	}
     } // loop over selection cuts
 
-#if debugme
+#if debugmepho
   cout << endl;
 #endif
 
@@ -649,14 +640,14 @@ void WgammaAnalyzer::setupCutOrderMuons()
 void WgammaAnalyzer::setupCutOrderPhotons()
 {
   cuts.clear();
-#if debugme
+#if debugmepho
   cout << "\n Photon cuts will be applied in this order: " << endl;
 #endif
 
   for(int cut_i = 0; cut_i != Num_photon_cuts; ++cut_i)
     { // loop over selection cuts
       string arg = photon_cuts_desc_short[cut_i];
-#if debugme
+#if debugmepho
       cout << " Cut #" << (cut_i+1) << ": " << mumet_cuts_desc_long[cut_i]
 	   << " (" << arg << ") " << endl;
 #endif
@@ -673,7 +664,7 @@ void WgammaAnalyzer::setupCutOrderPhotons()
 	}
     } // loop over selection cuts
 
-#if debugme
+#if debugmepho
   cout << endl;
 #endif
 
@@ -1051,7 +1042,7 @@ bool WgammaAnalyzer::kinematicCuts(bool * goodQual, int,
 
   double WtransMass = WPrimeUtil::TMass(mu4D, getNewMET(event, mu4D));
 
-   if (debugme) cout << "Found with transverse mass " << WtransMass << endl;
+   if (debugmepho) cout << "Found with transverse mass " << WtransMass << endl;
 
  
 
