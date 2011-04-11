@@ -78,7 +78,7 @@ class WgammaAnalyzer
   // Handle to the (pf)MET collection
   edm::Handle<pat::METCollection > met;
   // Handle to the pat::Photon collection
-  edm::Handle<pat::Photon> photons;
+  edm::Handle<pat::PhotonCollection> photons;
 
    // keeps track of selection efficiencies for all input samples & cuts
   wprime::SampleStat stats;
@@ -133,7 +133,8 @@ class WgammaAnalyzer
   void setupCutOrderMuons();
   void setupCutOrderPhotons();
 
-  selection_map_wgamma cuts;
+  selection_map_wgamma muoncuts;
+  selection_map_wgamma photoncuts;
 
   // Get the hardest muon (based on tracker-pt) in event
   // (returns index in pat::MuonCollection)

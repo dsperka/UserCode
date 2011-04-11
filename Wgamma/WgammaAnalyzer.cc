@@ -111,13 +111,17 @@ int WgammaAnalyzer::getTheHardestMuon()
 
 void WgammaAnalyzer::eventLoop(edm::EventBase const & event)
 {
+    using namespace std;
+    cout<<"test1"<<endl;
   event.getByLabel(muons_, muons);
   event.getByLabel(met_, met);
-  //event.getByLabel(photons_, photons);
+  event.getByLabel(photons_, photons);
+  cout<<"test2"<<endl;
 
-  edm::Handle< edm::View<pat::Photon> >  photonHandle;
-  event.getByLabel(photons_, photonHandle);
-  edm::View<pat::Photon> photons = *photonHandle;
+  if ( !(muons.isValid() && met.isValid() && photons.isValid()) ) {
+  //edm::Handle< edm::View<pat::PhotonCollection> >  photons;
+  //event.getByLabel(photons_, photons);
+  //edm::View<pat::Photon> photons = *photonHandle;
 
 
 
@@ -140,17 +144,17 @@ void WgammaAnalyzer::eventLoop(edm::EventBase const & event)
               iMuMax = iMu + 1;
           }
     }
-
-  int iPhotonMin = 0; int iPhotonMax = photons.size();
+  cout<<"test3"<<endl;
+  int iPhotonMin = 0; int iPhotonMax = photons->size();
   if(highestPtPhotonOnly_) // if true, will only consider highest-pt muon in event
     {
         int iPho=-1.0;
-        int nphotons = photons.size();
+        //int nphotons = photons->size();
         float temp_phoPT = -999;
  
-        for(int j = 0; j != nphotons; ++j)
+        for(int j = 0; j != iPhotonMax; ++j)
         {
-            pat::Photon currentPhoton = photons.at(j);
+            pat::Photon currentPhoton = (*photons)[j];
             float current_phoPT = currentPhoton.pt();
             if (current_phoPT > temp_phoPT) 
             {
@@ -166,7 +170,7 @@ void WgammaAnalyzer::eventLoop(edm::EventBase const & event)
         }
     }
 
-
+  cout<<"test4"<<endl;
 
   //loop over muons
   for (int theMu = iMuMin; theMu != iMuMax; ++theMu){
@@ -181,10 +185,11 @@ void WgammaAnalyzer::eventLoop(edm::EventBase const & event)
 
       for(int cut_index = 0; cut_index != Num_mumet_cuts; ++cut_index) { // loop over selection cuts
           
+          cout<<"Mu Cut "<<cut_index<<endl;
           // call to funcxtion [as implemented in setupCutOder]
           string arg = mumet_cuts_desc_short[cut_index];
-          pat::Photon dummyPhoton = photons.at(iPhotonMin);
-          bool survived_cut = (this->*cuts[arg])(&fill_entry, theMu, event,dummyPhoton);
+          pat::Photon dummyPhoton = (*photons)[iPhotonMin];
+          bool survived_cut = (this->*muoncuts[arg])(&fill_entry, theMu, event,dummyPhoton);
           if (!survived_cut) break; // skip rest of selection cuts
 	
           if(fill_entry) {
@@ -200,16 +205,16 @@ void WgammaAnalyzer::eventLoop(edm::EventBase const & event)
               if (cut_index == Num_mumet_cuts-1) {
                   //loop over photons
                   for (int thePhoton = iPhotonMin; thePhoton != iPhotonMax; ++thePhoton){
-                      
-                      pat::Photon currentPhoton = photons.at(thePhoton);
+                      cout<<"PHOTONS!!!"<<endl;
+                      pat::Photon currentPhoton = (*photons)[thePhoton];
       
                       LorentzVector PhotonP4 = currentPhoton.p4();
 
                       for(int pho_cut_index = 0; pho_cut_index != Num_photon_cuts; ++pho_cut_index) {
-
+                          cout<<"Photon cut "<<pho_cut_index<<endl;
                           // call to function [as implemented in setupCutOder]
                           string arg = photon_cuts_desc_short[cut_index];
-                          bool survived_cut = (this->*cuts[arg])(&fill_entry, thePhoton, event, currentPhoton);
+                          bool survived_cut = (this->*photoncuts[arg])(&fill_entry, thePhoton, event, currentPhoton);
                           if (!survived_cut) break; // skip rest of selection cuts
                           double invMass = -999.999;
                           if (fill_entry) {
@@ -235,7 +240,7 @@ void WgammaAnalyzer::eventLoop(edm::EventBase const & event)
       } // loop over muon cuts
   } // loop over muons
 }// events
-
+}
 void WgammaAnalyzer::setMuLorentzVector(TLorentzVector& P, const reco::TrackRef & trk)
 {
   if(trk.isNull())
@@ -603,7 +608,7 @@ void WgammaAnalyzer::defineHistos_MWgamma(TFileDirectory & dir)
 
 void WgammaAnalyzer::setupCutOrderMuons()
 {
-  cuts.clear();
+  muoncuts.clear();
 #if debugmepho
   cout << "\n Mu+MET cuts will be applied in this order: " << endl;
 #endif
@@ -615,13 +620,13 @@ void WgammaAnalyzer::setupCutOrderMuons()
       cout << " Cut #" << (cut_i+1) << ": " << mumet_cuts_desc_long[cut_i]
 	   << " (" << arg << ") " << endl;
 #endif
-      if(arg == "hlt")cuts[arg] = &WgammaAnalyzer::passedHLT;
+      if(arg == "hlt")muoncuts[arg] = &WgammaAnalyzer::passedHLT;
       else if(arg.find("thr") != string::npos)
-	cuts[arg] = &WgammaAnalyzer::muonMinimumPt;
-      else if(arg == "qual")cuts[arg] = &WgammaAnalyzer::goodQualityMuon;
-      else if(arg == "1mu")cuts[arg] = &WgammaAnalyzer::onlyOneHighTrackPtMuon;
-      else if(arg == "iso")cuts[arg] = &WgammaAnalyzer::isolatedMuon;
-      else if(arg == "met")cuts[arg] = &WgammaAnalyzer::kinematicCuts;
+          muoncuts[arg] = &WgammaAnalyzer::muonMinimumPt;
+      else if(arg == "qual")muoncuts[arg] = &WgammaAnalyzer::goodQualityMuon;
+      else if(arg == "1mu")muoncuts[arg] = &WgammaAnalyzer::onlyOneHighTrackPtMuon;
+      else if(arg == "iso")muoncuts[arg] = &WgammaAnalyzer::isolatedMuon;
+      else if(arg == "met")muoncuts[arg] = &WgammaAnalyzer::kinematicCuts;
       else
 	{
 	  cout << " Oops! Don't understand how to prepare for cut nicknamed as "
@@ -639,7 +644,7 @@ void WgammaAnalyzer::setupCutOrderMuons()
 
 void WgammaAnalyzer::setupCutOrderPhotons()
 {
-  cuts.clear();
+  photoncuts.clear();
 #if debugmepho
   cout << "\n Photon cuts will be applied in this order: " << endl;
 #endif
@@ -651,11 +656,11 @@ void WgammaAnalyzer::setupCutOrderPhotons()
       cout << " Cut #" << (cut_i+1) << ": " << mumet_cuts_desc_long[cut_i]
 	   << " (" << arg << ") " << endl;
 #endif
-      if(arg == "pt")cuts[arg] = &WgammaAnalyzer::photonPt;
-      else if(arg == "isolation")cuts[arg] = &WgammaAnalyzer::photonIsolation;
-      else if(arg == "hovere")cuts[arg] = &WgammaAnalyzer::photonHOverE;
-      else if(arg == "etawidth")cuts[arg] = &WgammaAnalyzer::photonEtaWidth;
-      else if(arg == "trackveto")cuts[arg] = &WgammaAnalyzer::photonTrackVeto;
+      if(arg == "pt")photoncuts[arg] = &WgammaAnalyzer::photonPt;
+      else if(arg == "isolation")photoncuts[arg] = &WgammaAnalyzer::photonIsolation;
+      else if(arg == "hovere")photoncuts[arg] = &WgammaAnalyzer::photonHOverE;
+      else if(arg == "etawidth")photoncuts[arg] = &WgammaAnalyzer::photonEtaWidth;
+      else if(arg == "trackveto")photoncuts[arg] = &WgammaAnalyzer::photonTrackVeto;
       else
 	{
 	  cout << " Oops! Don't understand how to prepare for cut nicknamed as "
