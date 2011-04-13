@@ -20,7 +20,7 @@ WgammaAnalyzer::WgammaAnalyzer(const edm::ParameterSet& cfg,WPrimeUtil * wprimeU
   assert(wprimeUtil_);
 
   muons_       = cfg.getParameter<edm::InputTag>("muons"  );
-  met_       = cfg.getParameter<edm::InputTag>("mets"  );
+  met_       = cfg.getParameter<edm::InputTag>("met"  );
   particleFlow_ = cfg.getParameter<edm::InputTag>("particleFlow" );
   photons_ = cfg.getParameter<edm::InputTag>("photons" );
   muReconstructor_   = cfg.getParameter<int>("muonReconstructor");
@@ -99,6 +99,7 @@ int WgammaAnalyzer::getTheHardestMuon()
   int ret = -1;
   for(int j = 0; j != nmuons; ++j)
     {
+      if((*muons)[j].innerTrack().isNull())continue;
       float current_muPT = (*muons)[j].innerTrack()->pt();
       if (current_muPT > temp_muPT) 
 	{
@@ -111,16 +112,12 @@ int WgammaAnalyzer::getTheHardestMuon()
 
 void WgammaAnalyzer::eventLoop(edm::EventBase const & event)
 {
-    using namespace std;
-    cout<<"test1"<<endl;
   event.getByLabel(muons_, muons);
   event.getByLabel(met_, met);
   event.getByLabel(photons_, photons);
-  cout<<"test2"<<endl;
 
-  if ( !(muons.isValid() && met.isValid() && photons.isValid()) ) {
-  //edm::Handle< edm::View<pat::PhotonCollection> >  photons;
-  //event.getByLabel(photons_, photons);
+  //edm::Handle< edm::View<pat::Photon> >  photonHandle;
+  //event.getByLabel(photons_, photonHandle);
   //edm::View<pat::Photon> photons = *photonHandle;
 
 
@@ -144,17 +141,16 @@ void WgammaAnalyzer::eventLoop(edm::EventBase const & event)
               iMuMax = iMu + 1;
           }
     }
-  cout<<"test3"<<endl;
   int iPhotonMin = 0; int iPhotonMax = photons->size();
   if(highestPtPhotonOnly_) // if true, will only consider highest-pt muon in event
     {
         int iPho=-1.0;
-        //int nphotons = photons->size();
+        int nphotons = photons->size();
         float temp_phoPT = -999;
  
-        for(int j = 0; j != iPhotonMax; ++j)
+        for(int j = 0; j != nphotons; ++j)
         {
-            pat::Photon currentPhoton = (*photons)[j];
+	  const pat::Photon & currentPhoton = (*photons)[j];
             float current_phoPT = currentPhoton.pt();
             if (current_phoPT > temp_phoPT) 
             {
@@ -170,11 +166,9 @@ void WgammaAnalyzer::eventLoop(edm::EventBase const & event)
         }
     }
 
-  cout<<"test4"<<endl;
 
   //loop over muons
   for (int theMu = iMuMin; theMu != iMuMax; ++theMu){
-
       bool fill_entry = true; // if true, will histogram muon
       
       isInvalidMuon_ = false;
@@ -184,12 +178,9 @@ void WgammaAnalyzer::eventLoop(edm::EventBase const & event)
       if (isInvalidMuon_) continue;
 
       for(int cut_index = 0; cut_index != Num_mumet_cuts; ++cut_index) { // loop over selection cuts
-          
-          cout<<"Mu Cut "<<cut_index<<endl;
           // call to funcxtion [as implemented in setupCutOder]
           string arg = mumet_cuts_desc_short[cut_index];
-          pat::Photon dummyPhoton = (*photons)[iPhotonMin];
-          bool survived_cut = (this->*muoncuts[arg])(&fill_entry, theMu, event,dummyPhoton);
+          bool survived_cut = (this->*cuts_mu[arg])(&fill_entry, theMu, event);
           if (!survived_cut) break; // skip rest of selection cuts
 	
           if(fill_entry) {
@@ -205,16 +196,12 @@ void WgammaAnalyzer::eventLoop(edm::EventBase const & event)
               if (cut_index == Num_mumet_cuts-1) {
                   //loop over photons
                   for (int thePhoton = iPhotonMin; thePhoton != iPhotonMax; ++thePhoton){
-                      cout<<"PHOTONS!!!"<<endl;
-                      pat::Photon currentPhoton = (*photons)[thePhoton];
-      
-                      LorentzVector PhotonP4 = currentPhoton.p4();
-
+		    const LorentzVector & PhotonP4 = (*photons)[thePhoton].p4();
+		    
                       for(int pho_cut_index = 0; pho_cut_index != Num_photon_cuts; ++pho_cut_index) {
-                          cout<<"Photon cut "<<pho_cut_index<<endl;
                           // call to function [as implemented in setupCutOder]
-                          string arg = photon_cuts_desc_short[cut_index];
-                          bool survived_cut = (this->*photoncuts[arg])(&fill_entry, thePhoton, event, currentPhoton);
+                          string arg = photon_cuts_desc_short[pho_cut_index];
+                          bool survived_cut = (this->*cuts_pho[arg])(&fill_entry, thePhoton, event);
                           if (!survived_cut) break; // skip rest of selection cuts
                           double invMass = -999.999;
                           if (fill_entry) {
@@ -224,13 +211,16 @@ void WgammaAnalyzer::eventLoop(edm::EventBase const & event)
                                   LorentzVector totalP4 = wP4+PhotonP4;
                                   invMass = totalP4.M();
                               }
-                              tabulatePho(pho_cut_index, accountMe, event, currentPhoton, invMass);
+                              tabulatePho(pho_cut_index, accountMe, event, thePhoton, invMass);
 	
                           }
                           if(dumpHighPtPhotons_ && fill_entry 
-                             && cut_index == Num_photon_cuts-1
+                             && pho_cut_index == Num_photon_cuts-1
                              && wprimeUtil_->getSampleName()=="data" 
-                             && currentPhoton.pt() > dumpHighPtPhotonThreshold_ ) printHighPtPhoton(event,&currentPhoton);
+                             && PhotonP4.pt() > dumpHighPtPhotonThreshold_ && invMass > 200.0) {
+                              printHighPtPhoton(event,thePhoton);
+                              cout<<"M W+Gamma = "<<invMass<<endl;
+                          }
                   
                          
                       } // loop over photon cuts
@@ -240,7 +230,7 @@ void WgammaAnalyzer::eventLoop(edm::EventBase const & event)
       } // loop over muon cuts
   } // loop over muons
 }// events
-}
+
 void WgammaAnalyzer::setMuLorentzVector(TLorentzVector& P, const reco::TrackRef & trk)
 {
   if(trk.isNull())
@@ -349,7 +339,7 @@ void WgammaAnalyzer::tabulateMu(int cut_index, bool accountMe[],
 }
 
 void WgammaAnalyzer::tabulatePho(int pho_cut_index, bool accountMe[], 
-                                 edm::EventBase const& event, pat::Photon & currentPhoton, double & InvMass)
+                                 edm::EventBase const& event, int thePhoton, double & InvMass)
 {
   // if the accountMe switch is on, increase the number of events passing the cuts
   // and turn the switch off so we don't count more than once per event
@@ -363,9 +353,9 @@ void WgammaAnalyzer::tabulatePho(int pho_cut_index, bool accountMe[],
     }
   float weight = wprimeUtil_->getWeight();
   // fill the histograms
-  hPHOPT[pho_cut_index]->Fill(currentPhoton.pt(),weight);
-  hPHOETA[pho_cut_index]->Fill(currentPhoton.superCluster()->eta());
-  hPHOPHI[pho_cut_index]->Fill(currentPhoton.phi());
+  hPHOPT[pho_cut_index]->Fill((*photons)[thePhoton].pt(),weight);
+  hPHOETA[pho_cut_index]->Fill((*photons)[thePhoton].superCluster()->eta());
+  hPHOPHI[pho_cut_index]->Fill((*photons)[thePhoton].phi());
   hMWG[pho_cut_index]->Fill(InvMass, weight);
 }
 
@@ -608,7 +598,7 @@ void WgammaAnalyzer::defineHistos_MWgamma(TFileDirectory & dir)
 
 void WgammaAnalyzer::setupCutOrderMuons()
 {
-  muoncuts.clear();
+  cuts_mu.clear();
 #if debugmepho
   cout << "\n Mu+MET cuts will be applied in this order: " << endl;
 #endif
@@ -620,13 +610,13 @@ void WgammaAnalyzer::setupCutOrderMuons()
       cout << " Cut #" << (cut_i+1) << ": " << mumet_cuts_desc_long[cut_i]
 	   << " (" << arg << ") " << endl;
 #endif
-      if(arg == "hlt")muoncuts[arg] = &WgammaAnalyzer::passedHLT;
+      if(arg == "hlt")cuts_mu[arg] = &WgammaAnalyzer::passedHLT;
       else if(arg.find("thr") != string::npos)
-          muoncuts[arg] = &WgammaAnalyzer::muonMinimumPt;
-      else if(arg == "qual")muoncuts[arg] = &WgammaAnalyzer::goodQualityMuon;
-      else if(arg == "1mu")muoncuts[arg] = &WgammaAnalyzer::onlyOneHighTrackPtMuon;
-      else if(arg == "iso")muoncuts[arg] = &WgammaAnalyzer::isolatedMuon;
-      else if(arg == "met")muoncuts[arg] = &WgammaAnalyzer::kinematicCuts;
+	cuts_mu[arg] = &WgammaAnalyzer::muonMinimumPt;
+      else if(arg == "qual")cuts_mu[arg] = &WgammaAnalyzer::goodQualityMuon;
+      else if(arg == "1mu")cuts_mu[arg] = &WgammaAnalyzer::onlyOneHighTrackPtMuon;
+      else if(arg == "iso")cuts_mu[arg] = &WgammaAnalyzer::isolatedMuon;
+      else if(arg == "met")cuts_mu[arg] = &WgammaAnalyzer::kinematicCuts;
       else
 	{
 	  cout << " Oops! Don't understand how to prepare for cut nicknamed as "
@@ -644,7 +634,7 @@ void WgammaAnalyzer::setupCutOrderMuons()
 
 void WgammaAnalyzer::setupCutOrderPhotons()
 {
-  photoncuts.clear();
+  cuts_pho.clear();
 #if debugmepho
   cout << "\n Photon cuts will be applied in this order: " << endl;
 #endif
@@ -656,11 +646,11 @@ void WgammaAnalyzer::setupCutOrderPhotons()
       cout << " Cut #" << (cut_i+1) << ": " << mumet_cuts_desc_long[cut_i]
 	   << " (" << arg << ") " << endl;
 #endif
-      if(arg == "pt")photoncuts[arg] = &WgammaAnalyzer::photonPt;
-      else if(arg == "isolation")photoncuts[arg] = &WgammaAnalyzer::photonIsolation;
-      else if(arg == "hovere")photoncuts[arg] = &WgammaAnalyzer::photonHOverE;
-      else if(arg == "etawidth")photoncuts[arg] = &WgammaAnalyzer::photonEtaWidth;
-      else if(arg == "trackveto")photoncuts[arg] = &WgammaAnalyzer::photonTrackVeto;
+      if(arg == "pt")cuts_pho[arg] = &WgammaAnalyzer::photonPt;
+      else if(arg == "isolation")cuts_pho[arg] = &WgammaAnalyzer::photonIsolation;
+      else if(arg == "hovere")cuts_pho[arg] = &WgammaAnalyzer::photonHOverE;
+      else if(arg == "etawidth")cuts_pho[arg] = &WgammaAnalyzer::photonEtaWidth;
+      else if(arg == "trackveto")cuts_pho[arg] = &WgammaAnalyzer::photonTrackVeto;
       else
 	{
 	  cout << " Oops! Don't understand how to prepare for cut nicknamed as "
@@ -717,15 +707,15 @@ void WgammaAnalyzer::printHighPtMuon(edm::EventBase const & event)
 }
 
 // dump on screen info about high-pt muon
-void WgammaAnalyzer::printHighPtPhoton(edm::EventBase const & event, pat::Photon* currentPhoton)
+void WgammaAnalyzer::printHighPtPhoton(edm::EventBase const & event, int thePho)
 {
   cout << " Run # = " << event.id().run() << " Event # = " 
        << event.id().event() << " LS = " << event.id().luminosityBlock() 
        << endl;
 
-  cout << " Photon eta = " << currentPhoton->eta() << "  phi = " << currentPhoton->phi()
-       << " pt = " << currentPhoton->pt() << endl;
-
+  cout << " Photon eta = " << (*photons)[thePho].eta() 
+       << "  phi = " << (*photons)[thePho].phi() 
+       << " pt = " << (*photons)[thePho].pt() << endl;
  
 }
 
@@ -808,7 +798,7 @@ float WgammaAnalyzer::combRelIsolation(int theMu)
 }
 
 // whether HLT accepted the event
-bool WgammaAnalyzer::passedHLT(bool *, int, edm::EventBase const &, pat::Photon & pho)
+bool WgammaAnalyzer::passedHLT(bool *, int, edm::EventBase const &)
 {
   // needs implementation
   return true;
@@ -816,7 +806,7 @@ bool WgammaAnalyzer::passedHLT(bool *, int, edm::EventBase const &, pat::Photon 
 
 // check if muon has minimum pt, fill isThere accordingly
 // always returns true
-bool WgammaAnalyzer::muonMinimumPt(bool * isThere, int, edm::EventBase const &, pat::Photon & pho)
+bool WgammaAnalyzer::muonMinimumPt(bool * isThere, int, edm::EventBase const &)
 {
   if(mu4D.Pt() <= muonPtThreshold_)
     *isThere = false;
@@ -826,7 +816,7 @@ bool WgammaAnalyzer::muonMinimumPt(bool * isThere, int, edm::EventBase const &, 
 
 // check if muon satisfies quality requirements
 // fill goodQual; always returns true
-bool WgammaAnalyzer::goodQualityMuon(bool * goodQual, int theMu, edm::EventBase const &, pat::Photon & pho)
+bool WgammaAnalyzer::goodQualityMuon(bool * goodQual, int theMu, edm::EventBase const &)
 {
   //See twiki: https://twiki.cern.ch/twiki/bin/view/CMS/ExoticaWprime
   //for the latest quality cuts
@@ -861,32 +851,31 @@ bool WgammaAnalyzer::goodQualityMuon(bool * goodQual, int theMu, edm::EventBase 
    return true;
 }
 
-bool WgammaAnalyzer::photonPt(bool * goodQual, int theMu, edm::EventBase const &, pat::Photon & pho)
+bool WgammaAnalyzer::photonPt(bool * goodQual, int thePho, edm::EventBase const &)
 {
-    //See twiki: https://twiki.cern.ch/twiki/bin/view/CMS/PhotonID
-
-    double pt = pho.et();
-    double eta = fabs(pho.superCluster()->eta());
-    bool passPt = ( pt > minPhotonPt_ && eta < maxPhotonEta_   );
-
-    if(!passPt)
-        *goodQual = false;
-
-   return true;
+  //See twiki: https://twiki.cern.ch/twiki/bin/view/CMS/PhotonID
+  double pt = (*photons)[thePho].et();
+  double eta = fabs((*photons)[thePho].superCluster()->eta());
+  bool passPt = ( pt > minPhotonPt_ && eta < maxPhotonEta_   );
+  
+  if(!passPt)
+    *goodQual = false;
+  
+  return true;
 }
 
-bool WgammaAnalyzer::photonIsolation(bool * goodQual,int theMu, edm::EventBase const &, pat::Photon & pho)
+bool WgammaAnalyzer::photonIsolation(bool * goodQual, int thePho, edm::EventBase const &)
 {
     //See twiki: https://twiki.cern.ch/twiki/bin/view/CMS/ExoticaPhotons
 
     //pat::Photon pho = photons.at(thePhoton);
 
-    double pt = pho.et();
-    double eta = fabs(pho.superCluster()->eta());
-    double ecaliso = pho.ecalRecHitSumEtConeDR04();
-    double hcaliso = pho.hcalTowerSumEtConeDR04();
-    double trkiso = pho.trkSumPtHollowConeDR04();
-    double hovere = pho.hadronicOverEm();
+    double pt = (*photons)[thePho].et();
+    double eta = fabs((*photons)[thePho].superCluster()->eta());
+    double ecaliso = (*photons)[thePho].ecalRecHitSumEtConeDR04();
+    double hcaliso = (*photons)[thePho].hcalTowerSumEtConeDR04();
+    double trkiso = (*photons)[thePho].trkSumPtHollowConeDR04();
+    double hovere = (*photons)[thePho].hadronicOverEm();
   
     double maxecaliso = 0.0;
     double maxhcaliso = 0.0;
@@ -920,15 +909,15 @@ if(!passJurassicECALIso || !passTowerHCALIso || !passHadronicOverEm ||!passHollo
 }
 
 
-bool WgammaAnalyzer::photonHOverE(bool * goodQual, int theMu, edm::EventBase const &, pat::Photon & pho)
+bool WgammaAnalyzer::photonHOverE(bool * goodQual, int thePho, edm::EventBase const &)
 {
     //See twiki: https://twiki.cern.ch/twiki/bin/view/CMS/PhotonID
 
     //pat::Photon pho = photons.at(thePhoton);
 
   
-    double hovere = pho.hadronicOverEm();
-    double eta = fabs(pho.superCluster()->eta());
+    double hovere = (*photons)[thePho].hadronicOverEm();
+    double eta = fabs((*photons)[thePho].superCluster()->eta());
     double maxhovere = 0.0;
 
     //should fill some histograms here
@@ -951,15 +940,15 @@ bool WgammaAnalyzer::photonHOverE(bool * goodQual, int theMu, edm::EventBase con
     
 
   
-bool WgammaAnalyzer::photonEtaWidth(bool * goodQual, int theMu , edm::EventBase const &, pat::Photon & pho)
+bool WgammaAnalyzer::photonEtaWidth(bool * goodQual, int thePho , edm::EventBase const &)
 {
     //See twiki: https://twiki.cern.ch/twiki/bin/view/CMS/PhotonID
 
     //pat::Photon pho = photons.at(thePhoton);
 
   
-    double etawidth = pho.sigmaIetaIeta();
-    double eta = fabs(pho.superCluster()->eta());
+    double etawidth = (*photons)[thePho].sigmaIetaIeta();
+    double eta = fabs((*photons)[thePho].superCluster()->eta());
     double maxetawidth = 0.0;
 
     //should fill some histograms here
@@ -981,10 +970,10 @@ bool WgammaAnalyzer::photonEtaWidth(bool * goodQual, int theMu , edm::EventBase 
 }
 
 
-bool WgammaAnalyzer::photonTrackVeto(bool * goodQual, int theMu , edm::EventBase const &, pat::Photon & pho)
+bool WgammaAnalyzer::photonTrackVeto(bool * goodQual, int thePho , edm::EventBase const &)
 {
     //See twiki: https://twiki.cern.ch/twiki/bin/view/CMS/PhotonID
-    if (applyTrackVeto_ && pho.hasPixelSeed())
+    if (applyTrackVeto_ && (*photons)[thePho].hasPixelSeed())
         *goodQual = false;
    return true;
 }
@@ -992,7 +981,7 @@ bool WgammaAnalyzer::photonTrackVeto(bool * goodQual, int theMu , edm::EventBase
 
 
 // true if only one muon with track pt > the threshold
-bool WgammaAnalyzer::onlyOneHighTrackPtMuon(bool *, int, edm::EventBase const &, pat::Photon & pho)
+bool WgammaAnalyzer::onlyOneHighTrackPtMuon(bool *, int, edm::EventBase const &)
 {
   return (nMuAboveThresh(oneMuPtTrackCut_) == 1);
 }
@@ -1018,8 +1007,8 @@ unsigned WgammaAnalyzer::nMuAboveThresh(float tracker_muon_pt)
 
 // set bool flag to true if muon isolated
 // always returns true
-bool WgammaAnalyzer::isolatedMuon(bool * goodQual, int theMu, 
-                                  edm::EventBase const &, pat::Photon & pho)
+bool WgammaAnalyzer::isolatedMuon(bool * goodQual, int theMu,
+                                  edm::EventBase const &)
 {
   if(combRelIsolation(theMu) > combRelCut_)
     *goodQual = false;
@@ -1029,8 +1018,8 @@ bool WgammaAnalyzer::isolatedMuon(bool * goodQual, int theMu,
 
 // check if muon, MET, and Photon pass kinematic cuts, updated goodQual
 // always returns true
-bool WgammaAnalyzer::kinematicCuts(bool * goodQual, int, 
-                                   edm::EventBase const & event, pat::Photon & pho)
+bool WgammaAnalyzer::kinematicCuts(bool * goodQual, int,
+                                   edm::EventBase const & event)
 {
   TVector2 MET = getNewMET(event, mu4D);
   float ratio = mu4D.Pt()/MET.Mod();
@@ -1051,7 +1040,7 @@ bool WgammaAnalyzer::kinematicCuts(bool * goodQual, int,
 
  
 
-  if(ratio < 0.4 || ratio > 1.5 || TMath::Abs(delta_phi) < 2.5)
+   if(ratio < 0.4 || ratio > 1.5)
     *goodQual = false;
 
   return true;
