@@ -308,6 +308,7 @@ WprimeMuValidation_v3::analyze(const edm::Event& iEvent, const edm::EventSetup& 
            if (!(mu->numberOfMatchedStations()>1)) continue;
            if (!(gm->hitPattern().numberOfValidTrackerHits()>10)) continue;
            if (!(gm->hitPattern().numberOfValidPixelHits()>0)) continue; 
+           if (!(gm->hitPattern().numberOfValidMuonHits()>0)) continue;
            if (!(gm->normalizedChi2()<10)) continue;
            if (!(fabs(gm->dxy(beamSpotHandle->position()))<0.02)) continue;
 
