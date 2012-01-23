@@ -21,9 +21,15 @@
     <Sample Name="wjets" HistoPath="" NormalizeByTheory="True" HistoName="mu_invmass_ge1b__wjets">
       <HistoSys Name="jes" HistoNameHigh="mu_invmass_ge1b__wjets__jes__plus" HistoNameLow="mu_invmass_ge1b__wjets__jes__minus"/>
       <HistoSys Name="btag" HistoNameHigh="mu_invmass_ge1b__wjets__btag__plus" HistoNameLow="mu_invmass_ge1b__wjets__btag__minus"/>
-      <OverallSys Name="norm_wjets_syst" High="1.30" Low="0.70" />
+      <OverallSys Name="norm_wjets_syst" High="1.15" Low="0.85" />
       <OverallSys Name="lepton_eff_mu" High="1.03" Low="0.97"/>
     </Sample>
 
+    <Sample Name="tops" HistoPath="" NormalizeByTheory="True" HistoName="mu_invmass_ge1b__tops">
+      <HistoSys Name="jes" HistoNameHigh="mu_invmass_ge1b__tops__jes__plus" HistoNameLow="mu_invmass_ge1b__tops__jes__minus"/>
+      <HistoSys Name="btag" HistoNameHigh="mu_invmass_ge1b__tops__btag__plus" HistoNameLow="mu_invmass_ge1b__tops__btag__minus"/>
+      <OverallSys Name="norm_tops_syst" High="1.30" Low="0.70" />
+      <OverallSys Name="lepton_eff_e" High="1.03" Low="0.97"/>
+    </Sample>
 
   </Channel>

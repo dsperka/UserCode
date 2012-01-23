@@ -29,7 +29,8 @@
     <ConstraintTerm Type="Gaussian" RelativeUncertainty=".05">alpha_jes</ConstraintTerm>
     <ConstraintTerm Type="Gaussian" RelativeUncertainty=".05">alpha_btag</ConstraintTerm>
     <ConstraintTerm Type="Gaussian" RelativeUncertainty=".15">alpha_norm_ttbar_syst</ConstraintTerm>
-    <ConstraintTerm Type="Gaussian" RelativeUncertainty=".30">alpha_norm_wjets_syst</ConstraintTerm>
+    <ConstraintTerm Type="Gaussian" RelativeUncertainty=".15">alpha_norm_wjets_syst</ConstraintTerm>
+    <ConstraintTerm Type="Gaussian" RelativeUncertainty=".30">alpha_norm_tops_syst</ConstraintTerm>
     <ConstraintTerm Type="Gaussian" RelativeUncertainty=".03">alpha_lepton_eff_e</ConstraintTerm>
     <ConstraintTerm Type="Gaussian" RelativeUncertainty=".03">alpha_lepton_eff_mu</ConstraintTerm>
 
