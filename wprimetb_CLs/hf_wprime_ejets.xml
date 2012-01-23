@@ -1,0 +1,28 @@
+<!DOCTYPE Channel  SYSTEM './config/HistFactorySchema.dtd'>
+
+  <Channel Name="ejets" InputFile="/uscms_data/d2/dsperka/10Jan/CMSSW_4_2_4_patch2/src/RootFiles_ForLimits_22Jan_VarBins100_O_Sumw2/O_bestTop_Wprime_Right_Histos_electrons-ge1b.root" HistoName="">
+
+    <Data HistoName="elec_invmass_ge1b__DATA" HistoPath="" />
+
+    <Sample Name="signal" HistoPath="" NormalizeByTheory="True" HistoName="elec_invmass_ge1b__wp800">
+      <HistoSys Name="jes" HistoNameHigh="elec_invmass_ge1b__wp800__jes__plus" HistoNameLow="elec_invmass_ge1b__wp800__jes__minus"/>
+      <HistoSys Name="btag" HistoNameHigh="elec_invmass_ge1b__wp800__btag__plus" HistoNameLow="elec_invmass_ge1b__wp800__btag__minus"/>
+      <OverallSys Name="lepton_eff_e" High="1.03" Low="0.97"/>
+      <NormFactor Name="xsec" Val="0.0" Low="0.0" High="1.5" />
+    </Sample>
+
+    <Sample Name="ttbar" HistoPath="" NormalizeByTheory="True" HistoName="elec_invmass_ge1b__ttbar">
+      <HistoSys Name="jes" HistoNameHigh="elec_invmass_ge1b__ttbar__jes__plus" HistoNameLow="elec_invmass_ge1b__ttbar__jes__minus"/>
+      <HistoSys Name="btag" HistoNameHigh="elec_invmass_ge1b__ttbar__btag__plus" HistoNameLow="elec_invmass_ge1b__ttbar__btag__minus"/>
+      <OverallSys Name="norm_ttbar_syst" High="1.15" Low="0.85"/>
+      <OverallSys Name="lepton_eff_e" High="1.03" Low="0.97"/>
+    </Sample>
+    
+    <Sample Name="wjets" HistoPath="" NormalizeByTheory="True" HistoName="elec_invmass_ge1b__wjets">
+      <HistoSys Name="jes" HistoNameHigh="elec_invmass_ge1b__wjets__jes__plus" HistoNameLow="elec_invmass_ge1b__wjets__jes__minus"/>
+      <HistoSys Name="btag" HistoNameHigh="elec_invmass_ge1b__wjets__btag__plus" HistoNameLow="elec_invmass_ge1b__wjets__btag__minus"/>
+      <OverallSys Name="norm_wjets_syst" High="1.30" Low="0.70" />
+      <OverallSys Name="lepton_eff_e" High="1.03" Low="0.97"/>
+    </Sample>
+
+  </Channel>

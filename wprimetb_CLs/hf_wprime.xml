@@ -1,0 +1,38 @@
+<!--
+//============================================================================
+// Name        : hf_wprime.xml
+//============================================================================
+-->
+
+<!--
+    Top-level configuration,  details for the single channel are in hf_wprime_channel.xml.
+    This is the input file to the executable.
+
+    Note: Config.dtd needs to be accessible.  It can be found in ROOT release area.  
+    The file system path is relative to location of this XML file, not the executable.
+-->
+
+<!DOCTYPE Combination  SYSTEM './config/HistFactorySchema.dtd'>
+
+<Combination OutputFilePrefix="./results/wprime" >
+
+  <Input>hf_wprime_ejets.xml</Input> 
+  <Input>hf_wprime_mujets.xml</Input>
+
+  <Measurement Name="wprimeCrossSection" Lumi="1.0" LumiRelErr="0.045" ExportOnly="False">
+
+    <POI>xsec</POI>
+
+    <!--<ParamSetting Const="True">jes</ParamSetting>-->
+    <!--<ParamSetting Const="True">btag</ParamSetting>-->
+   
+    <ConstraintTerm Type="Gaussian" RelativeUncertainty=".05">alpha_jes</ConstraintTerm>
+    <ConstraintTerm Type="Gaussian" RelativeUncertainty=".05">alpha_btag</ConstraintTerm>
+    <ConstraintTerm Type="Gaussian" RelativeUncertainty=".15">alpha_norm_ttbar_syst</ConstraintTerm>
+    <ConstraintTerm Type="Gaussian" RelativeUncertainty=".30">alpha_norm_wjets_syst</ConstraintTerm>
+    <ConstraintTerm Type="Gaussian" RelativeUncertainty=".03">alpha_lepton_eff_e</ConstraintTerm>
+    <ConstraintTerm Type="Gaussian" RelativeUncertainty=".03">alpha_lepton_eff_mu</ConstraintTerm>
+
+  </Measurement>
+  
+</Combination>
