@@ -23,15 +23,16 @@
 
     <POI>xsec</POI>
 
-    <!--<ParamSetting Const="True">jes</ParamSetting>-->
-    <!--<ParamSetting Const="True">btag</ParamSetting>-->
+    <!--<ParamSetting Const="True">norm_tops,norm_other,norm_wjets</ParamSetting>-->
    
-    <!--<ConstraintTerm Type="Gaussian" RelativeUncertainty=".001">alpha_jes</ConstraintTerm>-->
-    <!--<ConstraintTerm Type="Gaussian" RelativeUncertainty=".001">alpha_btag</ConstraintTerm>-->
+    <!--<ConstraintTerm Type="Gaussian" RelativeUncertainty=".05">alpha_jes</ConstraintTerm>-->
+    <!--<ConstraintTerm Type="Gaussian" RelativeUncertainty=".05">alpha_btag</ConstraintTerm>-->
     <!--<ConstraintTerm Type="Gaussian" RelativeUncertainty=".001">alpha_jer</ConstraintTerm>-->
     <!--<ConstraintTerm Type="Gaussian" RelativeUncertainty=".001">alpha_pileup</ConstraintTerm>-->
     <ConstraintTerm Type="Gaussian" RelativeUncertainty=".15">alpha_norm_ttbar_syst</ConstraintTerm>
     <ConstraintTerm Type="Gaussian" RelativeUncertainty=".15">alpha_norm_wjets_syst</ConstraintTerm>
+    <!--<ConstraintTerm Type="LogNormal" RelativeUncertainty=".30">norm_ttbar_syst</ConstraintTerm>-->
+    <!--<ConstraintTerm Type="LogNormal" RelativeUncertainty=".30">norm_wjets_syst</ConstraintTerm>-->
     <!--<ConstraintTerm Type="Gaussian" RelativeUncertainty=".30">alpha_norm_tops_syst</ConstraintTerm>-->
     <!--<ConstraintTerm Type="Gaussian" RelativeUncertainty=".30">alpha_norm_other_syst</ConstraintTerm>-->
     <!--<ConstraintTerm Type="Gaussian" RelativeUncertainty=".03">alpha_lepton_eff_e</ConstraintTerm>-->

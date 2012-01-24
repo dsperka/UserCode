@@ -11,7 +11,7 @@
       <!--<HistoSys Name="pileup" HistoNameHigh="elec_invmass_ge1b__wp800__PU__plus" HistoNameLow="elec_invmass_ge1b__wp800__PU__minus"/>-->
       <!--<OverallSys Name="lepton_eff_e" High="1.03" Low="0.97"/>-->
       <!--<OverallSys Name="trig_eff_e" High="1.03" Low="0.97"/>-->
-      <NormFactor Name="xsec" Val="0.0" Low="0.0" High="1.5" />
+      <NormFactor Name="xsec" Val="0.0" Low="0.0" High="1.0" />
     </Sample>
 
     <Sample Name="ttbar" HistoPath="" NormalizeByTheory="True" HistoName="elec_invmass_ge1b__ttbar">
@@ -19,7 +19,7 @@
       <!--<HistoSys Name="btag" HistoNameHigh="elec_invmass_ge1b__ttbar__btag__plus" HistoNameLow="elec_invmass_ge1b__ttbar__btag__minus"/>-->
       <!--<HistoSys Name="jer" HistoNameHigh="elec_invmass_ge1b__ttbar__jer__plus" HistoNameLow="elec_invmass_ge1b__ttbar__jer__minus"/>-->
       <!--<HistoSys Name="pileup" HistoNameHigh="elec_invmass_ge1b__ttbar__PU__plus" HistoNameLow="elec_invmass_ge1b__ttbar__PU__minus"/>-->
-      <OverallSys Name="norm_ttbar_syst" High="1.15" Low="0.85"/>
+      <!--<OverallSys Name="norm_ttbar_syst" High="1.15" Low="0.85"/>-->
       <!--<OverallSys Name="lepton_eff_e" High="1.03" Low="0.97"/>-->
       <!--<OverallSys Name="trig_eff_e" High="1.03" Low="0.97"/>-->
     </Sample>
@@ -42,16 +42,18 @@
       <!--<OverallSys Name="norm_tops_syst" High="1.30" Low="0.70" />-->
       <!--<OverallSys Name="lepton_eff_e" High="1.03" Low="0.97"/>-->
       <!--<OverallSys Name="trig_eff_e" High="1.03" Low="0.97"/>-->
+      <!--<NormFactor Name="norm_tops" Val="1.0" Low="1.0" High="1.0" Const="True" />-->
     </Sample>
 
-    <Sample Name="other" HistoPath="" NormalizeByTheory="True" HistoName="elec_invmass_ge1b__other">
+    <!--<Sample Name="other" HistoPath="" NormalizeByTheory="True" HistoName="elec_invmass_ge1b__other">-->
       <!--<HistoSys Name="jes" HistoNameHigh="elec_invmass_ge1b__other__jes__plus" HistoNameLow="elec_invmass_ge1b__other__jes__minus"/>-->
       <!--<HistoSys Name="btag" HistoNameHigh="elec_invmass_ge1b__other__btag__plus" HistoNameLow="elec_invmass_ge1b__other__btag__minus"/>-->
       <!--<HistoSys Name="jer" HistoNameHigh="elec_invmass_ge1b__other__jer__plus" HistoNameLow="elec_invmass_ge1b__other__jer__minus"/>-->
       <!--<HistoSys Name="pileup" HistoNameHigh="elec_invmass_ge1b__other__PU__plus" HistoNameLow="elec_invmass_ge1b__other__PU__minus"/>-->
       <!--<OverallSys Name="norm_other_syst" High="1.30" Low="0.70" />-->
       <!--<OverallSys Name="lepton_eff_e" High="1.03" Low="0.97"/>-->
-      <!--<OverallSys Name="trig_eff_e" High="1.03" Low="0.97"/>-->
-    </Sample>
+      <!--<OverallSys Name="trig_eff_e" High="1.03" Low="0.97"/>--> 
+      <!--<NormFactor Name="norm_other" Val="1.0" Low="1.0" High="1.0" Const="True" />-->
+    <!--</Sample>-->
 
   </Channel>
