@@ -23,7 +23,7 @@
 
     <POI>xsec</POI>
 
-    <!--<ParamSetting Const="True">Lumi</ParamSetting>-->
+    <ParamSetting Const="True">Lumi</ParamSetting>
     <!--<ParamSetting Const="True">btag</ParamSetting>-->
    
     <ConstraintTerm Type="Gaussian" RelativeUncertainty=".05">alpha_jes</ConstraintTerm>

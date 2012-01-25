@@ -1,6 +1,6 @@
 <!DOCTYPE Channel  SYSTEM './config/HistFactorySchema.dtd'>
 
-  <Channel Name="mujets" InputFile="/uscms_data/d2/dsperka/10Jan/CMSSW_4_2_4_patch2/src/RootFiles_ForMuonLimits_24Jan_VarBins100v3_O_NoZeros/O_bestTop_Wprime_Right_Histos_muons-ge1b_nomandjer.root" HistoName="">
+  <Channel Name="mujets" InputFile="/uscms_data/d2/dsperka/10Jan/CMSSW_4_2_4_patch2/src/RootFiles_ForMuonLimits_24Jan_BGWp800pt2Max50min_O/O_bestTop_Wprime_Right_Histos_muons-ge1b_jerandnom.root" HistoName="">
 
     <Data HistoName="mu_invmass_ge1b__DATA" HistoPath="" />
 
@@ -11,7 +11,7 @@
       <!--<HistoSys Name="pileup" HistoNameHigh="mu_invmass_ge1b__wp800__PU__plus" HistoNameLow="mu_invmass_ge1b__wp800__PU__minus"/>-->
       <!--<OverallSys Name="lepton_eff_mu" High="1.03" Low="0.97"/>-->
       <!--<OverallSys Name="trig_eff_mu" High="1.03" Low="0.97"/>-->
-      <NormFactor Name="xsec" Val="0.0" Low="0.0" High="1.5" />
+      <NormFactor Name="xsec" Val="0.0" Low="0.0" High="4.0"/>
     </Sample>
 
     <Sample Name="ttbar" HistoPath="" NormalizeByTheory="True" HistoName="mu_invmass_ge1b__ttbar">
