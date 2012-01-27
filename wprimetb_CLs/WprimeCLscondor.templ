@@ -1,10 +1,10 @@
 universe = vanilla
-Executable = DIRECTORY/TYPE.csh
+Executable = DIRECTORY/TYPE_QUANTILE.csh
 Requirements   =  OpSys == "LINUX" && (Arch =="INTEL" || Arch =="x86_64")
 Should_Transfer_Files = YES
 WhenToTransferOutput = ON_EXIT
-Output = DIRECTORY/TYPE.stdout
-Error = DIRECTORY/TYPE.stderr
-Log = DIRECTORY/TYPE.condor.log
+Output = DIRECTORY/TYPE_QUANTILE.stdout
+Error = DIRECTORY/TYPE_QUANTILE.stderr
+Log = DIRECTORY/TYPE_QUANTILE.condor.log
 Queue = 1
 +UseSL5 = True
