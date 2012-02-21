@@ -5,7 +5,7 @@
     <Data HistoName="elec_invmass_ge1b__DATA" HistoPath="" />
 
     <Sample Name="signal" HistoPath="" NormalizeByTheory="True" HistoName="elec_invmass_ge1b__wp800">
-      <HistoSys Name="jes" HistoNameHigh="elec_invmass_ge1b__wp800__jes__minus" HistoNameLow="elec_invmass_ge1b__wp800__jes__plus"/>
+      <HistoSys Name="jes" HistoNameHigh="elec_invmass_ge1b__wp800__jes__plus" HistoNameLow="elec_invmass_ge1b__wp800__jes__minus"/>
       <!--<HistoSys Name="jer" HistoNameHigh="elec_invmass_ge1b__wp800__jer__plus" HistoNameLow="elec_invmass_ge1b__wp800__jer__minus"/>-->
       <!--<HistoSys Name="pileup" HistoNameHigh="elec_invmass_ge1b__wp800__PU__plus" HistoNameLow="elec_invmass_ge1b__wp800__PU__minus"/>-->
       <!--<OverallSys Name="lepton_eff_e" High="1.03" Low="0.97"/>-->
@@ -14,7 +14,7 @@
     </Sample>
 
     <Sample Name="ttbar" HistoPath="" NormalizeByTheory="True" HistoName="elec_invmass_ge1b__ttbar">
-      <HistoSys Name="jes" HistoNameHigh="elec_invmass_ge1b__ttbar__jes__minus" HistoNameLow="elec_invmass_ge1b__ttbar__jes__plus"/>
+      <HistoSys Name="jes" HistoNameHigh="elec_invmass_ge1b__ttbar__jes__plus" HistoNameLow="elec_invmass_ge1b__ttbar__jes__minus"/>
       <!--<HistoSys Name="jer" HistoNameHigh="elec_invmass_ge1b__ttbar__jer__plus" HistoNameLow="elec_invmass_ge1b__ttbar__jer__minus"/>-->
       <!--<HistoSys Name="pileup" HistoNameHigh="elec_invmass_ge1b__ttbar__PU__plus" HistoNameLow="elec_invmass_ge1b__ttbar__PU__minus"/>-->
       <OverallSys Name="norm_ttbar_syst" High="1.15" Low="0.85"/>
@@ -23,7 +23,7 @@
     </Sample>
     
     <Sample Name="wjets" HistoPath="" NormalizeByTheory="True" HistoName="elec_invmass_ge1b__wjets">
-      <HistoSys Name="jes" HistoNameHigh="elec_invmass_ge1b__wjets__jes__minus" HistoNameLow="elec_invmass_ge1b__wjets__jes__plus"/>
+      <HistoSys Name="jes" HistoNameHigh="elec_invmass_ge1b__wjets__jes__plus" HistoNameLow="elec_invmass_ge1b__wjets__jes__minus"/>
       <!--<HistoSys Name="jer" HistoNameHigh="elec_invmass_ge1b__wjets__jer__plus" HistoNameLow="elec_invmass_ge1b__wjets__jer__minus"/>-->
       <!--<HistoSys Name="pileup" HistoNameHigh="elec_invmass_ge1b__wjets__PU__plus" HistoNameLow="elec_invmass_ge1b__wjets__PU__minus"/>-->
       <OverallSys Name="norm_wjets_syst" High="1.15" Low="0.85" />
