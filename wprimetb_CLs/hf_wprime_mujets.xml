@@ -1,12 +1,11 @@
 <!DOCTYPE Channel  SYSTEM './config/HistFactorySchema.dtd'>
 
-  <Channel Name="mujets" InputFile="/uscms_data/d2/dsperka/10Jan/CMSSW_4_2_4_patch2/src/RootFiles_ForMuonLimits_24Jan_BGWp800pt2Max50min_O/O_bestTop_Wprime_Right_Histos_muons-ge1b_jerandnom.root" HistoName="">
+  <Channel Name="mujets" InputFile="/uscms_data/d2/lpcljm/meena/Wprime/MUONS/O_bestTop_Wprime_Right_Histos_muons-ge1b.root" HistoName="">
 
     <Data HistoName="mu_invmass_ge1b__DATA" HistoPath="" />
 
     <Sample Name="signal" HistoPath="" NormalizeByTheory="True" HistoName="mu_invmass_ge1b__wp800">
-      <HistoSys Name="jes" HistoNameHigh="mu_invmass_ge1b__wp800__jes__plus" HistoNameLow="mu_invmass_ge1b__wp800__jes__minus"/>
-      <HistoSys Name="btag" HistoNameHigh="mu_invmass_ge1b__wp800__btag__plus" HistoNameLow="mu_invmass_ge1b__wp800__btag__minus"/>
+      <HistoSys Name="jes" HistoNameHigh="mu_invmass_ge1b__wp800__jes__minus" HistoNameLow="mu_invmass_ge1b__wp800__jes__plus"/>
       <!--<HistoSys Name="jer" HistoNameHigh="mu_invmass_ge1b__wp800__jer__plus" HistoNameLow="mu_invmass_ge1b__wp800__jer__minus"/>-->
       <!--<HistoSys Name="pileup" HistoNameHigh="mu_invmass_ge1b__wp800__PU__plus" HistoNameLow="mu_invmass_ge1b__wp800__PU__minus"/>-->
       <!--<OverallSys Name="lepton_eff_mu" High="1.03" Low="0.97"/>-->
@@ -15,8 +14,7 @@
     </Sample>
 
     <Sample Name="ttbar" HistoPath="" NormalizeByTheory="True" HistoName="mu_invmass_ge1b__ttbar">
-      <HistoSys Name="jes" HistoNameHigh="mu_invmass_ge1b__ttbar__jes__plus" HistoNameLow="mu_invmass_ge1b__ttbar__jes__minus"/>
-      <HistoSys Name="btag" HistoNameHigh="mu_invmass_ge1b__ttbar__btag__plus" HistoNameLow="mu_invmass_ge1b__ttbar__btag__minus"/>
+      <HistoSys Name="jes" HistoNameHigh="mu_invmass_ge1b__ttbar__jes__minus" HistoNameLow="mu_invmass_ge1b__ttbar__jes__plus"/>
       <!--<HistoSys Name="jer" HistoNameHigh="mu_invmass_ge1b__ttbar__jer__plus" HistoNameLow="mu_invmass_ge1b__ttbar__jer__minus"/>-->
       <!--<HistoSys Name="pileup" HistoNameHigh="mu_invmass_ge1b__ttbar__PU__plus" HistoNameLow="mu_invmass_ge1b__ttbar__PU__minus"/>-->
       <OverallSys Name="norm_ttbar_syst" High="1.15" Low="0.85"/>
@@ -25,8 +23,7 @@
     </Sample>
     
     <Sample Name="wjets" HistoPath="" NormalizeByTheory="True" HistoName="mu_invmass_ge1b__wjets">
-      <HistoSys Name="jes" HistoNameHigh="mu_invmass_ge1b__wjets__jes__plus" HistoNameLow="mu_invmass_ge1b__wjets__jes__minus"/>
-      <HistoSys Name="btag" HistoNameHigh="mu_invmass_ge1b__wjets__btag__plus" HistoNameLow="mu_invmass_ge1b__wjets__btag__minus"/>
+      <HistoSys Name="jes" HistoNameHigh="mu_invmass_ge1b__wjets__jes__minus" HistoNameLow="mu_invmass_ge1b__wjets__jes__plus"/>
       <!--<HistoSys Name="jer" HistoNameHigh="mu_invmass_ge1b__wjets__jer__plus" HistoNameLow="mu_invmass_ge1b__wjets__jer__minus"/>-->
       <!--<HistoSys Name="pileup" HistoNameHigh="mu_invmass_ge1b__wjets__PU__plus" HistoNameLow="mu_invmass_ge1b__wjets__PU__minus"/>-->
       <OverallSys Name="norm_wjets_syst" High="1.15" Low="0.85" />
@@ -34,25 +31,33 @@
       <!--<OverallSys Name="trig_eff_mu" High="1.03" Low="0.97"/>-->
     </Sample>
 
+<!--
+this is a commented out area
+      <HistoSys Name="btag" HistoNameHigh="mu_invmass_ge1b__wp800__btag__plus" HistoNameLow="mu_invmass_ge1b__wp800__btag__minus"/>
+      <HistoSys Name="btag" HistoNameHigh="mu_invmass_ge1b__ttbar__btag__plus" HistoNameLow="mu_invmass_ge1b__ttbar__btag__minus"/>
+      <HistoSys Name="btag" HistoNameHigh="mu_invmass_ge1b__wjets__btag__plus" HistoNameLow="mu_invmass_ge1b__wjets__btag__minus"/>
+      <HistoSys Name="btag" HistoNameHigh="mu_invmass_ge1b__tops__btag__plus" HistoNameLow="mu_invmass_ge1b__tops__btag__minus"/>
+
     <Sample Name="tops" HistoPath="" NormalizeByTheory="True" HistoName="mu_invmass_ge1b__tops">
       <HistoSys Name="jes" HistoNameHigh="mu_invmass_ge1b__tops__jes__plus" HistoNameLow="mu_invmass_ge1b__tops__jes__minus"/>
-      <HistoSys Name="btag" HistoNameHigh="mu_invmass_ge1b__tops__btag__plus" HistoNameLow="mu_invmass_ge1b__tops__btag__minus"/>
-      <!--<HistoSys Name="jer" HistoNameHigh="mu_invmass_ge1b__tops__jer__plus" HistoNameLow="mu_invmass_ge1b__tops__jer__minus"/>-->
-      <!--<HistoSys Name="pileup" HistoNameHigh="mu_invmass_ge1b__tops__PU__plus" HistoNameLow="mu_invmass_ge1b__tops__PU__minus"/>-->
-      <!--<OverallSys Name="norm_tops_syst" High="1.30" Low="0.70" />-->
-      <!--<OverallSys Name="lepton_eff_mu" High="1.03" Low="0.97"/>-->
-      <!--<OverallSys Name="trig_eff_mu" High="1.03" Low="0.97"/>-->
+      <HistoSys Name="jer" HistoNameHigh="mu_invmass_ge1b__tops__jer__plus" HistoNameLow="mu_invmass_ge1b__tops__jer__minus"/>
+      <HistoSys Name="pileup" HistoNameHigh="mu_invmass_ge1b__tops__PU__plus" HistoNameLow="mu_invmass_ge1b__tops__PU__minus"/>
+      <OverallSys Name="norm_tops_syst" High="1.30" Low="0.70" />
+      <OverallSys Name="lepton_eff_mu" High="1.03" Low="0.97"/>
+      <OverallSys Name="trig_eff_mu" High="1.03" Low="0.97"/>
     </Sample>
 
-    <!--<Sample Name="other" HistoPath="" NormalizeByTheory="True" HistoName="mu_invmass_ge1b__other">-->
-      <!--<HistoSys Name="jes" HistoNameHigh="mu_invmass_ge1b__other__jes__plus" HistoNameLow="mu_invmass_ge1b__other__jes__minus"/>-->
-      <!--<HistoSys Name="btag" HistoNameHigh="mu_invmass_ge1b__other__btag__plus" HistoNameLow="mu_invmass_ge1b__other__btag__minus"/>-->
-      <!--<HistoSys Name="jer" HistoNameHigh="mu_invmass_ge1b__other__jer__plus" HistoNameLow="mu_invmass_ge1b__other__jer__minus"/>-->
-      <!--<HistoSys Name="pileup" HistoNameHigh="mu_invmass_ge1b__other__PU__plus" HistoNameLow="mu_invmass_ge1b__other__PU__minus"/>-->
-      <!--<OverallSys Name="norm_other_syst" High="1.30" Low="0.70" />-->
-      <!--<OverallSys Name="lepton_eff_mu" High="1.03" Low="0.97"/>-->
-      <!--<OverallSys Name="trig_eff_mu" High="1.03" Low="0.97"/>-->
-    <!--</Sample>-->
+    <Sample Name="other" HistoPath="" NormalizeByTheory="True" HistoName="mu_invmass_ge1b__other">
+      <HistoSys Name="jes" HistoNameHigh="mu_invmass_ge1b__other__jes__plus" HistoNameLow="mu_invmass_ge1b__other__jes__minus"/>
+      <HistoSys Name="btag" HistoNameHigh="mu_invmass_ge1b__other__btag__plus" HistoNameLow="mu_invmass_ge1b__other__btag__minus"/>
+      <HistoSys Name="jer" HistoNameHigh="mu_invmass_ge1b__other__jer__plus" HistoNameLow="mu_invmass_ge1b__other__jer__minus"/>
+      <HistoSys Name="pileup" HistoNameHigh="mu_invmass_ge1b__other__PU__plus" HistoNameLow="mu_invmass_ge1b__other__PU__minus"/>
+      <OverallSys Name="norm_other_syst" High="1.30" Low="0.70" />
+      <OverallSys Name="lepton_eff_mu" High="1.03" Low="0.97"/>
+      <OverallSys Name="trig_eff_mu" High="1.03" Low="0.97"/>
+    </Sample>
  
+
+-->
 
   </Channel>

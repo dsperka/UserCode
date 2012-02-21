@@ -23,21 +23,8 @@
 
     <POI>xsec</POI>
 
-    <ParamSetting Const="True">Lumi</ParamSetting>
+    <!--<ParamSetting Const="True">Lumi</ParamSetting>-->
     <!--<ParamSetting Const="True">btag</ParamSetting>-->
-   
-    <ConstraintTerm Type="Gaussian" RelativeUncertainty=".05">alpha_jes</ConstraintTerm>
-    <ConstraintTerm Type="Gaussian" RelativeUncertainty=".05">alpha_btag</ConstraintTerm>
-    <!--<ConstraintTerm Type="Gaussian" RelativeUncertainty=".05">alpha_jer</ConstraintTerm>-->
-    <!--<ConstraintTerm Type="Gaussian" RelativeUncertainty=".05">alpha_pileup</ConstraintTerm>-->
-    <ConstraintTerm Type="Gaussian" RelativeUncertainty=".15">alpha_norm_ttbar_syst</ConstraintTerm>
-    <ConstraintTerm Type="Gaussian" RelativeUncertainty=".15">alpha_norm_wjets_syst</ConstraintTerm>
-    <!--<ConstraintTerm Type="Gaussian" RelativeUncertainty=".30">alpha_norm_tops_syst</ConstraintTerm>-->
-    <!--<ConstraintTerm Type="Gaussian" RelativeUncertainty=".30">alpha_norm_other_syst</ConstraintTerm>-->
-    <!--<ConstraintTerm Type="Gaussian" RelativeUncertainty=".03">alpha_lepton_eff_e</ConstraintTerm>-->
-    <!--<ConstraintTerm Type="Gaussian" RelativeUncertainty=".03">alpha_trig_eff_e</ConstraintTerm>-->
-    <!--<ConstraintTerm Type="Gaussian" RelativeUncertainty=".03">alpha_lepton_eff_mu</ConstraintTerm>-->
-    <!--<ConstraintTerm Type="Gaussian" RelativeUncertainty=".03">alpha_trig_eff_mu</ConstraintTerm>-->
 
   </Measurement>
   
