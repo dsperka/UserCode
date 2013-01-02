@@ -203,7 +203,7 @@ void TMVAnalysis( TString myMethodList = "" ,TString infname = "",TString tag = 
   cout << "=====Signal for training ======" << signalt << endl;
   TTree *signal      = (TTree*)input->Get(signalt);
 
-  int nTrainSignal = floor(0.75*signal->GetEntries());
+  int nTrainSignal = floor(0.50*signal->GetEntries());
   string string_nTrainSignal = static_cast<ostringstream*>( &(ostringstream() << nTrainSignal) )->str();
   std::cout <<"entries = "<< signal->GetEntries() <<", "<<string_nTrainSignal<<" for training "<< std::endl;
 
@@ -220,11 +220,13 @@ void TMVAnalysis( TString myMethodList = "" ,TString infname = "",TString tag = 
   
   Double_t signalWeight     = 1.0;
    
+  std::cout<<"coupling = "<<coupl<<std::endl;
+
   int nTrainBackground = bkgndwjets->GetEntries()+bkgndTtbar->GetEntries()+bkgndTchan->GetEntries()+bkgndTchanb->GetEntries()+bkgndTWchan->GetEntries()+bkgndTWchanb->GetEntries()+bkgndWW->GetEntries()+bkgndZJets->GetEntries(); 
   if (coupl == "R") nTrainBackground += (bkgndSchan->GetEntries()+bkgndSchanb->GetEntries());
 
   std::cout << "=====Total Background for training ======" << std::endl;
-  string string_nTrainBackground = static_cast<ostringstream*>( &(ostringstream() << floor(0.75*nTrainBackground) ) )->str();
+  string string_nTrainBackground = static_cast<ostringstream*>( &(ostringstream() << floor(0.50*nTrainBackground) ) )->str();
   std::cout <<"entries = "<< nTrainBackground <<", "<<string_nTrainBackground<<" for training "<< std::endl;
 
   Double_t bkgndwjetsWeight    = 1.0;
@@ -282,7 +284,7 @@ void TMVAnalysis( TString myMethodList = "" ,TString infname = "",TString tag = 
   factory->AddBackgroundTree( bkgndTWchan, bkgndTWchanWeight);
   factory->AddBackgroundTree( bkgndTWchanb, bkgndTWchanWeightb);
      
-  signalWeight = (1.0/signal->GetEntries())*(bkgndwjetsWeight + bkgndzjetsWeight + bkgndwwWeight + bkgndTtbarWeight + bkgndTchanWeight + bkgndTchanWeightb + bkgndTWchanWeight + bkgndTWchanWeightb + bkgndSchanWeight + bkgndSchanWeightb);
+  signalWeight = (1./signal->GetEntries())*(bkgndwjetsWeight + bkgndzjetsWeight + bkgndwwWeight + bkgndTtbarWeight + bkgndTchanWeight + bkgndTchanWeightb + bkgndTWchanWeight + bkgndTWchanWeightb + bkgndSchanWeight + bkgndSchanWeightb);
 
   factory->AddSignalTree( signal, signalWeight );
   
@@ -363,7 +365,9 @@ void TMVAnalysis( TString myMethodList = "" ,TString infname = "",TString tag = 
 
   //TString paramfs = "nTrain_Signal=0:nTrain_Background=0:SplitMode=Random:NormMode=None:V";
   //TString paramfs = "nTrain_Signal="+string_nTrainSignal+":nTest_Signal=0:nTrain_Background="+string_nTrainBackground+":nTest_Background=0:SplitMode=Random:NormMode=None:V";                                                          
+  //TString paramfs = "nTrain_Signal="+string_nTrainSignal+":nTest_Signal=0:nTrain_Background="+string_nTrainBackground+":nTest_Background=0:SplitMode=Random:NormMode=EqualNumEvents:V";
   TString paramfs = "nTrain_Signal="+string_nTrainSignal+":nTest_Signal=0:nTrain_Background="+string_nTrainBackground+":nTest_Background=0:SplitMode=Random:NormMode=EqualNumEvents:V";
+
 
   cout << "parameters are = " <<  paramfs << endl;
   factory->PrepareTrainingAndTestTree( mycut,  mycutb, paramfs );//signal and background weights equal - this works
@@ -401,7 +405,11 @@ void TMVAnalysis( TString myMethodList = "" ,TString infname = "",TString tag = 
  
  
   if (Use_BDT){
-    factory->BookMethod( TMVA::Types::kBDT, "BDT","!H:!V:NTrees=400:nEventsMin=400:MaxDepth=3:BoostType=AdaBoost:SeparationType=GiniIndex:nCuts=20:PruneMethod=NoPruning" );
+      //factory->BookMethod( TMVA::Types::kBDT, "BDT","!H:!V:NTrees=400:nEventsMin=400:MaxDepth=3:BoostType=AdaBoost:SeparationType=GiniIndex:nCuts=20:PruneMethod=NoPruning" );
+      //factory->BookMethod( TMVA::Types::kBDT, "BDT","H:V:NTrees=400:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.2:SeparationType=GiniIndex:nCuts=20:PruneMethod=NoPruning" );
+      //factory->BookMethod( TMVA::Types::kBDT, "BDT","!H:V:NTrees=700:BoostType=AdaBoost:AdaBoostBeta=0.2:SeparationType=GiniIndex:nCuts=20"); // Shabnam
+      factory->BookMethod( TMVA::Types::kBDT, "BDT","!H:V:NTrees=500:BoostType=AdaBoost:AdaBoostBeta=0.2:SeparationType=GiniIndex:nCuts=20:nEventsMin=10000");                 
+
   }
 
   // ---- Now you can tell the factory to train, test, and evaluate the MVAs
