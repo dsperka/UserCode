@@ -89,17 +89,17 @@ def FillTables(channel, varName, bin, low, high):
         #SFWjmu = 1.05*0.85       ## myHF
         #SFWcmu = 1.25*0.92*1.66  ## myHF
         #SFWbmu = 1.25*0.92*1.21  ## myHF
-        #SFWjmu = 1.08*0.85      ## myHF120
-        #SFWcmu = 1.06*0.92*1.66  ## myHF120
-        #SFWbmu = 1.06*0.92*1.21  ## myHF120
-        SFWjmu = 1.0   ## noHF
-        SFWcmu = 1.66  ## noHF
-        SFWbmu = 1.21  ## noHF
-                             
+        SFWjmu = 1.08*0.85      ## myHF120
+        SFWcmu = 1.06*0.92*1.66  ## myHF120
+        SFWbmu = 1.06*0.92*1.21  ## myHF120
+        #SFWjmu = 1.0   ## noHF
+        #SFWcmu = 1.66  ## noHF
+        #SFWbmu = 1.21  ## noHF
+
         if (channel=='electron'):
-            weight = 'weight_PU_ABC_PileUpCalc*weight_ElectronEff_WprimeCalc'
+            weight = 'weight_PU_ABCD_PileUpCalc*weight_ElectronEff_53x_WprimeCalc'
         if (channel=='muon'):
-            weight = 'weight_PU_ABC_PileUpCalc*weight_MuonEff_WprimeCalc'
+            weight = 'weight_PU_ABCD_PileUpCalc*weight_MuonEff_WprimeCalc'
 
         j = 0
         for Type in List:

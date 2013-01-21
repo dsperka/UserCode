@@ -19,26 +19,56 @@ List_Bg = ['WJets','WW','TTbar_Madgraph','ZJets_M50','T_t','Tbar_t','T_tW','Tbar
 'WJets_JERDOWN','WW_JERDOWN','TTbar_Madgraph_JERDOWN','ZJets_M50_JERDOWN','T_t_JERDOWN','Tbar_t_JERDOWN','T_tW_JERDOWN','Tbar_tW_JERDOWN','T_s_JERDOWN','Tbar_s_JERDOWN',
 'WJets_BTAGUP','WW_BTAGUP','TTbar_Madgraph_BTAGUP','ZJets_M50_BTAGUP','T_t_BTAGUP','Tbar_t_BTAGUP','T_tW_BTAGUP','Tbar_tW_BTAGUP','T_s_BTAGUP','Tbar_s_BTAGUP',
 'WJets_BTAGDOWN','WW_BTAGDOWN','TTbar_Madgraph_BTAGDOWN','ZJets_M50_BTAGDOWN','T_t_BTAGDOWN','Tbar_t_BTAGDOWN','T_tW_BTAGDOWN','Tbar_tW_BTAGDOWN','T_s_BTAGDOWN','Tbar_s_BTAGDOWN',
-#'TTbar_MATCHING_UP','TTbar_MATCHING_DOWN','TTbar_SCALE_UP','TTbar_SCALE_DOWN','WJets_MATCHING_UP','WJets_MATCHING_DOWN','WJets_SCALE_UP','WJets_SCALE_DOWN',
+'TTbar_Madgraph_MATCHINGUP','TTbar_Madgraph_MATCHINGDOWN','TTbar_Madgraph_SCALEUP','TTbar_Madgraph_SCALEDOWN',
 ]
+
 
 List_Right = ['Wprime1100Right','Wprime1200Right','Wprime1300Right','Wprime1400Right','Wprime1500Right','Wprime1600Right','Wprime1700Right','Wprime1800Right','Wprime1900Right','Wprime2000Right','Wprime2100Right','Wprime2200Right','Wprime2300Right','Wprime2400Right','Wprime2500Right','Wprime2600Right','Wprime2700Right','Wprime2800Right','Wprime2900Right','Wprime3000Right',
-'Wprime1100Right_JESUP','Wprime1200Right_JESUP','Wprime1300Right_JESUP','Wprime1400Right_JESUP','Wprime1500Right_JESUP','Wprime1600Right_JESUP','Wprime1700Right_JESUP','Wprime1800Right_JESUP','Wprime1900Right_JESUP','Wprime2000Right_JESUP','Wprime2100Right_JESUP','Wprime2200Right_JESUP','Wprime2300Right_JESUP','Wprime2400Right_JESUP','Wprime2500Right_JESUP','Wprime2600Right_JESUP','Wprime2700Right_JESUP','Wprime2800Right_JESUP','Wprime2900Right_JESUP','Wprime3000Right_JESUP',
-'Wprime1100Right_JESDOWN','Wprime1200Right_JESDOWN','Wprime1300Right_JESDOWN','Wprime1400Right_JESDOWN','Wprime1500Right_JESDOWN','Wprime1600Right_JESDOWN','Wprime1700Right_JESDOWN','Wprime1800Right_JESDOWN','Wprime1900Right_JESDOWN','Wprime2000Right_JESDOWN','Wprime2100Right_JESDOWN','Wprime2200Right_JESDOWN','Wprime2300Right_JESDOWN','Wprime2400Right_JESDOWN','Wprime2500Right_JESDOWN','Wprime2600Right_JESDOWN','Wprime2700Right_JESDOWN','Wprime2800Right_JESDOWN','Wprime2900Right_JESDOWN','Wprime3000Right_JESDOWN',
-'Wprime1100Right_JERUP','Wprime1200Right_JERUP','Wprime1300Right_JERUP','Wprime1400Right_JERUP','Wprime1500Right_JERUP','Wprime1600Right_JERUP','Wprime1700Right_JERUP','Wprime1800Right_JERUP','Wprime1900Right_JERUP','Wprime2000Right_JERUP','Wprime2100Right_JERUP','Wprime2200Right_JERUP','Wprime2300Right_JERUP','Wprime2400Right_JERUP','Wprime2500Right_JERUP','Wprime2600Right_JERUP','Wprime2700Right_JERUP','Wprime2800Right_JERUP','Wprime2900Right_JERUP','Wprime3000Right_JERUP',
-'Wprime1100Right_JERDOWN','Wprime1200Right_JERDOWN','Wprime1300Right_JERDOWN','Wprime1400Right_JERDOWN','Wprime1500Right_JERDOWN','Wprime1600Right_JERDOWN','Wprime1700Right_JERDOWN','Wprime1800Right_JERDOWN','Wprime1900Right_JERDOWN','Wprime2000Right_JERDOWN','Wprime2100Right_JERDOWN','Wprime2200Right_JERDOWN','Wprime2300Right_JERDOWN','Wprime2400Right_JERDOWN','Wprime2500Right_JERDOWN','Wprime2600Right_JERDOWN','Wprime2700Right_JERDOWN','Wprime2800Right_JERDOWN','Wprime2900Right_JERDOWN','Wprime3000Right_JERDOWN',
-'Wprime1100Right_BTAGUP','Wprime1200Right_BTAGUP','Wprime1300Right_BTAGUP','Wprime1400Right_BTAGUP','Wprime1500Right_BTAGUP','Wprime1600Right_BTAGUP','Wprime1700Right_BTAGUP','Wprime1800Right_BTAGUP','Wprime1900Right_BTAGUP','Wprime2000Right_BTAGUP','Wprime2100Right_BTAGUP','Wprime2200Right_BTAGUP','Wprime2300Right_BTAGUP','Wprime2400Right_BTAGUP','Wprime2500Right_BTAGUP','Wprime2600Right_BTAGUP','Wprime2700Right_BTAGUP','Wprime2800Right_BTAGUP','Wprime2900Right_BTAGUP','Wprime3000Right_BTAGUP',
-'Wprime1100Right_BTAGDOWN','Wprime1200Right_BTAGDOWN','Wprime1300Right_BTAGDOWN','Wprime1400Right_BTAGDOWN','Wprime1500Right_BTAGDOWN','Wprime1600Right_BTAGDOWN','Wprime1700Right_BTAGDOWN','Wprime1800Right_BTAGDOWN','Wprime1900Right_BTAGDOWN','Wprime2000Right_BTAGDOWN','Wprime2100Right_BTAGDOWN','Wprime2200Right_BTAGDOWN','Wprime2300Right_BTAGDOWN','Wprime2400Right_BTAGDOWN','Wprime2500Right_BTAGDOWN','Wprime2600Right_BTAGDOWN','Wprime2700Right_BTAGDOWN','Wprime2800Right_BTAGDOWN','Wprime2900Right_BTAGDOWN','Wprime3000Right_BTAGDOWN',
+'Wprime1100Right_JESUP','Wprime1200Right_JESUP','Wprime1300Right_JESUP','Wprime1400Right_JESUP','Wprime1500Right_JESUP','Wprime1600Right_JESUP','Wprime1700Right_JESUP','Wprime1800Right_JESUP','Wprime1900Right_JESUP','Wprime2000Right_JESUP','Wprime2100Right_JESUP','Wprime2200Right_JESUP','Wprime2300Right_JESUP','Wprime2400Right_JESUP','Wprime2500Right_JESUP','Wprime2600Right_JESUP','Wprime2700Right_JESUP','Wprime2800Right_JESUP','Wprime2900Right_JESUP','Wprime3000Right_JESUP', 
+'Wprime1100Right_JESDOWN','Wprime1200Right_JESDOWN','Wprime1300Right_JESDOWN','Wprime1400Right_JESDOWN','Wprime1500Right_JESDOWN','Wprime1600Right_JESDOWN','Wprime1700Right_JESDOWN','Wprime1800Right_JESDOWN','Wprime1900Right_JESDOWN','Wprime2000Right_JESDOWN','Wprime2100Right_JESDOWN','Wprime2200Right_JESDOWN','Wprime2300Right_JESDOWN','Wprime2400Right_JESDOWN','Wprime2500Right_JESDOWN','Wprime2600Right_JESDOWN','Wprime2700Right_JESDOWN','Wprime2800Right_JESDOWN','Wprime2900Right_JESDOWN','Wprime3000Right_JESDOWN', 
+'Wprime1100Right_JERUP','Wprime1200Right_JERUP','Wprime1300Right_JERUP','Wprime1400Right_JERUP','Wprime1500Right_JERUP','Wprime1600Right_JERUP','Wprime1700Right_JERUP','Wprime1800Right_JERUP','Wprime1900Right_JERUP','Wprime2000Right_JERUP','Wprime2100Right_JERUP','Wprime2200Right_JERUP','Wprime2300Right_JERUP','Wprime2400Right_JERUP','Wprime2500Right_JERUP','Wprime2600Right_JERUP','Wprime2700Right_JERUP','Wprime2800Right_JERUP','Wprime2900Right_JERUP','Wprime3000Right_JERUP', 
+'Wprime1100Right_JERDOWN','Wprime1200Right_JERDOWN','Wprime1300Right_JERDOWN','Wprime1400Right_JERDOWN','Wprime1500Right_JERDOWN','Wprime1600Right_JERDOWN','Wprime1700Right_JERDOWN','Wprime1800Right_JERDOWN','Wprime1900Right_JERDOWN','Wprime2000Right_JERDOWN','Wprime2100Right_JERDOWN','Wprime2200Right_JERDOWN','Wprime2300Right_JERDOWN','Wprime2400Right_JERDOWN','Wprime2500Right_JERDOWN','Wprime2600Right_JERDOWN','Wprime2700Right_JERDOWN','Wprime2800Right_JERDOWN','Wprime2900Right_JERDOWN','Wprime3000Right_JERDOWN', 
+'Wprime1100Right_BTAGUP','Wprime1200Right_BTAGUP','Wprime1300Right_BTAGUP','Wprime1400Right_BTAGUP','Wprime1500Right_BTAGUP','Wprime1600Right_BTAGUP','Wprime1700Right_BTAGUP','Wprime1800Right_BTAGUP','Wprime1900Right_BTAGUP','Wprime2000Right_BTAGUP','Wprime2100Right_BTAGUP','Wprime2200Right_BTAGUP','Wprime2300Right_BTAGUP','Wprime2400Right_BTAGUP','Wprime2500Right_BTAGUP','Wprime2600Right_BTAGUP','Wprime2700Right_BTAGUP','Wprime2800Right_BTAGUP','Wprime2900Right_BTAGUP','Wprime3000Right_BTAGUP', 
+'Wprime1100Right_BTAGDOWN','Wprime1200Right_BTAGDOWN','Wprime1300Right_BTAGDOWN','Wprime1400Right_BTAGDOWN','Wprime1500Right_BTAGDOWN','Wprime1600Right_BTAGDOWN','Wprime1700Right_BTAGDOWN','Wprime1800Right_BTAGDOWN','Wprime1900Right_BTAGDOWN','Wprime2000Right_BTAGDOWN','Wprime2100Right_BTAGDOWN','Wprime2200Right_BTAGDOWN','Wprime2300Right_BTAGDOWN','Wprime2400Right_BTAGDOWN','Wprime2500Right_BTAGDOWN','Wprime2600Right_BTAGDOWN','Wprime2700Right_BTAGDOWN','Wprime2800Right_BTAGDOWN','Wprime2900Right_BTAGDOWN','Wprime3000Right_BTAGDOWN', 
+] 
+
+'''
+List_Right = ['Wprime1100Right','Wprime1200Right','Wprime1300Right','Wprime1400Right','Wprime1500Right','Wprime1600Right','Wprime1700Right','Wprime1800Right','Wprime1900Right','Wprime2000Right','Wprime2100Right','Wprime2400Right','Wprime2500Right','Wprime2700Right','Wprime2900Right',
+'Wprime1100Right_JESUP','Wprime1200Right_JESUP','Wprime1300Right_JESUP','Wprime1400Right_JESUP','Wprime1500Right_JESUP','Wprime1600Right_JESUP','Wprime1700Right_JESUP','Wprime1800Right_JESUP','Wprime1900Right_JESUP','Wprime2000Right_JESUP','Wprime2100Right_JESUP','Wprime2400Right_JESUP','Wprime2500Right_JESUP','Wprime2700Right_JESUP','Wprime2900Right_JESUP',
+'Wprime1100Right_JESDOWN','Wprime1200Right_JESDOWN','Wprime1300Right_JESDOWN','Wprime1400Right_JESDOWN','Wprime1500Right_JESDOWN','Wprime1600Right_JESDOWN','Wprime1700Right_JESDOWN','Wprime1800Right_JESDOWN','Wprime1900Right_JESDOWN','Wprime2000Right_JESDOWN','Wprime2100Right_JESDOWN','Wprime2400Right_JESDOWN','Wprime2500Right_JESDOWN','Wprime2700Right_JESDOWN','Wprime2900Right_JESDOWN',
+'Wprime1100Right_JERUP','Wprime1200Right_JERUP','Wprime1300Right_JERUP','Wprime1400Right_JERUP','Wprime1500Right_JERUP','Wprime1600Right_JERUP','Wprime1700Right_JERUP','Wprime1800Right_JERUP','Wprime1900Right_JERUP','Wprime2000Right_JERUP','Wprime2100Right_JERUP','Wprime2400Right_JERUP','Wprime2500Right_JERUP','Wprime2700Right_JERUP','Wprime2900Right_JERUP',
+'Wprime1100Right_JERDOWN','Wprime1200Right_JERDOWN','Wprime1300Right_JERDOWN','Wprime1400Right_JERDOWN','Wprime1500Right_JERDOWN','Wprime1600Right_JERDOWN','Wprime1700Right_JERDOWN','Wprime1800Right_JERDOWN','Wprime1900Right_JERDOWN','Wprime2000Right_JERDOWN','Wprime2100Right_JERDOWN','Wprime2400Right_JERDOWN','Wprime2500Right_JERDOWN','Wprime2700Right_JERDOWN','Wprime2900Right_JERDOWN',
+'Wprime1100Right_BTAGUP','Wprime1200Right_BTAGUP','Wprime1300Right_BTAGUP','Wprime1400Right_BTAGUP','Wprime1500Right_BTAGUP','Wprime1600Right_BTAGUP','Wprime1700Right_BTAGUP','Wprime1800Right_BTAGUP','Wprime1900Right_BTAGUP','Wprime2000Right_BTAGUP','Wprime2100Right_BTAGUP','Wprime2400Right_BTAGUP','Wprime2500Right_BTAGUP','Wprime2700Right_BTAGUP','Wprime2900Right_BTAGUP',
+'Wprime1100Right_BTAGDOWN','Wprime1200Right_BTAGDOWN','Wprime1300Right_BTAGDOWN','Wprime1400Right_BTAGDOWN','Wprime1500Right_BTAGDOWN','Wprime1600Right_BTAGDOWN','Wprime1700Right_BTAGDOWN','Wprime1800Right_BTAGDOWN','Wprime1900Right_BTAGDOWN','Wprime2000Right_BTAGDOWN','Wprime2100Right_BTAGDOWN','Wprime2400Right_BTAGDOWN','Wprime2500Right_BTAGDOWN','Wprime2700Right_BTAGDOWN','Wprime2900Right_BTAGDOWN',
+]
+'''
+
+List_Left = ['Wprime1100Left','Wprime1200Left','Wprime1300Left','Wprime1400Left','Wprime1500Left','Wprime1600Left','Wprime1700Left','Wprime1800Left','Wprime1900Left','Wprime2000Left','Wprime2100Left','Wprime2400Left','Wprime2500Left','Wprime2700Left','Wprime2900Left',
+'Wprime1100Left_JESUP','Wprime1200Left_JESUP','Wprime1300Left_JESUP','Wprime1400Left_JESUP','Wprime1500Left_JESUP','Wprime1600Left_JESUP','Wprime1700Left_JESUP','Wprime1800Left_JESUP','Wprime1900Left_JESUP','Wprime2000Left_JESUP','Wprime2100Left_JESUP','Wprime2400Left_JESUP','Wprime2500Left_JESUP','Wprime2700Left_JESUP','Wprime2900Left_JESUP',
+'Wprime1100Left_JESDOWN','Wprime1200Left_JESDOWN','Wprime1300Left_JESDOWN','Wprime1400Left_JESDOWN','Wprime1500Left_JESDOWN','Wprime1600Left_JESDOWN','Wprime1700Left_JESDOWN','Wprime1800Left_JESDOWN','Wprime1900Left_JESDOWN','Wprime2000Left_JESDOWN','Wprime2100Left_JESDOWN','Wprime2400Left_JESDOWN','Wprime2500Left_JESDOWN','Wprime2700Left_JESDOWN','Wprime2900Left_JESDOWN',
+'Wprime1100Left_JERUP','Wprime1200Left_JERUP','Wprime1300Left_JERUP','Wprime1400Left_JERUP','Wprime1500Left_JERUP','Wprime1600Left_JERUP','Wprime1700Left_JERUP','Wprime1800Left_JERUP','Wprime1900Left_JERUP','Wprime2000Left_JERUP','Wprime2100Left_JERUP','Wprime2400Left_JERUP','Wprime2500Left_JERUP','Wprime2700Left_JERUP','Wprime2900Left_JERUP',
+'Wprime1100Left_JERDOWN','Wprime1200Left_JERDOWN','Wprime1300Left_JERDOWN','Wprime1400Left_JERDOWN','Wprime1500Left_JERDOWN','Wprime1600Left_JERDOWN','Wprime1700Left_JERDOWN','Wprime1800Left_JERDOWN','Wprime1900Left_JERDOWN','Wprime2000Left_JERDOWN','Wprime2100Left_JERDOWN','Wprime2400Left_JERDOWN','Wprime2500Left_JERDOWN','Wprime2700Left_JERDOWN','Wprime2900Left_JERDOWN',
+'Wprime1100Left_BTAGUP','Wprime1200Left_BTAGUP','Wprime1300Left_BTAGUP','Wprime1400Left_BTAGUP','Wprime1500Left_BTAGUP','Wprime1600Left_BTAGUP','Wprime1700Left_BTAGUP','Wprime1800Left_BTAGUP','Wprime1900Left_BTAGUP','Wprime2000Left_BTAGUP','Wprime2100Left_BTAGUP','Wprime2400Left_BTAGUP','Wprime2500Left_BTAGUP','Wprime2700Left_BTAGUP','Wprime2900Left_BTAGUP',
+'Wprime1100Left_BTAGDOWN','Wprime1200Left_BTAGDOWN','Wprime1300Left_BTAGDOWN','Wprime1400Left_BTAGDOWN','Wprime1500Left_BTAGDOWN','Wprime1600Left_BTAGDOWN','Wprime1700Left_BTAGDOWN','Wprime1800Left_BTAGDOWN','Wprime1900Left_BTAGDOWN','Wprime2000Left_BTAGDOWN','Wprime2100Left_BTAGDOWN','Wprime2400Left_BTAGDOWN','Wprime2500Left_BTAGDOWN','Wprime2700Left_BTAGDOWN','Wprime2900Left_BTAGDOWN',
+]
+
+List_Mix = ['Wprime1100Mix','Wprime1200Mix','Wprime1300Mix','Wprime1400Mix','Wprime1500Mix','Wprime1600Mix','Wprime1700Mix','Wprime1800Mix','Wprime1900Mix','Wprime2000Mix','Wprime2100Mix','Wprime2400Mix','Wprime2500Mix','Wprime2700Mix','Wprime2900Mix',
+'Wprime1100Mix_JESUP','Wprime1200Mix_JESUP','Wprime1300Mix_JESUP','Wprime1400Mix_JESUP','Wprime1500Mix_JESUP','Wprime1600Mix_JESUP','Wprime1700Mix_JESUP','Wprime1800Mix_JESUP','Wprime1900Mix_JESUP','Wprime2000Mix_JESUP','Wprime2100Mix_JESUP','Wprime2400Mix_JESUP','Wprime2500Mix_JESUP','Wprime2700Mix_JESUP','Wprime2900Mix_JESUP',
+'Wprime1100Mix_JESDOWN','Wprime1200Mix_JESDOWN','Wprime1300Mix_JESDOWN','Wprime1400Mix_JESDOWN','Wprime1500Mix_JESDOWN','Wprime1600Mix_JESDOWN','Wprime1700Mix_JESDOWN','Wprime1800Mix_JESDOWN','Wprime1900Mix_JESDOWN','Wprime2000Mix_JESDOWN','Wprime2100Mix_JESDOWN','Wprime2400Mix_JESDOWN','Wprime2500Mix_JESDOWN','Wprime2700Mix_JESDOWN','Wprime2900Mix_JESDOWN',
+'Wprime1100Mix_JERUP','Wprime1200Mix_JERUP','Wprime1300Mix_JERUP','Wprime1400Mix_JERUP','Wprime1500Mix_JERUP','Wprime1600Mix_JERUP','Wprime1700Mix_JERUP','Wprime1800Mix_JERUP','Wprime1900Mix_JERUP','Wprime2000Mix_JERUP','Wprime2100Mix_JERUP','Wprime2400Mix_JERUP','Wprime2500Mix_JERUP','Wprime2700Mix_JERUP','Wprime2900Mix_JERUP',
+'Wprime1100Mix_JERDOWN','Wprime1200Mix_JERDOWN','Wprime1300Mix_JERDOWN','Wprime1400Mix_JERDOWN','Wprime1500Mix_JERDOWN','Wprime1600Mix_JERDOWN','Wprime1700Mix_JERDOWN','Wprime1800Mix_JERDOWN','Wprime1900Mix_JERDOWN','Wprime2000Mix_JERDOWN','Wprime2100Mix_JERDOWN','Wprime2400Mix_JERDOWN','Wprime2500Mix_JERDOWN','Wprime2700Mix_JERDOWN','Wprime2900Mix_JERDOWN',
+'Wprime1100Mix_BTAGUP','Wprime1200Mix_BTAGUP','Wprime1300Mix_BTAGUP','Wprime1400Mix_BTAGUP','Wprime1500Mix_BTAGUP','Wprime1600Mix_BTAGUP','Wprime1700Mix_BTAGUP','Wprime1800Mix_BTAGUP','Wprime1900Mix_BTAGUP','Wprime2000Mix_BTAGUP','Wprime2100Mix_BTAGUP','Wprime2400Mix_BTAGUP','Wprime2500Mix_BTAGUP','Wprime2700Mix_BTAGUP','Wprime2900Mix_BTAGUP',
+'Wprime1100Mix_BTAGDOWN','Wprime1200Mix_BTAGDOWN','Wprime1300Mix_BTAGDOWN','Wprime1400Mix_BTAGDOWN','Wprime1500Mix_BTAGDOWN','Wprime1600Mix_BTAGDOWN','Wprime1700Mix_BTAGDOWN','Wprime1800Mix_BTAGDOWN','Wprime1900Mix_BTAGDOWN','Wprime2000Mix_BTAGDOWN','Wprime2100Mix_BTAGDOWN','Wprime2400Mix_BTAGDOWN','Wprime2500Mix_BTAGDOWN','Wprime2700Mix_BTAGDOWN','Wprime2900Mix_BTAGDOWN',
 ]
 
 
-def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime, btags, List_to_use):
+def plot_DataVsMc(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high, ylabel, xlabel, save, wprime, btags, List_to_use):
 
     if (channel == 'electron'):      
-        cut = 'jet_0_pt_WprimeCalc >= 120 && jet_1_pt_WprimeCalc >= 40 && elec_1_pt_WprimeCalc > 32 && abs(elec_1_eta_WprimeCalc) < 2.5 && elec_1_RelIso_WprimeCalc < 0.1 && corr_met_WprimeCalc > 20' 
+        cut = 'jet_0_pt_WprimeCalc >= 120 && jet_1_pt_WprimeCalc >= 40 && elec_1_pt_WprimeCalc > 32 && abs(elec_1_eta_WprimeCalc) < 2.5 && elec_1_RelIso_WprimeCalc < 0.1 && corr_met_WprimeCalc > 20 && Muon_DeltaR_LjetsTopoCalcNew > '+lepjetdR 
 
     if (channel == 'muon'):      
-        cut = 'jet_0_pt_WprimeCalc >= 120 && jet_1_pt_WprimeCalc >= 40 && muon_1_pt_WprimeCalc > 26 && abs(muon_1_eta_WprimeCalc) < 2.1 && muon_1_RelIso_WprimeCalc < 0.12 && corr_met_WprimeCalc > 20'
+        cut = 'jet_0_pt_WprimeCalc >= 120 && jet_1_pt_WprimeCalc >= 40 && muon_1_pt_WprimeCalc > 26 && abs(muon_1_eta_WprimeCalc) < 2.1 && muon_1_RelIso_WprimeCalc < 0.12 && corr_met_WprimeCalc > 20 && Muon_DeltaR_LjetsTopoCalcNew > '+lepjetdR 
    
     print varName
                  
@@ -49,7 +79,13 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
     if btags == 'ge2btags': cutbtag = ' && ( (jet_0_tag_WprimeCalc==1 && (jet_1_tag_WprimeCalc + jet_2_tag_WprimeCalc + jet_3_tag_WprimeCalc + jet_4_tag_WprimeCalc + jet_5_tag_WprimeCalc + jet_6_tag_WprimeCalc + jet_7_tag_WprimeCalc + jet_8_tag_WprimeCalc + jet_9_tag_WprimeCalc) >= 1 ) || (jet_1_tag_WprimeCalc==1 && (jet_0_tag_WprimeCalc + jet_2_tag_WprimeCalc + jet_3_tag_WprimeCalc + jet_4_tag_WprimeCalc + jet_5_tag_WprimeCalc + jet_6_tag_WprimeCalc + jet_7_tag_WprimeCalc + jet_8_tag_WprimeCalc + jet_9_tag_WprimeCalc) >= 1 ) ) '
     if btags == 'final': cutbtag = ' && ( (jet_0_tag_WprimeCalc+jet_1_tag_WprimeCalc ) >= 1 )'
     
-    if btags == 'final': cut = cut + ' && BestTop_LjetsTopoCalcNew > 130 && BestTop_LjetsTopoCalcNew < 210 &&  BestTop_Pt_LjetsTopoCalcNew > 75  && Jet1Jet2_Pt_LjetsTopoCalcNew > 100 '
+    #if btags == 'final': cut = cut + ' && BestTop_LjetsTopoCalcNew > 130 && BestTop_LjetsTopoCalcNew < 210 &&  BestTop_Pt_LjetsTopoCalcNew > '+toppt+' && Jet1Jet2_Pt_LjetsTopoCalcNew > '+j1j2pt
+
+    #if btags == 'final': cut = cut + ' && BestTop_Pt_LjetsTopoCalcNew > '+toppt+' && Jet1Jet2_Pt_LjetsTopoCalcNew > '+j1j2pt
+    #if btags == 'final': cut = cut + ' && BestTop_LjetsTopoCalcNew > 130 && BestTop_LjetsTopoCalcNew < 210 && Jet1Jet2_Pt_LjetsTopoCalcNew > '+j1j2pt
+    if btags == 'final': cut = cut + ' && BestTop_LjetsTopoCalcNew > 130 && BestTop_LjetsTopoCalcNew < 210 &&  BestTop_Pt_LjetsTopoCalcNew > '+toppt
+
+    
  
     cutwbb = ' && n_Bjets_WprimeCalc > 0' # Wb(b)
     cutwcc = ' && n_Bjets_WprimeCalc==0 && n_Cjets_WprimeCalc>0' # Wc(c)
@@ -75,16 +111,14 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
     List = List_to_use
     
     Variables = {}
-    #VariablesPUup = {}
-    #VariablesPUdown = {}
+    VariablesPUup = {}
     Variables0tag = {}
     VariablesHFup = {}
     VariablesHFdown = {}
     VariablesPre = {}
 
     VariablesSmooth = {}
-    #VariablesSmoothPUup = {}
-    #VariablesSmoothPUdown = {}
+    VariablesSmoothPUup = {}
     VariablesSmooth0tag = {}
     VariablesSmoothHFup = {}
     VariablesSmoothHFdown = {}
@@ -146,10 +180,10 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
         if (Type == 'WJets_SCALEDOWN'): suffix = 'wjets_q2scaleDown'
         if (Type == 'WJets_MATCHINGUP'): suffix = 'wjets_matchingUp'
         if (Type == 'WJets_MATCHINGDOWN'): suffix = 'wjets_matchingDown'
-        if (Type == 'TTbar_Madgraph_SCALEUP'): suffix = 'ttbar_q2scaleUp'
-        if (Type == 'TTbar_Madgraph_SCALEDOWN'): suffix = 'ttbar_q2scaleDown'
-        if (Type == 'TTbar_Madgraph_MATCHINGUP'): suffix = 'ttbar_matchingUp'
-        if (Type == 'TTbar_Madgraph_MATCHINGDOWN'): suffix = 'ttbar_matchingDown'
+        if (Type == 'TTbar_Madgraph_SCALEUP'): suffix = 'ttbar__q2scale__plus'
+        if (Type == 'TTbar_Madgraph_SCALEDOWN'): suffix = 'ttbar__q2scale__mins'
+        if (Type == 'TTbar_Madgraph_MATCHINGUP'): suffix = 'ttbar__matching__plus'
+        if (Type == 'TTbar_Madgraph_MATCHINGDOWN'): suffix = 'ttbar__matching__minus'
 
         w_suffix = 'wp'
 
@@ -214,19 +248,19 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
 
       
         histName = prefix+suffix+'varbin'
-        histNamePUup = prefix+suffix+'varbin'+'_PileupUp'
-        histNamePUdown = prefix+suffix+'varbin'+'_PileupDown'
-        histName0tag = prefix+suffix+'varbin'+'_0tag'
-        histNameHFup = prefix+suffix+'varbin'+'_hfUp'
-        histNameHFdown = prefix+suffix+'varbin'+'_hfDown'
+        histNamePUup = prefix+suffix+'varbin'+'__PU__plus'
+        histNamePUdown = prefix+suffix+'varbin'+'__PU__minus'
+        histName0tag = prefix+suffix+'varbin'+'__0tag__plus'
+        histNameHFup = prefix+suffix+'varbin'+'__hf__plus'
+        histNameHFdown = prefix+suffix+'varbin'+'__hf__minus'
         histNamePre = prefix+suffix+'varbin'+'Pre'
 
         histNameSmooth = prefix+suffix
-        histNameSmoothPUup = prefix+suffix+'_PileupUp'
-        histNameSmoothPUdown = prefix+suffix+'_PileupDown'
+        histNameSmoothPUup = prefix+suffix+'__PU__plus'
+        histNameSmoothPUdown = prefix+suffix+'__PU_minus'
         histNameSmooth0tag = prefix+suffix+'0tag'
-        histNameSmoothHFup = prefix+suffix+'_hfUp'
-        histNameSmoothHFdown = prefix+suffix+'_hfDown'
+        histNameSmoothHFup = prefix+suffix+'__hf__plus'
+        histNameSmoothHFdown = prefix+suffix+'__hf__minus'
         histNameSmoothPre = prefix+suffix+'Pre'
 
         Variables[Type] = TH1D(histName, histName, bin, array('d',xlow))  
@@ -240,9 +274,11 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
 
         if (channel=='electron'):
             weight = 'weight_PU_ABC_PileUpCalc*weight_ElectronEff_WprimeCalc'
+            weightPUup = 'weight_PU_ABC735_PileUpCalc*weight_ElectronEff_WprimeCalc'
             SF = 0.977
         if (channel=='muon'):
             weight = 'weight_PU_ABC_PileUpCalc*weight_MuonEff_WprimeCalc'
+            weightPUup = 'weight_PU_ABC735_PileUpCalc*weight_ElectronEff_WprimeCalc'
             SF = 1.0
 
         if (Type == 'WJets'):
@@ -250,6 +286,10 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
             WbbHist = TH1D('WbbHist', 'WbbHist', bin,array('d',xlow))
             WccHist.Sumw2()
             WbbHist.Sumw2()
+            WccHistPUup = TH1D('WccHistPUup', 'WccHistPUup', bin,array('d',xlow))
+            WbbHistPUup = TH1D('WbbHistPUup', 'WbbHistPUup', bin,array('d',xlow))
+            WccHistPUup.Sumw2()
+            WbbHistPUup.Sumw2()
             WccHistHFup = TH1D('WccHistHFup', 'WccHistHFup', bin,array('d',xlow))
             WbbHistHFup = TH1D('WbbHistHFup', 'WbbHistHFup', bin,array('d',xlow))
             WccHistHFup.Sumw2()
@@ -264,22 +304,22 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
             WbbHistPre.Sumw2()
 
         if ( (not Type.endswith('UP')) and (not Type.endswith('DOWN')) ):                      
-            #VariablesPUup[Type] = TH1D(histNamePUup, histNamePUup, bin, array('d',xlow))
+            VariablesPUup[Type] = TH1D(histNamePUup, histNamePUup, bin, array('d',xlow))
             #VariablesPUdown[Type] = TH1D(histNamePUdown, histNamePUdown, bin, array('d',xlow))
             Variables0tag[Type] = TH1D(histName0tag, histName0tag, bin, array('d',xlow))
             VariablesHFup[Type] = TH1D(histNameHFup, histNameHFup, bin, array('d',xlow))
             VariablesHFdown[Type] = TH1D(histNameHFdown, histNameHFdown, bin, array('d',xlow))
-            #VariablesPUup[Type].Sumw2()
+            VariablesPUup[Type].Sumw2()
             #VariablesPUdown[Type].Sumw2()
             Variables0tag[Type].Sumw2()
             VariablesHFup[Type].Sumw2()
             VariablesHFdown[Type].Sumw2()
-            #VariablesSmoothPUup[Type] = TH1D(histNameSmoothPUup, histNameSmoothPUup, bin, array('d',xlow) )
+            VariablesSmoothPUup[Type] = TH1D(histNameSmoothPUup, histNameSmoothPUup, bin, array('d',xlow) )
             #VariablesSmoothPUdown[Type] = TH1D(histNameSmoothPUdown, histNameSmoothPUdown, bin, array('d',xlow) )
             VariablesSmooth0tag[Type] = TH1D(histNameSmooth0tag, histNameSmooth0tag, bin, array('d',xlow) )
             VariablesSmoothHFup[Type] = TH1D(histNameSmoothHFup, histNameSmoothHFup, bin, array('d',xlow) )
             VariablesSmoothHFdown[Type] = TH1D(histNameSmoothHFdown, histNameSmoothHFdown, bin, array('d',xlow) )
-            #VariablesSmoothPUup[Type].Sumw2()
+            VariablesSmoothPUup[Type].Sumw2()
             #VariablesSmoothPUdown[Type].Sumw2()
             VariablesSmooth0tag[Type].Sumw2()
             VariablesSmoothHFup[Type].Sumw2()
@@ -290,8 +330,7 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
             Trees[Type].Draw(var + " >> " + histName, "(" + cut + cutbtag + ")", 'goff')
             # 0 tag for data-driven shape
             Trees[Type].Draw(var + " >> " + histName0tag, "(" + cut + cutzerobtags + ")", 'goff')
-        elif (Type.startswith('WJets')): # Here we go...
-
+        elif (Type.startswith('WJets')): 
             ############################################
             ##### Pretag, to be scaled down later
             ############################################
@@ -304,7 +343,6 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
             #print 'WJets light+bb pre: ',VariablesPre[Type].Integral() 
             VariablesPre[Type].Add(WccHistPre)
             #print 'WJets light+bb+cc pre: ',VariablesPre[Type].Integral() 
-
             ############################################
             ##### >=1, to get the ratio on the fly
             ############################################
@@ -313,11 +351,13 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
             Trees[Type].Draw(var+" >> "+"WccHist","("+weight+")*("+str(SFWcmu)+")*("+cut+cutwcc+cutbtag+")",'goff') 
             Variables[Type].Add(WbbHist)
             Variables[Type].Add(WccHist)
-
             if ( (not Type.endswith('UP')) and (not Type.endswith('DOWN')) ): 
                 # Pile Up 
-                #Trees[Type].Draw(var+" >> "+histNamePUup,"("+weightPUup+")*("+cut+cutbtag+")",'goff')
-                #Trees[Type].Draw(var+" >> "+histNamePUdown,"("+weightPUdown+")*("+cut+cutbtag+")",'goff')
+                Trees[Type].Draw(var+" >> "+histNamePUup,"("+weightPUup+")*("+str(SFWjmu)+")*("+cut+cutwjj+cutbtag+")",'goff')
+                Trees[Type].Draw(var+" >> "+"WbbHistPUup","("+weightPUup+")*("+str(SFWbmu)+")*("+cut+cutwbb+cutbtag+")",'goff')
+                Trees[Type].Draw(var+" >> "+"WccHistPUup","("+weightPUup+")*("+str(SFWcmu)+")*("+cut+cutwcc+cutbtag+")",'goff') 
+                VariablesPUup[Type].Add(WbbHistPUup)
+                VariablesPUup[Type].Add(WccHistPUup)
                 # 0 tag shape (one sided, so only one histogram)
                 Trees[Type].Draw(var+" >> "+histName0tag,"("+weight+")*("+cut+cutzerobtags+")",'goff')
                 # H.F. k-factor  
@@ -335,7 +375,7 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
             Trees[Type].Draw(var + " >> " + histNamePre, "("+weight+")*("+cut+")", 'goff')
             Trees[Type].Draw(var + " >> " + histName, "("+weight+")*("+cut+cutbtag+")", 'goff')
             if ( (not Type.endswith('UP')) and (not Type.endswith('DOWN')) ):                      
-                #Trees[Type].Draw(var + " >> " + histNamePUup, "("+weightPUup+")*("+cut+cutbtag+")", 'goff')
+                Trees[Type].Draw(var + " >> " + histNamePUup, "("+weightPUup+")*("+cut+cutbtag+")", 'goff')
                 #Trees[Type].Draw(var + " >> " + histNamePUdown, "("+weightPUdown+")*("+cut+cutbtag+")", 'goff')
                 Trees[Type].Draw(var + " >> " + histName0tag, "("+weight+")*("+cut+cutzerobtags+")", 'goff')
                 Trees[Type].Draw(var + " >> " + histNameHFup, "("+weight+")*("+cut+cutbtag+")", 'goff')
@@ -344,7 +384,7 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
             #print 'cut = ',cut+cutbtag
             Trees[Type].Draw(var + " >> " + histName, "("+weight+")*("+cut+cutbtag+")", 'goff')
             if ( (not Type.endswith('UP')) and (not Type.endswith('DOWN')) ):                      
-                #Trees[Type].Draw(var + " >> " + histNamePUup, "("+weightPUup+")*("+cut+cutbtag+")", 'goff')
+                Trees[Type].Draw(var + " >> " + histNamePUup, "("+weightPUup+")*("+cut+cutbtag+")", 'goff')
                 #Trees[Type].Draw(var + " >> " + histNamePUdown, "("+weightPUdown+")*("+cut+cutbtag+")", 'goff')
                 Trees[Type].Draw(var + " >> " + histName0tag, "("+weight+")*("+cut+cutzerobtags+")", 'goff')
                 Trees[Type].Draw(var + " >> " + histNameHFup, "("+weight+")*("+cut+cutbtag+")", 'goff')
@@ -361,7 +401,7 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
             if Variables[Type].Integral() != 0:
                 Variables[Type].Scale ( (SF*lumi*xsec_norm[Type]/Nevents[Type]) ) 
                 if ( (not Type.endswith('UP')) and (not Type.endswith('DOWN')) ): 
-                    #VariablesPUup[Type].Scale ( (SF*lumi*xsec_norm[Type]/Nevents[Type]) ) 
+                    VariablesPUup[Type].Scale ( (SF*lumi*xsec_norm[Type]/Nevents[Type]) ) 
                     #VariablesPUdown[Type].Scale ( (SF*lumi*xsec_norm[Type]/Nevents[Type]) )
                     Variables0tag[Type].Scale ( (SF*lumi*xsec_norm[Type]/Nevents[Type]) )  
                     VariablesHFup[Type].Scale ( (SF*lumi*xsec_norm[Type]/Nevents[Type]) ) 
@@ -372,7 +412,7 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
         ############################################## 
         ### REBIN TO HAVE EVEN SIZED BINS  
         ### If VariablesSmooth* have the same binning
-        ### as Varibles*, this does nothing
+        ### as Variables*, this does nothing
         ##############################################
        
         for x in range(0,bin+1):       
@@ -381,8 +421,8 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
             VariablesSmoothPre[Type].SetBinContent(x,VariablesPre[Type].GetBinContent(x) )
             VariablesSmoothPre[Type].SetBinError(x,VariablesPre[Type].GetBinError(x) )      
             if ( (not Type.endswith('UP')) and (not Type.endswith('DOWN')) ):
-                #VariablesSmoothPUup[Type].SetBinContent(x,VariablesPUup[Type].GetBinContent(x) )
-                #VariablesSmoothPUup[Type].SetBinError(x,VariablesPUup[Type].GetBinError(x) )
+                VariablesSmoothPUup[Type].SetBinContent(x,VariablesPUup[Type].GetBinContent(x) )
+                VariablesSmoothPUup[Type].SetBinError(x,VariablesPUup[Type].GetBinError(x) )
                 #VariablesSmoothPUdown[Type].SetBinContent(x,VariablesPUdown[Type].GetBinContent(x) )
                 #VariablesSmoothPUdown[Type].SetBinError(x,VariablesPUdown[Type].GetBinError(x) )
                 VariablesSmooth0tag[Type].SetBinContent(x,Variables0tag[Type].GetBinContent(x) )
@@ -393,7 +433,7 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
         VariablesSmooth[Type].SetEntries(Variables[Type].GetEntries() )
         VariablesSmoothPre[Type].SetEntries(VariablesPre[Type].GetEntries() )
         if ( (not Type.endswith('UP')) and (not Type.endswith('DOWN')) ):
-            #VariablesSmoothPUup[Type].SetEntries(VariablesPUup[Type].GetEntries() )
+            VariablesSmoothPUup[Type].SetEntries(VariablesPUup[Type].GetEntries() )
             #VariablesSmoothPUdown[Type].SetEntries(VariablesPUdown[Type].GetEntries() )
             VariablesSmooth0tag[Type].SetEntries(Variables0tag[Type].GetEntries() )
             VariablesSmoothHFup[Type].SetEntries(VariablesHFup[Type].GetEntries() )
@@ -415,7 +455,7 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
                         print 'Setting ',VariablesSmooth[Type].GetBinContent(x),' to 10E-6 for bin ',x,' of ',Type
                         VariablesSmooth[Type].SetBinContent(x,0.000001)
                     if ( (not Type.endswith('UP')) and (not Type.endswith('DOWN')) ): 
-                        #if (VariablesSmoothPUup[Type].GetBinContent(x) < 0.000001 ): VariablesSmoothPUup[Type].SetBinContent(x,0.00001)
+                        if (VariablesSmoothPUup[Type].GetBinContent(x) < 0.000001 ): VariablesSmoothPUup[Type].SetBinContent(x,0.00001)
                         #if (VariablesSmoothPUdown[Type].GetBinContent(x) < 0.000001 ): VariablesSmoothPUdown[Type].SetBinContent(x,0.00001)
                         if (VariablesSmooth0tag[Type].GetBinContent(x) < 0.000001 ): VariablesSmooth0tag[Type].SetBinContent(x,0.00001)
                         if (VariablesSmoothHFup[Type].GetBinContent(x) < 0.000001 ): VariablesSmoothHFup[Type].SetBinContent(x,0.00001)
@@ -432,10 +472,12 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
     if (channel == 'electron'):
         chan = 'elec_'
         VariablesSmooth['Data_el'].SetName(chan+"invmass_"+btags+"__DATA")
+        VariablesSmooth['Data_el'].SetTitle(chan+"invmass_"+btags+"__DATA")
         VariablesSmooth['Data_el'].Write()
     if (channel == 'muon'):
         chan = 'mu_'
         VariablesSmooth['Data_mu'].SetName(chan+"invmass_"+btags+"__DATA")
+        VariablesSmooth['Data_mu'].SetTitle(chan+"invmass_"+btags+"__DATA")
         VariablesSmooth['Data_mu'].Write()
 
     VariablesSmooth['WW'].Add(VariablesSmooth['ZJets_M50'])
@@ -443,6 +485,7 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
     VariablesSmoothPre['WW'].Add(VariablesSmoothPre['ZJets_M50'])
     VariablesSmoothPre['WJets'].Add(VariablesSmoothPre['WW'])
     VariablesSmoothPre['WJets'].SetName(chan+"invmass_"+btags+"__wjets")
+    VariablesSmoothPre['WJets'].SetTitle(chan+"invmass_"+btags+"__wjets")
 
     ######################################### 
     ### RESCALE W+Jets    
@@ -451,9 +494,11 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
     VariablesSmoothPre['WJets'].Scale( VariablesSmooth['WJets'].Integral()/VariablesSmoothPre['WJets'].Integral() )
     VariablesSmoothPre['WJets'].Write()
     VariablesSmooth['WJets'].SetName(chan+"invmass_"+btags+"__ge1bwjets")
+    VariablesSmooth['WJets'].SetTitle(chan+"invmass_"+btags+"__ge1bwjets")
     #VariablesSmooth['WJets'].Write()
 
     VariablesSmooth['TTbar_Madgraph'].SetName(chan+"invmass_"+btags+"__ttbar")
+    VariablesSmooth['TTbar_Madgraph'].SetTitle(chan+"invmass_"+btags+"__ttbar")
     VariablesSmooth['T_t'].Add(VariablesSmooth['Tbar_t'])
     VariablesSmooth['T_t'].Add(VariablesSmooth['T_tW'])
     VariablesSmooth['T_t'].Add(VariablesSmooth['Tbar_tW'])
@@ -461,39 +506,26 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
 
     VariablesSmooth['T_s'].Add(VariablesSmooth['Tbar_s']) 
    
-    if (wprime == 'Left' or wprime == 'MixRL'): 
+    if (wprime == 'Left' or wprime == 'Mix'): 
         VariablesSmooth['TTbar_Madgraph'].Write()
     else:
         if ( wprime == 'ModRight' ):
             VariablesSmooth['TTbar_Madgraph'].Write()
             VariablesSmooth['T_s'].SetName(chan+"invmass_"+btags+"__topstb")
+            VariablesSmooth['T_s'].SetTitle(chan+"invmass_"+btags+"__topstb")
             VariablesSmooth['T_s'].Write()
         elif (wprime == 'Right'):
             VariablesSmooth['TTbar_Madgraph'].Add(VariablesSmooth['T_s'])
             VariablesSmooth['TTbar_Madgraph'].Write()
 
-    if (channel=='electron'):
-        print 'Electron Data = ', VariablesSmooth['Data_el'].Integral()
-        print 'Total background = ', VariablesSmooth['TTbar_Madgraph'].Integral()+VariablesSmoothPre['WJets'].Integral()
-        print 'WJets ',VariablesSmoothPre['WJets'].Integral()
-        print 'TTbar ',VariablesSmooth['TTbar_Madgraph'].Integral()
-        print 'Background / Data = ', (VariablesSmooth['TTbar_Madgraph'].Integral()+VariablesSmoothPre['WJets'].Integral())/VariablesSmooth['Data_el'].Integral()
-        totaln=0
-        for i in range(bin):
-            #print i+1,' ',VariablesSmooth['TTbar'].GetBinContent(i+1)+VariablesSmoothPre['WJets'].GetBinContent(i+1),' ',VariablesSmooth['TTbar'].GetBinContent(i+1)+VariablesSmoothPre['WJets'].GetBinContent(i+1)
-            totaln+=VariablesSmooth['TTbar_Madgraph'].GetBinContent(i+1)+VariablesSmoothPre['WJets'].GetBinContent(i+1)
-        print 'total b.g. again: ',totaln
-    if (channel=='muon'):
-        print 'Muon Data = ', VariablesSmooth['Data_mu'].Integral()
-        print 'Total background = ', VariablesSmooth['TTbar_Madgraph'].Integral()+VariablesSmoothPre['WJets'].Integral()
-        print 'WJets ',VariablesSmoothPre['WJets'].Integral(),' bin 1 ',VariablesSmoothPre['WJets'].GetBinContent(1)
-        print 'TTbar ',VariablesSmooth['TTbar_Madgraph'].Integral(),' bin 1 ',VariablesSmooth['TTbar_Madgraph'].GetBinContent(1)
-        print 'Background / Data = ', (VariablesSmooth['TTbar_Madgraph'].Integral()+VariablesSmoothPre['WJets'].Integral())/VariablesSmooth['Data_mu'].Integral()
-        totaln=0
-        for i in range(bin):
-            #print i+1,' ',VariablesSmooth['TTbar'].GetBinContent(i+1)+VariablesSmoothPre['WJets'].GetBinContent(i+1),' ',VariablesSmooth['TTbar'].GetBinContent(i+1)+VariablesSmoothPre['WJets'].GetBinContent(i+1)
-            totaln+=VariablesSmooth['TTbar_Madgraph'].GetBinContent(i+1)+VariablesSmoothPre['WJets'].GetBinContent(i+1)
-        print 'total b.g. again: ',totaln
+    if (channel == 'electron'): ch = '_el' 
+    if (channel == 'muon'): ch = '_mu' 
+
+    print channel,' data = ', VariablesSmooth['Data'+ch].Integral()
+    print 'Total background = ', VariablesSmooth['TTbar_Madgraph'].Integral()+VariablesSmoothPre['WJets'].Integral()
+    print 'WJets ',VariablesSmoothPre['WJets'].Integral()
+    print 'TTbar ',VariablesSmooth['TTbar_Madgraph'].Integral()
+    print 'Background / Data = ', (VariablesSmooth['TTbar_Madgraph'].Integral()+VariablesSmoothPre['WJets'].Integral())/VariablesSmooth['Data'+ch].Integral()
                 
     ##### JES UP ##### 
     VariablesSmooth['WW_JESUP'].Add(VariablesSmooth['ZJets_M50_JESUP'])
@@ -501,6 +533,7 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
     VariablesSmoothPre['WW_JESUP'].Add(VariablesSmoothPre['ZJets_M50_JESUP'])
     VariablesSmoothPre['WJets_JESUP'].Add(VariablesSmoothPre['WW_JESUP'])
     VariablesSmoothPre['WJets_JESUP'].SetName(chan+"invmass_"+btags+"__wjets__jes__plus")
+    VariablesSmoothPre['WJets_JESUP'].SetTitle(chan+"invmass_"+btags+"__wjets__jes__plus")
     ######################################### 
     ### RESCALE W+Jets JES UP   
     #########################################
@@ -509,6 +542,7 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
     VariablesSmoothPre['WJets_JESUP'].Write()
 
     VariablesSmooth['TTbar_Madgraph_JESUP'].SetName(chan+"invmass_"+btags+"__ttbar__jes__plus")
+    VariablesSmooth['TTbar_Madgraph_JESUP'].SetTitle(chan+"invmass_"+btags+"__ttbar__jes__plus")
     VariablesSmooth['T_t_JESUP'].Add(VariablesSmooth['Tbar_t_JESUP'])
     VariablesSmooth['T_t_JESUP'].Add(VariablesSmooth['T_tW_JESUP'])
     VariablesSmooth['T_t_JESUP'].Add(VariablesSmooth['Tbar_tW_JESUP'])
@@ -516,12 +550,13 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
 
     VariablesSmooth['T_s_JESUP'].Add(VariablesSmooth['Tbar_s_JESUP']) 
    
-    if (wprime == 'Left' or wprime == 'MixRL'): 
+    if (wprime == 'Left' or wprime == 'Mix'): 
         VariablesSmooth['TTbar_Madgraph_JESUP'].Write()
     else:
         if ( wprime == 'ModRight' ):
             VariablesSmooth['TTbar_Madgraph_JESUP'].Write()
             VariablesSmooth['T_s_JESUP'].SetName(chan+"invmass_"+btags+"__topstb__jes__plus")
+            VariablesSmooth['T_s_JESUP'].SetTitle(chan+"invmass_"+btags+"__topstb__jes__plus")
             VariablesSmooth['T_s_JESUP'].Write()
         elif (wprime == 'Right'):
             VariablesSmooth['TTbar_Madgraph_JESUP'].Add(VariablesSmooth['T_s_JESUP'])
@@ -533,6 +568,7 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
     VariablesSmoothPre['WW_JESDOWN'].Add(VariablesSmoothPre['ZJets_M50_JESDOWN'])
     VariablesSmoothPre['WJets_JESDOWN'].Add(VariablesSmoothPre['WW_JESDOWN'])
     VariablesSmoothPre['WJets_JESDOWN'].SetName(chan+"invmass_"+btags+"__wjets__jes__minus")
+    VariablesSmoothPre['WJets_JESDOWN'].SetTitle(chan+"invmass_"+btags+"__wjets__jes__minus")
     ######################################### 
     ### REBIN W+Jets JES UP   
     #########################################
@@ -541,6 +577,7 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
     VariablesSmoothPre['WJets_JESDOWN'].Write()
 
     VariablesSmooth['TTbar_Madgraph_JESDOWN'].SetName(chan+"invmass_"+btags+"__ttbar__jes__minus")
+    VariablesSmooth['TTbar_Madgraph_JESDOWN'].SetTitle(chan+"invmass_"+btags+"__ttbar__jes__minus")
     VariablesSmooth['T_t_JESDOWN'].Add(VariablesSmooth['Tbar_t_JESDOWN'])
     VariablesSmooth['T_t_JESDOWN'].Add(VariablesSmooth['T_tW_JESDOWN'])
     VariablesSmooth['T_t_JESDOWN'].Add(VariablesSmooth['Tbar_tW_JESDOWN'])
@@ -548,34 +585,32 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
 
     VariablesSmooth['T_s_JESDOWN'].Add(VariablesSmooth['Tbar_s_JESDOWN']) 
    
-    if (wprime == 'Left' or wprime == 'MixRL'): 
+    if (wprime == 'Left' or wprime == 'Mix'): 
         VariablesSmooth['TTbar_Madgraph_JESDOWN'].Write()
     else:
         if ( wprime == 'ModRight' ):
             VariablesSmooth['TTbar_Madgraph_JESDOWN'].Write()
             VariablesSmooth['T_s_JESDOWN'].SetName(chan+"invmass_"+btags+"__topstb__jes__minus")
+            VariablesSmooth['T_s_JESDOWN'].SetTitle(chan+"invmass_"+btags+"__topstb__jes__minus")
             VariablesSmooth['T_s_JESDOWN'].Write()
         elif (wprime == 'Right'):
             VariablesSmooth['TTbar_Madgraph_JESDOWN'].Add(VariablesSmooth['T_s_JESDOWN'])
             VariablesSmooth['TTbar_Madgraph_JESDOWN'].Write()
 
     ##### BTAG UP #####
-    #VariablesSmooth['WW_BTAGUP'].Add(VariablesSmooth['ZJets_M50_BTAGUP'])
-    #VariablesSmooth['WJets_BTAGUP'].Add(VariablesSmooth['WW_BTAGUP'])
-    VariablesSmooth['WJets_BTAGUP'].SetName(chan+"invmass_"+btags+"__wjets__btag__plus")
-
+    VariablesSmooth['WW_BTAGUP'].Add(VariablesSmooth['ZJets_M50_BTAGUP'])
+    VariablesSmooth['WJets_BTAGUP'].Add(VariablesSmooth['WW_BTAGUP'])
+    VariablesSmoothPre['WJets_BTAGUP'] = VariablesSmoothPre['WJets'].Clone()
+    VariablesSmoothPre['WJets_BTAGUP'].SetName(chan+"invmass_"+btags+"__wjets__btag__plus")
+    VariablesSmoothPre['WJets_BTAGUP'].SetTitle(chan+"invmass_"+btags+"__wjets__btag__plus")
     ######################################### 
-    ### REBIN W+Jets BTAG BASED ON RATIO
+    ### RESCALE W+Jets BTAG BASED ON RATIO
     #########################################
-    for step in range(len(xlow)):
-        #if Variables['Data'].GetBinLowEdge(step) >= 500:  
-        ratio = 1.0/0.9162
-        #print 'Wjets = ',Variables['WJets'].GetBinContent(step)
-        #VariablesSmooth['WJets_BTAGUP'].SetBinContent(step, VariablesSmooth['WJets'].GetBinContent(step)*ratio )
-        VariablesSmooth['WJets_BTAGUP'].SetBinContent(step, VariablesSmoothPre['WJets'].GetBinContent(step)*(VariablesSmooth['WJets_BTAGUP'].Integral()/VariablesSmoothPre['WJets'].Integral()) )
-    VariablesSmooth['WJets_BTAGUP'].Write()
+    VariablesSmoothPre['WJets_BTAGUP'].Scale(VariablesSmooth['WJets_BTAGUP'].Integral()/VariablesSmoothPre['WJets'].Integral() )
+    VariablesSmoothPre['WJets_BTAGUP'].Write()
 
     VariablesSmooth['TTbar_Madgraph_BTAGUP'].SetName(chan+"invmass_"+btags+"__ttbar__btag__plus")
+    VariablesSmooth['TTbar_Madgraph_BTAGUP'].SetTitle(chan+"invmass_"+btags+"__ttbar__btag__plus")
     VariablesSmooth['T_t_BTAGUP'].Add(VariablesSmooth['Tbar_t_BTAGUP'])
     VariablesSmooth['T_t_BTAGUP'].Add(VariablesSmooth['T_tW_BTAGUP'])
     VariablesSmooth['T_t_BTAGUP'].Add(VariablesSmooth['Tbar_tW_BTAGUP'])
@@ -583,34 +618,32 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
 
     VariablesSmooth['T_s_BTAGUP'].Add(VariablesSmooth['Tbar_s_BTAGUP']) 
    
-    if (wprime == 'Left' or wprime == 'MixRL'): 
+    if (wprime == 'Left' or wprime == 'Mix'): 
         VariablesSmooth['TTbar_Madgraph_BTAGUP'].Write()
     else:
         if ( wprime == 'ModRight' ):
             VariablesSmooth['TTbar_Madgraph_BTAGUP'].Write()
             VariablesSmooth['T_s_BTAGUP'].SetName(chan+"invmass_"+btags+"__topstb__btag__plus")
+            VariablesSmooth['T_s_BTAGUP'].SetTitle(chan+"invmass_"+btags+"__topstb__btag__plus")
             VariablesSmooth['T_s_BTAGUP'].Write()
         elif (wprime == 'Right'):
             VariablesSmooth['TTbar_Madgraph_BTAGUP'].Add(VariablesSmooth['T_s_BTAGUP'])
             VariablesSmooth['TTbar_Madgraph_BTAGUP'].Write()
 
     ##### BTAG DOWN #####
-    #VariablesSmooth['WW_BTAGDOWN'].Add(VariablesSmooth['ZJets_M50_BTAGDOWN'])
-    #VariablesSmooth['WJets_BTAGDOWN'].Add(VariablesSmooth['WW_BTAGDOWN'])
-    VariablesSmooth['WJets_BTAGDOWN'].SetName(chan+"invmass_"+btags+"__wjets__btag__minus")
+    VariablesSmooth['WW_BTAGDOWN'].Add(VariablesSmooth['ZJets_M50_BTAGDOWN'])
+    VariablesSmooth['WJets_BTAGDOWN'].Add(VariablesSmooth['WW_BTAGDOWN'])
+    VariablesSmoothPre['WJets_BTAGDOWN'] = VariablesSmoothPre['WJets'].Clone()
+    VariablesSmoothPre['WJets_BTAGDOWN'].SetName(chan+"invmass_"+btags+"__wjets__btag__minus")
+    VariablesSmoothPre['WJets_BTAGDOWN'].SetTitle(chan+"invmass_"+btags+"__wjets__btag__minus")
     ######################################### 
-    ### REBIN W+Jets BTAG BASED ON RATIO
+    ### RESCALE W+Jets BTAG BASED ON RATIO
     #########################################
-    for step in range(len(xlow)):
-        #if Variables['Data'].GetBinLowEdge(step) >= 500:  
-        ratio = 1.0/1.099
-        #print 'Wjets = ',Variables['WJets'].GetBinContent(step)
-        #VariablesSmooth['WJets_BTAGDOWN'].SetBinContent(step, VariablesSmooth['WJets'].GetBinContent(step)*ratio )
-        VariablesSmooth['WJets_BTAGDOWN'].SetBinContent(step, VariablesSmoothPre['WJets'].GetBinContent(step)*(VariablesSmooth['WJets_BTAGDOWN'].Integral()/VariablesSmoothPre['WJets'].Integral()) )
-
-    VariablesSmooth['WJets_BTAGDOWN'].Write()
+    VariablesSmoothPre['WJets_BTAGDOWN'].Scale(VariablesSmooth['WJets_BTAGDOWN'].Integral()/VariablesSmoothPre['WJets'].Integral())
+    VariablesSmoothPre['WJets_BTAGDOWN'].Write()
 
     VariablesSmooth['TTbar_Madgraph_BTAGDOWN'].SetName(chan+"invmass_"+btags+"__ttbar__btag__minus")
+    VariablesSmooth['TTbar_Madgraph_BTAGDOWN'].SetTitle(chan+"invmass_"+btags+"__ttbar__btag__minus")
     VariablesSmooth['T_t_BTAGDOWN'].Add(VariablesSmooth['Tbar_t_BTAGDOWN'])
     VariablesSmooth['T_t_BTAGDOWN'].Add(VariablesSmooth['T_tW_BTAGDOWN'])
     VariablesSmooth['T_t_BTAGDOWN'].Add(VariablesSmooth['Tbar_tW_BTAGDOWN'])
@@ -618,13 +651,14 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
 
     VariablesSmooth['T_s_BTAGDOWN'].Add(VariablesSmooth['Tbar_s_BTAGDOWN']) 
    
-    if (wprime == 'Left' or wprime == 'MixRL'): 
+    if (wprime == 'Left' or wprime == 'Mix'): 
         dummy = 1.0
         VariablesSmooth['TTbar_Madgraph_BTAGDOWN'].Write()
     else:
         if ( wprime == 'ModRight' ):
             VariablesSmooth['TTbar_Madgraph_BTAGDOWN'].Write()
             VariablesSmooth['T_s_BTAGDOWN'].SetName(chan+"invmass_"+btags+"__topstb__btag__minus")
+            VariablesSmooth['T_s_BTAGDOWN'].SetTitle(chan+"invmass_"+btags+"__topstb__btag__minus")
             VariablesSmooth['T_s_BTAGDOWN'].Write()
         elif (wprime == 'Right'):
             VariablesSmooth['TTbar_Madgraph_BTAGDOWN'].Add(VariablesSmooth['T_s_BTAGDOWN'])
@@ -636,6 +670,7 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
     VariablesSmoothPre['WW_JERUP'].Add(VariablesSmoothPre['ZJets_M50_JERUP'])
     VariablesSmoothPre['WJets_JERUP'].Add(VariablesSmoothPre['WW_JERUP'])
     VariablesSmoothPre['WJets_JERUP'].SetName(chan+"invmass_"+btags+"__wjets__jer__plus")
+    VariablesSmoothPre['WJets_JERUP'].SetTitle(chan+"invmass_"+btags+"__wjets__jer__plus")
     #########################################
     ### RESCALE W+Jets JER UP
     #########################################
@@ -643,6 +678,7 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
     VariablesSmoothPre['WJets_JERUP'].Write()
 
     VariablesSmooth['TTbar_Madgraph_JERUP'].SetName(chan+"invmass_"+btags+"__ttbar__jer__plus")
+    VariablesSmooth['TTbar_Madgraph_JERUP'].SetTitle(chan+"invmass_"+btags+"__ttbar__jer__plus")
     VariablesSmooth['T_t_JERUP'].Add(VariablesSmooth['Tbar_t_JERUP'])
     VariablesSmooth['T_t_JERUP'].Add(VariablesSmooth['T_tW_JERUP'])
     VariablesSmooth['T_t_JERUP'].Add(VariablesSmooth['Tbar_tW_JERUP'])
@@ -650,12 +686,13 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
 
     VariablesSmooth['T_s_JERUP'].Add(VariablesSmooth['Tbar_s_JERUP']) 
    
-    if (wprime == 'Left' or wprime == 'MixRL'): 
+    if (wprime == 'Left' or wprime == 'Mix'): 
         VariablesSmooth['TTbar_Madgraph_JERUP'].Write()
     else:
         if ( wprime == 'ModRight' ):
             VariablesSmooth['TTbar_Madgraph_JERUP'].Write()
             VariablesSmooth['T_s_JERUP'].SetName(chan+"invmass_"+btags+"__topstb__jer__plus")
+            VariablesSmooth['T_s_JERUP'].SetTitle(chan+"invmass_"+btags+"__topstb__jer__plus")
             VariablesSmooth['T_s_JERUP'].Write()
         elif (wprime == 'Right'):
             VariablesSmooth['TTbar_Madgraph_JERUP'].Add(VariablesSmooth['T_s_JERUP'])
@@ -667,6 +704,7 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
     VariablesSmoothPre['WW_JERDOWN'].Add(VariablesSmoothPre['ZJets_M50_JERDOWN'])
     VariablesSmoothPre['WJets_JERDOWN'].Add(VariablesSmoothPre['WW_JERDOWN'])
     VariablesSmoothPre['WJets_JERDOWN'].SetName(chan+"invmass_"+btags+"__wjets__jer__minus")
+    VariablesSmoothPre['WJets_JERDOWN'].SetTitle(chan+"invmass_"+btags+"__wjets__jer__minus")
     #########################################
     ### RESCALE W+Jets JER DOWN   
     #########################################
@@ -674,6 +712,7 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
     VariablesSmoothPre['WJets_JERDOWN'].Write()
 
     VariablesSmooth['TTbar_Madgraph_JERDOWN'].SetName(chan+"invmass_"+btags+"__ttbar__jer__minus")
+    VariablesSmooth['TTbar_Madgraph_JERDOWN'].SetTitle(chan+"invmass_"+btags+"__ttbar__jer__minus")
     VariablesSmooth['T_t_JERDOWN'].Add(VariablesSmooth['Tbar_t_JERDOWN'])
     VariablesSmooth['T_t_JERDOWN'].Add(VariablesSmooth['T_tW_JERDOWN'])
     VariablesSmooth['T_t_JERDOWN'].Add(VariablesSmooth['Tbar_tW_JERDOWN'])
@@ -681,72 +720,58 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
 
     VariablesSmooth['T_s_JERDOWN'].Add(VariablesSmooth['Tbar_s_JERDOWN']) 
    
-    if (wprime == 'Left' or wprime == 'MixRL'):
+    if (wprime == 'Left' or wprime == 'Mix'):
         VariablesSmooth['TTbar_Madgraph_JERDOWN'].Write()
     else:
         if ( wprime == 'ModRight' ):
             VariablesSmooth['TTbar_Madgraph_JERDOWN'].Write()
             VariablesSmooth['T_s_JERDOWN'].SetName(chan+"invmass_"+btags+"__topstb__jer__minus")
+            VariablesSmooth['T_s_JERDOWN'].SetTitle(chan+"invmass_"+btags+"__topstb__jer__minus")
             VariablesSmooth['T_s_JERDOWN'].Write()
         elif (wprime == 'Right'):
             VariablesSmooth['TTbar_Madgraph_JERDOWN'].Add(VariablesSmooth['T_s_JERDOWN'])
             VariablesSmooth['TTbar_Madgraph_JERDOWN'].Write()
 
-    
-    '''
-    ##### PU Down ######
-    VariablesSmoothPUdown['WW'].Add(VariablesSmoothPUdown['ZJets_M50'])
-    VariablesSmoothPUdown['WJets'].Add(VariablesSmoothPUdown['WW'])
-    VariablesSmoothPUdown['WJets'].SetName(chan+"invmass_"+btags+"__wjets_PileupDown")
-    VariablesSmoothPUdown['WJets'].Write()
 
-    VariablesSmoothPUdown['T_t'].Add(VariablesSmoothPUdown['Tbar_t'])
-    VariablesSmoothPUdown['T_t'].Add(VariablesSmoothPUdown['T_tW'])
-    VariablesSmoothPUdown['T_t'].Add(VariablesSmoothPUdown['Tbar_tW'])
-    VariablesSmoothPUdown['TTbar'].Add( VariablesSmoothPUdown['T_t'])
-    VariablesSmoothPUdown['TTbar'].SetName(chan+"invmass_"+btags+"__ttbar_PileupDown")
-
-    VariablesSmoothPUdown['T_s'].Add(VariablesSmoothPUdown['Tbar_s']) 
-
-    if (wprime == 'Left' or wprime == 'MixRL'): 
-        VariablesSmoothPUdown['TTbar'].Write()
-    else:
-        if ( wprime == 'ModRight' ):
-            VariablesSmoothPUdown['TTbar'].Write()
-            VariablesSmoothPUdown['T_s'].SetName(chan+"invmass_"+btags+"__topstb_PileupDown")
-            VariablesSmoothPUdown['T_s'].Write()
-        elif (wprime == 'Right'):
-            VariablesSmoothPUdown['TTbar'].Add(VariablesSmoothPUdown['T_s'])
-            VariablesSmoothPUdown['TTbar'].Write()
-  
-
-    ##### PU Up#####
     VariablesSmoothPUup['WW'].Add(VariablesSmoothPUup['ZJets_M50'])
     VariablesSmoothPUup['WJets'].Add(VariablesSmoothPUup['WW'])
-    VariablesSmoothPUup['WJets'].SetName(chan+"invmass_"+btags+"__wjets_PileupUp")
+    VariablesSmoothPUup['WJets'].SetName(chan+"invmass_"+btags+"__wjets__PU__plus")
+    VariablesSmoothPUup['WJets'].SetTitle(chan+"invmass_"+btags+"__wjets__PU__plus")
     VariablesSmoothPUup['WJets'].Write()
 
+    VariablesSmoothPUup['TTbar_Madgraph'].SetName(chan+"invmass_"+btags+"__ttbar__PU__plus")
+    VariablesSmoothPUup['TTbar_Madgraph'].SetTitle(chan+"invmass_"+btags+"__ttbar__PU__plus")
     VariablesSmoothPUup['T_t'].Add(VariablesSmoothPUup['Tbar_t'])
     VariablesSmoothPUup['T_t'].Add(VariablesSmoothPUup['T_tW'])
     VariablesSmoothPUup['T_t'].Add(VariablesSmoothPUup['Tbar_tW'])
-    VariablesSmoothPUup['TTbar'].Add( VariablesSmoothPUup['T_t'])
-    VariablesSmoothPUup['TTbar'].SetName(chan+"invmass_"+btags+"__ttbar_PileupUp")
+    VariablesSmoothPUup['TTbar_Madgraph'].Add( VariablesSmoothPUup['T_t'])
 
     VariablesSmoothPUup['T_s'].Add(VariablesSmoothPUup['Tbar_s']) 
-
-    if (wprime == 'Left' or wprime == 'MixRL'): 
-        VariablesSmoothPUup['TTbar'].Write()
+   
+    if (wprime == 'Left' or wprime == 'Mix'):
+        VariablesSmoothPUup['TTbar_Madgraph'].Write()
     else:
         if ( wprime == 'ModRight' ):
-            VariablesSmoothPUup['TTbar'].Write()
-            VariablesSmoothPUup['T_s'].SetName(chan+"invmass_"+btags+"__topstb_PileupUp")
+            VariablesSmoothPUup['TTbar_Madgraph'].Write()
+            VariablesSmoothPUup['T_s'].SetName(chan+"invmass_"+btags+"__topstb__PU__plus")
+            VariablesSmoothPUup['T_s'].SetTitle(chan+"invmass_"+btags+"__topstb__PU__plus")
             VariablesSmoothPUup['T_s'].Write()
         elif (wprime == 'Right'):
-            VariablesSmoothPUup['TTbar'].Add(VariablesSmoothPUup['T_s'])
-            VariablesSmoothPUup['TTbar'].Write()
-    '''
+            VariablesSmoothPUup['TTbar_Madgraph'].Add(VariablesSmoothPUup['T_s'])
+            VariablesSmoothPUup['TTbar_Madgraph'].Write()
+
+    VariablesSmoothPUup['WJetsDown'] = VariablesSmoothPre['WJets'].Clone()
+    VariablesSmoothPUup['WJetsDown'].SetName(chan+"invmass_"+btags+"__wjets__PU__minus")
+    VariablesSmoothPUup['WJetsDown'].SetTitle(chan+"invmass_"+btags+"__wjets__PU__minus")
+    VariablesSmoothPUup['WJetsDown'].Write()
+    VariablesSmoothPUup['TTbar_MadgraphDown'] = VariablesSmooth['TTbar_Madgraph'].Clone()
+    VariablesSmoothPUup['TTbar_MadgraphDown'].SetName(chan+"invmass_"+btags+"__ttbar__PU__minus")
+    VariablesSmoothPUup['TTbar_MadgraphDown'].SetTitle(chan+"invmass_"+btags+"__ttbar__PU__minus")
+    VariablesSmoothPUup['TTbar_MadgraphDown'].Write()
+ 
 
     masses = ['1100','1200','1300','1400','1500','1600','1700','1800','1900','2000','2100','2200','2300','2400','2500','2600','2700','2800','2900','3000']
+    #masses = ['1100','1200','1300','1400','1500','1600','1700','1800','1900','2000','2100','2400','2500','2700','2900']
     for mass in masses:
         if (wprime != 'ModRight'):
             VariablesSmooth['Wprime' + mass + wprime].Write()
@@ -756,8 +781,11 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
             VariablesSmooth['Wprime' + mass + wprime + '_JERDOWN'].Write()
             VariablesSmooth['Wprime' + mass + wprime + '_BTAGUP'].Write()
             VariablesSmooth['Wprime' + mass + wprime + '_BTAGDOWN'].Write()
-            #VariablesSmoothPUup['Wprime' + mass + wprime ].Write()    
-            #VariablesSmoothPUdown['Wprime' + mass + wprime ].Write()
+            VariablesSmoothPUup['Wprime' + mass + wprime ].Write()  
+            VariablesSmoothPUup['Wprime' + mass + wprime+'Down' ] = VariablesSmooth['Wprime' + mass + wprime].Clone()
+            VariablesSmoothPUup['Wprime' + mass + wprime+'Down' ].SetName( chan+'invmass_'+btags+'__'+'wp'+mass+'__PU__minus')
+            VariablesSmoothPUup['Wprime' + mass + wprime+'Down' ].SetTitle( chan+'invmass_'+btags+'__'+'wp'+mass+'__PU__minus')
+            VariablesSmoothPUup['Wprime' + mass + wprime+'Down' ].Write()
         else:
             VariablesSmooth['Wprime' + mass + 'Right'].Write()
             VariablesSmooth['Wprime' + mass + 'Right' + '_JESUP'].Write()
@@ -766,73 +794,60 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
             VariablesSmooth['Wprime' + mass + 'Right' + '_JERDOWN'].Write()
             VariablesSmooth['Wprime' + mass + 'Right' + '_BTAGUP'].Write()
             VariablesSmooth['Wprime' + mass + 'Right' + '_BTAGDOWN'].Write()
-            #VariablesSmoothPUup['Wprime' + mass + 'Right'].Write()    
-            #VariablesSmoothPUdown['Wprime' + mass + 'Right'].Write()
- 
-    '''
-    VariablesSmooth['TTbar_Madgraph_MATCHING_DOWN'].Add(VariablesSmooth['T_t'])
-    VariablesSmooth['TTbar_Madgraph_MATCHING_DOWN'].SetName(chan+"invmass_"+btags+"__ttbar__matching__minus")
-    if (wprime == 'Left' or wprime == 'MixRL'):
-        VariablesSmooth['TTbar_Madgraph_MATCHING_DOWN'].Write()
+            VariablesSmoothPUup['Wprime' + mass + 'Right' ].Write()  
+            VariablesSmoothPUup['Wprime' + mass + 'Right'+'Down' ] = VariablesSmooth['Wprime' + mass + 'Right'].Clone()
+            VariablesSmoothPUup['Wprime' + mass + 'Right'+'Down' ].SetName( chan+'invmass_'+btags+'__'+'wp'+mass+'__PU__minus')
+            VariablesSmoothPUup['Wprime' + mass + 'Right'+'Down' ].SetTitle( chan+'invmass_'+btags+'__'+'wp'+mass+'__PU__minus')
+            VariablesSmoothPUup['Wprime' + mass + 'Right'+'Down' ].Write() 
+
+    
+    VariablesSmooth['TTbar_Madgraph_MATCHINGDOWN'].Add(VariablesSmooth['T_t'])
+    VariablesSmooth['TTbar_Madgraph_MATCHINGDOWN'].SetName(chan+"invmass_"+btags+"__ttbar__matching__minus")
+    VariablesSmooth['TTbar_Madgraph_MATCHINGDOWN'].SetTitle(chan+"invmass_"+btags+"__ttbar__matching__minus")
+    if (wprime == 'Left' or wprime == 'Mix'):
+        VariablesSmooth['TTbar_Madgraph_MATCHINGDOWN'].Write()
     else:
         if ( wprime == 'ModRight' ):
-            VariablesSmooth['TTbar_Madgraph_MATCHING_DOWN'].Write()
+            VariablesSmooth['TTbar_Madgraph_MATCHINGDOWN'].Write()
         elif (wprime == 'Right'):
-            VariablesSmooth['TTbar_Madgraph_MATCHING_DOWN'].Add(VariablesSmooth['T_s'])
-            VariablesSmooth['TTbar_Madgraph_MATCHING_DOWN'].Write()
+            VariablesSmooth['TTbar_Madgraph_MATCHINGDOWN'].Add(VariablesSmooth['T_s'])
+            VariablesSmooth['TTbar_Madgraph_MATCHINGDOWN'].Write()
 
-    VariablesSmooth['TTbar_Madgraph_MATCHING_UP'].Add(VariablesSmooth['T_t'])
-    VariablesSmooth['TTbar_Madgraph_MATCHING_UP'].SetName(chan+"invmass_"+btags+"__ttbar__matching__plus")
-    if (wprime == 'Left' or wprime == 'MixRL'):
-        VariablesSmooth['TTbar_Madgraph_MATCHING_UP'].Write()
+    VariablesSmooth['TTbar_Madgraph_MATCHINGUP'].Add(VariablesSmooth['T_t'])
+    VariablesSmooth['TTbar_Madgraph_MATCHINGUP'].SetName(chan+"invmass_"+btags+"__ttbar__matching__plus")
+    VariablesSmooth['TTbar_Madgraph_MATCHINGUP'].SetTitle(chan+"invmass_"+btags+"__ttbar__matching__plus")
+    if (wprime == 'Left' or wprime == 'Mix'):
+        VariablesSmooth['TTbar_Madgraph_MATCHINGUP'].Write()
     else:
         if ( wprime == 'ModRight' ):
-            VariablesSmooth['TTbar_Madgraph_MATCHING_UP'].Write()
+            VariablesSmooth['TTbar_Madgraph_MATCHINGUP'].Write()
         elif (wprime == 'Right'):
-            VariablesSmooth['TTbar_Madgraph_MATCHING_UP'].Add(VariablesSmooth['T_s'])
-            VariablesSmooth['TTbar_Madgraph_MATCHING_UP'].Write()
+            VariablesSmooth['TTbar_Madgraph_MATCHINGUP'].Add(VariablesSmooth['T_s'])
+            VariablesSmooth['TTbar_Madgraph_MATCHINGUP'].Write()
 
-    VariablesSmooth['TTbar_Madgraph_SCALE_DOWN'].Add(VariablesSmooth['T_t'])
-    VariablesSmooth['TTbar_Madgraph_SCALE_DOWN'].SetName(chan+"invmass_"+btags+"__ttbar__q2scale__minus")
-    if (wprime == 'Left' or wprime == 'MixRL'): 
-        VariablesSmooth['TTbar_Madgraph_SCALE_DOWN'].Write()
+    VariablesSmooth['TTbar_Madgraph_SCALEDOWN'].Add(VariablesSmooth['T_t'])
+    VariablesSmooth['TTbar_Madgraph_SCALEDOWN'].SetName(chan+"invmass_"+btags+"__ttbar__q2scale__minus")
+    VariablesSmooth['TTbar_Madgraph_SCALEDOWN'].SetTitle(chan+"invmass_"+btags+"__ttbar__q2scale__minus")
+    if (wprime == 'Left' or wprime == 'Mix'): 
+        VariablesSmooth['TTbar_Madgraph_SCALEDOWN'].Write()
     else:
         if ( wprime == 'ModRight' ):
-            VariablesSmooth['TTbar_Madgraph_SCALE_DOWN'].Write()
+            VariablesSmooth['TTbar_Madgraph_SCALEDOWN'].Write()
         elif (wprime == 'Right'):
-            VariablesSmooth['TTbar_Madgraph_SCALE_DOWN'].Add(VariablesSmooth['T_s'])
-            VariablesSmooth['TTbar_Madgraph_SCALE_DOWN'].Write()
+            VariablesSmooth['TTbar_Madgraph_SCALEDOWN'].Add(VariablesSmooth['T_s'])
+            VariablesSmooth['TTbar_Madgraph_SCALEDOWN'].Write()
 
-    VariablesSmooth['TTbar_Madgraph_SCALE_UP'].Add(VariablesSmooth['T_t'])
-    VariablesSmooth['TTbar_Madgraph_SCALE_UP'].SetName(chan+"invmass_"+btags+"__ttbar__q2scale__plus")
-    if (wprime == 'Left' or wprime == 'MixRL'): 
-        VariablesSmooth['TTbar_Madgraph_SCALE_UP'].Write()
+    VariablesSmooth['TTbar_Madgraph_SCALEUP'].Add(VariablesSmooth['T_t'])
+    VariablesSmooth['TTbar_Madgraph_SCALEUP'].SetName(chan+"invmass_"+btags+"__ttbar__q2scale__plus")
+    VariablesSmooth['TTbar_Madgraph_SCALEUP'].SetTitle(chan+"invmass_"+btags+"__ttbar__q2scale__plus")
+    if (wprime == 'Left' or wprime == 'Mix'): 
+        VariablesSmooth['TTbar_Madgraph_SCALEUP'].Write()
     else:
         if ( wprime == 'ModRight' ):
-            VariablesSmooth['TTbar_Madgraph_SCALE_UP'].Write()
+            VariablesSmooth['TTbar_Madgraph_SCALEUP'].Write()
         elif (wprime == 'Right'):
-            VariablesSmooth['TTbar_Madgraph_SCALE_UP'].Add(VariablesSmooth['T_s'])
-            VariablesSmooth['TTbar_Madgraph_SCALE_UP'].Write()
-
-    VariablesSmooth['WJets_MATCHING_DOWN'].Add(VariablesSmooth['WW'])
-    VariablesSmooth['WJets_MATCHING_DOWN'].SetName(chan+"invmass_"+btags+"__wjets__matching__minus")
-    VariablesSmooth['WJets_MATCHING_DOWN'].Write()
-
-    VariablesSmooth['WJets_MATCHING_UP'].Add(VariablesSmooth['WW'])
-    VariablesSmooth['WJets_MATCHING_UP'].SetName(chan+"invmass_"+btags+"__wjets__matching__plus")
-    VariablesSmooth['WJets_MATCHING_UP'].Write()
-
-    VariablesSmooth['WJets_SCALE_DOWN'].Add(VariablesSmooth['WW'])
-    VariablesSmooth['WJets_SCALE_DOWN'].SetName(chan+"invmass_"+btags+"__wjets__q2scale__minus")
-    VariablesSmooth['WJets_SCALE_DOWN'].Write()
-
-    VariablesSmooth['WJets_SCALE_UP'].Add(VariablesSmooth['WW'])
-    VariablesSmooth['WJets_SCALE_UP'].SetName(chan+"invmass_"+btags+"__wjets__q2scale__plus")
-    VariablesSmooth['WJets_SCALE_UP'].Write()
-    '''
-
-    if (channel == 'electron'): ch = '_el' 
-    if (channel == 'muon'): ch = '_mu' 
+            VariablesSmooth['TTbar_Madgraph_SCALEUP'].Add(VariablesSmooth['T_s'])
+            VariablesSmooth['TTbar_Madgraph_SCALEUP'].Write()
 
     VariablesSmooth0tag['Data'+ch].Add(VariablesSmooth0tag['TTbar_Madgraph'],-1)
     VariablesSmooth0tag['Data'+ch].Add(VariablesSmooth0tag['T_t'],-1)
@@ -843,6 +858,7 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
     VariablesSmooth0tag['Data'+ch].Add(VariablesSmooth0tag['Tbar_s'],-1)
     VariablesSmooth0tag['Data'+ch].Scale(VariablesSmooth['WJets'].Integral()/VariablesSmooth0tag['Data'+ch].Integral())
     VariablesSmooth0tag['Data'+ch].SetName(chan+"invmass_"+btags+"__wjets__zerotagshape__plus")
+    VariablesSmooth0tag['Data'+ch].SetTitle(chan+"invmass_"+btags+"__wjets__zerotagshape__plus")
     for x in range(1,bin+1):  
         if (VariablesSmooth0tag['Data'+ch].GetBinContent(x) < 0): 
             VariablesSmooth0tag['Data'+ch].SetBinContent(x,0.000001)
@@ -850,15 +866,18 @@ def plot_DataVsMc(channel,varName, bin, low, high, ylabel, xlabel, save, wprime,
     VariablesSmooth0tag['Data'+ch].Write()
     VariablesSmooth0tag['WJetsDown'] = VariablesSmoothPre['WJets'].Clone()
     VariablesSmooth0tag['WJetsDown'].SetName(chan+"invmass_"+btags+"__wjets__zerotagshape__minus")
+    VariablesSmooth0tag['WJetsDown'].SetTitle(chan+"invmass_"+btags+"__wjets__zerotagshape__minus")
     VariablesSmooth0tag['WJetsDown'].Write()
 
     VariablesSmoothHFup['WW'].Add(VariablesSmoothHFup['ZJets_M50'])
     VariablesSmoothHFup['WJets'].Add(VariablesSmoothHFup['WW'])
     VariablesSmoothHFup['WJets'].SetName(chan+"invmass_"+btags+"__wjets__hf__plus")
+    VariablesSmoothHFup['WJets'].SetTitle(chan+"invmass_"+btags+"__wjets__hf__plus")
     VariablesSmoothHFup['WJets'].Write()
     VariablesSmoothHFdown['WW'].Add(VariablesSmoothHFdown['ZJets_M50'])
     VariablesSmoothHFdown['WJets'].Add(VariablesSmoothHFdown['WW'])
     VariablesSmoothHFdown['WJets'].SetName(chan+"invmass_"+btags+"__wjets__hf__minus")
+    VariablesSmoothHFdown['WJets'].SetTitle(chan+"invmass_"+btags+"__wjets__hf__minus")
     VariablesSmoothHFdown['WJets'].Write()
 
 
@@ -869,34 +888,76 @@ var = 'BestJetJet2W_M_LjetsTopoCalcNew'; high = 4000; xaxis = "W' invariant mass
 #btags = 0
 #btagstr = '0btags'
 btags = 'final'
-channel = 'electron'
-wprime = 'ModRight'
-f = TFile("RootFiles_ForLimits/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+".root","RECREATE")
 xlow  = [ 200, 300,  400, 500, 600, 700, 800, 900,  1000, 1100, 1200,  1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2500, 4000]
 bins = len(xlow)-1 
-f.cd() 
+
 List_DataBgEl_RightWprime = copy.copy(List_DataEl) 
 List_DataBgEl_RightWprime.extend(List_Bg) 
 List_DataBgEl_RightWprime.extend(List_Right) 
-#plot_DataVsMc(channel,var, bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgEl_RightWprime) 
 
-wprime = 'Right'
-f = TFile("RootFiles_ForLimits/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+".root","RECREATE")
-f.cd() 
-plot_DataVsMc(channel,var, bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgEl_RightWprime) 
+List_DataBgEl_LeftWprime = copy.copy(List_DataEl) 
+List_DataBgEl_LeftWprime.extend(List_Bg) 
+List_DataBgEl_LeftWprime.extend(List_Left) 
 
-channel = 'muon'
-wprime = 'ModRight'
-f = TFile("RootFiles_ForLimits/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+".root","RECREATE")
-xlow  = [ 200, 300,  400, 500, 600, 700, 800, 900,  1000, 1100, 1200,  1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2500, 4000]
-bins = len(xlow)-1 
-f.cd() 
+List_DataBgEl_MixWprime = copy.copy(List_DataEl) 
+List_DataBgEl_MixWprime.extend(List_Bg) 
+List_DataBgEl_MixWprime.extend(List_Mix) 
+
 List_DataBgMu_RightWprime = copy.copy(List_DataMu) 
 List_DataBgMu_RightWprime.extend(List_Bg) 
 List_DataBgMu_RightWprime.extend(List_Right) 
-#plot_DataVsMc(channel,var, bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgMu_RightWprime) 
+
+List_DataBgMu_LeftWprime = copy.copy(List_DataMu) 
+List_DataBgMu_LeftWprime.extend(List_Bg) 
+List_DataBgMu_LeftWprime.extend(List_Left) 
+
+List_DataBgMu_MixWprime = copy.copy(List_DataMu) 
+List_DataBgMu_MixWprime.extend(List_Bg) 
+List_DataBgMu_MixWprime.extend(List_Mix) 
+
+
+channel = 'electron'
+
+wprime = 'ModRight'
+#f = TFile("RootFiles_For2DLimits_19Jan/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03.root","RECREATE")
+#f.cd() 
+#plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgEl_RightWprime) 
 
 wprime = 'Right'
-f = TFile("RootFiles_ForLimits/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+".root","RECREATE")
+f = TFile("RootFiles_For2DLimits_19Jan/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03.root","RECREATE")
 f.cd() 
-plot_DataVsMc(channel,var, bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgMu_RightWprime) 
+plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgEl_RightWprime) 
+
+wprime = 'Left'
+#f = TFile("RootFiles_For2DLimits_19Jan/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03.root","RECREATE")
+#f.cd() 
+#plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgEl_LeftWprime) 
+
+wprime = 'Mix'
+#f = TFile("RootFiles_For2DLimits_19Jan/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03.root","RECREATE")
+#f.cd() 
+#plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgEl_MixWprime) 
+
+
+channel = 'muon'
+
+wprime = 'ModRight'
+#f = TFile("RootFiles_For2DLimits_19Jan/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03.root","RECREATE")
+#f.cd() 
+#plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgMu_RightWprime) 
+
+wprime = 'Right'
+f = TFile("RootFiles_For2DLimits_19Jan/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03.root","RECREATE")
+f.cd() 
+plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgMu_RightWprime) 
+
+wprime = 'Left'
+#f = TFile("RootFiles_For2DLimits_19Jan/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03.root","RECREATE")
+#f.cd() 
+#plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgMu_LeftWprime) 
+
+wprime = 'Mix'
+#f = TFile("RootFiles_For2DLimits_19Jan/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03.root","RECREATE")
+#f.cd() 
+#plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgMu_MixWprime) 
+
