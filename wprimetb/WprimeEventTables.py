@@ -6,7 +6,7 @@ TFormula.SetMaxima(5000,5000,5000)
 
 from array import array
 
-from LoadData import *
+from LoadData_LPC import *
 
 global txtfile
 txtfile = open('eventtables.txt', 'w') 
@@ -52,7 +52,7 @@ def FillTables(channel, varName, bin, low, high):
     if (channel == 'muon'):
         List = ['Data_mu','ZJets_M50','WW', 'WJets', 'T_t', 'Tbar_t', 'T_tW', 'Tbar_tW', 'T_s', 'Tbar_s', 'TTbar_Madgraph']
 
-    SignalList = ['Wprime1500Right','Wprime1700Right','Wprime1900Right','Wprime2100Right','Wprime2300Right']
+    SignalList = ['Wprime1100Right','Wprime1200Right','Wprime1300Right','Wprime1400Right','Wprime1500Right','Wprime1600Right','Wprime1700Right','Wprime1800Right','Wprime1900Right','Wprime2000Right','Wprime2100Right','Wprime2200Right','Wprime2300Right','Wprime2400Right','Wprime2500Right','Wprime2600Right','Wprime2700Right','Wprime2800Right','Wprime2900Right','Wprime3000Right']
     List.extend(SignalList)
 
 
@@ -61,11 +61,11 @@ def FillTables(channel, varName, bin, low, high):
 
         if (channel == 'electron'):      
             #cut = 'jet_0_pt_WprimeCalc >= 100 && jet_1_pt_WprimeCalc >= 40 && elec_1_pt_WprimeCalc > 32 && abs(elec_1_eta_WprimeCalc) < 2.5 && elec_1_RelIso_WprimeCalc < 0.1 && corr_met_WprimeCalc > 20' 
-            cut = 'jet_0_pt_WprimeCalc >= 120 && jet_1_pt_WprimeCalc >= 40 && elec_1_pt_WprimeCalc > 32 && abs(elec_1_eta_WprimeCalc) < 2.5 && elec_1_RelIso_WprimeCalc < 0.1 && corr_met_WprimeCalc > 20' 
+            cut = 'jet_0_pt_WprimeCalc >= 120 && jet_1_pt_WprimeCalc >= 40 && elec_1_pt_WprimeCalc > 32 && abs(elec_1_eta_WprimeCalc) < 2.5 && elec_1_RelIso_WprimeCalc < 0.1 && corr_met_WprimeCalc > 20 && Muon_DeltaR_LjetsTopoCalcNew > 0.3' 
 
         if (channel == 'muon'):      
             #cut = 'jet_0_pt_WprimeCalc >= 100 && jet_1_pt_WprimeCalc >= 40 && muon_1_pt_WprimeCalc > 26 && abs(muon_1_eta_WprimeCalc) < 2.1 && muon_1_RelIso_WprimeCalc < 0.12 && corr_met_WprimeCalc > 20'
-            cut = 'jet_0_pt_WprimeCalc >= 120 && jet_1_pt_WprimeCalc >= 40 && muon_1_pt_WprimeCalc > 26 && abs(muon_1_eta_WprimeCalc) < 2.1 && muon_1_RelIso_WprimeCalc < 0.12 && corr_met_WprimeCalc > 20'
+            cut = 'jet_0_pt_WprimeCalc >= 120 && jet_1_pt_WprimeCalc >= 40 && muon_1_pt_WprimeCalc > 26 && abs(muon_1_eta_WprimeCalc) < 2.1 && muon_1_RelIso_WprimeCalc < 0.12 && corr_met_WprimeCalc > 20 && Muon_DeltaR_LjetsTopoCalcNew > 0.3'
         
 
 
@@ -77,7 +77,7 @@ def FillTables(channel, varName, bin, low, high):
         if cutlabel == 'onebtags': cut = cut + ' && ((jet_0_tag_WprimeCalc+jet_1_tag_WprimeCalc)==1) '
         if cutlabel == 'ge1btags': cut = cut + ' && ((jet_0_tag_WprimeCalc+jet_1_tag_WprimeCalc)>=1) '
         if cutlabel == 'ge2btags': cut = cut + ' && ( (jet_0_tag_WprimeCalc==1 && (jet_1_tag_WprimeCalc + jet_2_tag_WprimeCalc + jet_3_tag_WprimeCalc + jet_4_tag_WprimeCalc + jet_5_tag_WprimeCalc + jet_6_tag_WprimeCalc + jet_7_tag_WprimeCalc + jet_8_tag_WprimeCalc + jet_9_tag_WprimeCalc) >= 1 ) || (jet_1_tag_WprimeCalc==1 && (jet_0_tag_WprimeCalc + jet_2_tag_WprimeCalc + jet_3_tag_WprimeCalc + jet_4_tag_WprimeCalc + jet_5_tag_WprimeCalc + jet_6_tag_WprimeCalc + jet_7_tag_WprimeCalc + jet_8_tag_WprimeCalc + jet_9_tag_WprimeCalc) >= 1 ) ) '
-        if cutlabel == 'final':    cut = cut + ' && ( (jet_0_tag_WprimeCalc+jet_1_tag_WprimeCalc ) >= 1 ) && BestTop_LjetsTopoCalcNew > 130 && BestTop_LjetsTopoCalcNew < 210 &&  BestTop_Pt_LjetsTopoCalcNew > 75  && Jet1Jet2_Pt_LjetsTopoCalcNew > 100 '
+        if cutlabel == 'final':    cut = cut + ' && ( (jet_0_tag_WprimeCalc+jet_1_tag_WprimeCalc ) >= 1 ) && BestTop_LjetsTopoCalcNew > 130 && BestTop_LjetsTopoCalcNew < 210 &&  BestTop_Pt_LjetsTopoCalcNew > 85  && Jet1Jet2_Pt_LjetsTopoCalcNew > 140 '
 
 
         #SFWjmu = 0.85             ## oldHF
@@ -89,11 +89,13 @@ def FillTables(channel, varName, bin, low, high):
         #SFWjmu = 1.05*0.85       ## myHF
         #SFWcmu = 1.25*0.92*1.66  ## myHF
         #SFWbmu = 1.25*0.92*1.21  ## myHF
-        SFWjmu = 1.08*0.85      ## myHF120
-        SFWcmu = 1.06*0.92*1.66  ## myHF120
-        SFWbmu = 1.06*0.92*1.21  ## myHF120
-
-     
+        #SFWjmu = 1.08*0.85      ## myHF120
+        #SFWcmu = 1.06*0.92*1.66  ## myHF120
+        #SFWbmu = 1.06*0.92*1.21  ## myHF120
+        SFWjmu = 1.0   ## noHF
+        SFWcmu = 1.66  ## noHF
+        SFWbmu = 1.21  ## noHF
+                             
         if (channel=='electron'):
             weight = 'weight_PU_ABC_PileUpCalc*weight_ElectronEff_WprimeCalc'
         if (channel=='muon'):
@@ -276,7 +278,7 @@ def FillTables(channel, varName, bin, low, high):
     txtfile.write("\\begin{tabular}{l|c|c|c|c|c|c}\n")
     txtfile.write("\hline\n")
     txtfile.write("Process    & \multicolumn{6}{c}{Number of Events} \\\ \hline\hline\n")
-    txtfile.write("   & & \multicolumn{4}{c|}{Number of b-tagged jets} & $p_{T}^{top}>$ 75,$p_{T}^{jet1,jet2}>$100,130$<m_{top}<$210 \\\ \n")
+    txtfile.write("   & & \multicolumn{4}{c|}{Number of b-tagged jets} & $p_{T}^{top}>$ 85,$p_{T}^{jet1,jet2}>$140,130$<m_{top}<$210 \\\ \n")
     txtfile.write(" & Pre selection & = 0 & = 1 \n")
     txtfile.write("& $>$ 0 & $>$ 1  & $>$0 b-tagged jet    \\\ \hline\n")
     txtfile.write("{\\bf Data} & "+str(int(round(EventCountPre['Data_'+suffix])))+" & "+str(int(round(EventCountZero['Data_'+suffix])))+" & "+str(int(round(EventCountOne['Data_'+suffix])))+" & "+str(int(round(EventCountGEOne['Data_'+suffix])))+" & "+str(int(round(EventCountGETwo['Data_'+suffix])))+" & "+str(int(round(EventCountFinal['Data_'+suffix])))+"   \\\ \hline\n") 
@@ -288,7 +290,7 @@ def FillTables(channel, varName, bin, low, high):
     txtfile.write("$tW$  &"+str(int(round(EventCountPre['T_tW'])))+" & "+str(int(round(EventCountZero['T_tW'])))+" & "+str(int(round(EventCountOne['T_tW'])))+" & "+str(int(round(EventCountGEOne['T_tW'])))+" & "+str(int(round(EventCountGETwo['T_tW'])))+"  & "+str(int(round(EventCountFinal['T_tW'])))+"  \\\ \n")
     txtfile.write("$\overline{t}W$ &"+str(int(round(EventCountPre['Tbar_tW'])))+" & "+str(int(round(EventCountZero['Tbar_tW'])))+" & "+str(int(round(EventCountOne['Tbar_tW'])))+" & "+str(int(round(EventCountGEOne['Tbar_tW'])))+" & "+str(int(round(EventCountGETwo['Tbar_tW'])))+"  & "+str(int(round(EventCountFinal['Tbar_tW'])))+"  \\\ \n")
     txtfile.write("$tb$ & "+str(int(round(EventCountPre['T_s'])))+" & "+str(int(round(EventCountZero['T_s'])))+" & "+str(int(round(EventCountOne['T_s'])))+" & "+str(int(round(EventCountGEOne['T_s'])))+" & "+str(int(round(EventCountGETwo['T_s'])))+" & "+str(int(round(EventCountFinal['T_s'])))+"    \\\ \n")
-    txtfile.write("$tb$ & "+str(int(round(EventCountPre['Tbar_s'])))+" & "+str(int(round(EventCountZero['Tbar_s'])))+" & "+str(int(round(EventCountOne['Tbar_s'])))+" & "+str(int(round(EventCountGEOne['Tbar_s'])))+" & "+str(int(round(EventCountGETwo['Tbar_s'])))+" & "+str(int(round(EventCountFinal['Tbar_s'])))+"    \\\ \n")
+    txtfile.write("$\overline{t}b$ & "+str(int(round(EventCountPre['Tbar_s'])))+" & "+str(int(round(EventCountZero['Tbar_s'])))+" & "+str(int(round(EventCountOne['Tbar_s'])))+" & "+str(int(round(EventCountGEOne['Tbar_s'])))+" & "+str(int(round(EventCountGETwo['Tbar_s'])))+" & "+str(int(round(EventCountFinal['Tbar_s'])))+"    \\\ \n")
     txtfile.write("$W(\\rightarrow)\ell\\nu$+light jets &"+str(int(round(EventCountPre['WJets'])))+" & "+str(int(round(EventCountZero['WJets'])))+" & "+str(int(round(EventCountOne['WJets'])))+" & "+str(int(round(EventCountGEOne['WJets'])))+" & "+str(int(round(EventCountGETwo['WJets'])))+"  & "+str(int(round(EventCountFinal['WJets'])))+"  \\\ \n")
     txtfile.write("$W(\\rightarrow)\ell\\nu$+c jets &"+str(int(round(EventCountPre['Wcc'])))+" & "+str(int(round(EventCountZero['Wcc'])))+" & "+str(int(round(EventCountOne['Wcc'])))+" & "+str(int(round(EventCountGEOne['Wcc'])))+" & "+str(int(round(EventCountGETwo['Wcc'])))+"  & "+str(int(round(EventCountFinal['Wcc'])))+"  \\\ \n")
     txtfile.write("$W(\\rightarrow)\ell\\nu$+b jets &"+str(int(round(EventCountPre['Wbb'])))+" & "+str(int(round(EventCountZero['Wbb'])))+" & "+str(int(round(EventCountOne['Wbb'])))+" & "+str(int(round(EventCountGEOne['Wbb'])))+" & "+str(int(round(EventCountGETwo['Wbb'])))+"  & "+str(int(round(EventCountFinal['Wbb'])))+"  \\\ \n")
@@ -324,26 +326,36 @@ def FillTables(channel, varName, bin, low, high):
     txtfile.write("\\begin{tabular}{l|c|c|c|c|c|c} \n")
     txtfile.write("\hline \n")
     txtfile.write("Process    & \multicolumn{6}{c}{Number of Events} \\\ \hline\hline \n")
-    txtfile.write("   & & \multicolumn{4}{c|}{Number of b-tagged jets} & $p_{T}^{top}>$ 75,$p_{T}^{jet1,jet2}>$100 \\\ \n")
+    txtfile.write("   & & \multicolumn{4}{c|}{Number of b-tagged jets} & $p_{T}^{top}>$ 85,$p_{T}^{jet1,jet2}>$140 \\\ \n")
     txtfile.write(" & Pre selection & = 0 & = 1\n")
     txtfile.write("& $>$ 0 & $>$ 1 & $>$0 b-tagged jet      \\\ \hline \n")
     txtfile.write("\multicolumn{6}{l}{\\bf Signal:}     \\\ \hline \n")
     txtfile.write("$tb$ & "+str(int(round(EventCountPre['T_s'])))+" & "+str(int(round(EventCountZero['T_s'])))+" & "+str(int(round(EventCountOne['T_s'])))+" & "+str(int(round(EventCountGEOne['T_s'])))+" & "+str(int(round(EventCountGETwo['T_s'])))+" & "+str(int(round(EventCountFinal['T_s'])))+"    \\\ \n")
     txtfile.write("{\underline {\\bf ${\PWpr}_R\\rightarrow tb$}} & &  &  & & \\\ \n")
-    #txtfile.write("M(${\PWpr}_R=$)800 GeV &"+str(int(round(EventCountPre['Wprime800Right'])))+" & "+str(int(round(EventCountZero['Wprime800Right'])))+" & "+str(int(round(EventCountOne['Wprime800Right'])))+" & "+str(int(round(EventCountGEOne['Wprime800Right'])))+" & "+str(int(round(EventCountGETwo['Wprime800Right'])))+" & "+str(int(round(EventCountFinal['Wprime800Right'])))+"   \\\ \n")
-    #txtfile.write("M(${\PWpr}_R=$)900 GeV &"+str(int(round(EventCountPre['Wprime900Right'])))+" & "+str(int(round(EventCountZero['Wprime900Right'])))+" & "+str(int(round(EventCountOne['Wprime900Right'])))+" & "+str(int(round(EventCountGEOne['Wprime900Right'])))+" & "+str(int(round(EventCountGETwo['Wprime900Right'])))+" & "+str(int(round(EventCountFinal['Wprime900Right'])))+"   \\\ \n")
-    #txtfile.write("M(${\PWpr}_R=$)1000 GeV &"+str(int(round(EventCountPre['Wprime1000Right'])))+" & "+str(int(round(EventCountZero['Wprime1000Right'])))+" & "+str(int(round(EventCountOne['Wprime1000Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1000Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1000Right'])))+" & "+str(int(round(EventCountFinal['Wprime1000Right'])))+"   \\\ \n")
-    #txtfile.write("M(${\PWpr}_R=$)1100 GeV &"+str(int(round(EventCountPre['Wprime1100Right'])))+" & "+str(int(round(EventCountZero['Wprime1100Right'])))+" & "+str(int(round(EventCountOne['Wprime1100Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1100Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1100Right'])))+" & "+str(int(round(EventCountFinal['Wprime1100Right'])))+"   \\\ \n")
-    #txtfile.write("M(${\PWpr}_R=$)1200 GeV &"+str(int(round(EventCountPre['Wprime1200Right'])))+" & "+str(int(round(EventCountZero['Wprime1200Right'])))+" & "+str(int(round(EventCountOne['Wprime1200Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1200Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1200Right'])))+" & "+str(int(round(EventCountFinal['Wprime1200Right'])))+"   \\\ \n")
-    #txtfile.write("M(${\PWpr}_R=$)1300 GeV &"+str(int(round(EventCountPre['Wprime1300Right'])))+" & "+str(int(round(EventCountZero['Wprime1300Right'])))+" & "+str(int(round(EventCountOne['Wprime1300Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1300Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1300Right'])))+" & "+str(int(round(EventCountFinal['Wprime1300Right'])))+"   \\\ \n")
-    #txtfile.write("M(${\PWpr}_R=$)1400 GeV &"+str(int(round(EventCountPre['Wprime1400Right'])))+" & "+str(int(round(EventCountZero['Wprime1400Right'])))+" & "+str(int(round(EventCountOne['Wprime1400Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1400Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1400Right'])))+" & "+str(int(round(EventCountFinal['Wprime1400Right'])))+"   \\\ \n")
-    txtfile.write("M(${\PWpr}_R=$)1500 GeV &"+str(int(round(EventCountPre['Wprime1500Right'])))+" & "+str(int(round(EventCountZero['Wprime1500Right'])))+" & "+str(int(round(EventCountOne['Wprime1500Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1500Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1500Right'])))+" & "+str(int(round(EventCountFinal['Wprime1500Right'])))+"   \\\ \n")
-    #txtfile.write("M(${\PWpr}_R=$)1600 GeV &"+str(int(round(EventCountPre['Wprime1600Right'])))+" & "+str(int(round(EventCountZero['Wprime1600Right'])))+" & "+str(int(round(EventCountOne['Wprime1600Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1600Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1600Right'])))+" & "+str(int(round(EventCountFinal['Wprime1600Right'])))+"   \\\ \n")
-    txtfile.write("M(${\PWpr}_R=$)1700 GeV &"+str(int(round(EventCountPre['Wprime1700Right'])))+" & "+str(int(round(EventCountZero['Wprime1700Right'])))+" & "+str(int(round(EventCountOne['Wprime1700Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1700Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1700Right'])))+" & "+str(int(round(EventCountFinal['Wprime1700Right'])))+"   \\\ \n")
-    txtfile.write("M(${\PWpr}_R=$)1900 GeV &"+str(int(round(EventCountPre['Wprime1900Right'])))+" & "+str(int(round(EventCountZero['Wprime1900Right'])))+" & "+str(int(round(EventCountOne['Wprime1900Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1900Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1900Right'])))+" & "+str(int(round(EventCountFinal['Wprime1900Right'])))+"   \\\ \n")
-    txtfile.write("M(${\PWpr}_R=$)2100 GeV &"+str(int(round(EventCountPre['Wprime2100Right'])))+" & "+str(int(round(EventCountZero['Wprime2100Right'])))+" & "+str(int(round(EventCountOne['Wprime2100Right'])))+" & "+str(int(round(EventCountGEOne['Wprime2100Right'])))+" & "+str(int(round(EventCountGETwo['Wprime2100Right'])))+" & "+str(int(round(EventCountFinal['Wprime2100Right'])))+"   \\\ \n")
-    txtfile.write("M(${\PWpr}_R=$)2300 GeV &"+str(int(round(EventCountPre['Wprime2300Right'])))+" & "+str(int(round(EventCountZero['Wprime2300Right'])))+" & "+str(int(round(EventCountOne['Wprime2300Right'])))+" & "+str(int(round(EventCountGEOne['Wprime2300Right'])))+" & "+str(int(round(EventCountGETwo['Wprime2300Right'])))+" & "+str(int(round(EventCountFinal['Wprime2300Right'])))+"   \\\ \n")
-    #txtfile.write("M(${\PWpr}_R=$)2500 GeV &"+str(int(round(EventCountPre['Wprime2500Right'])))+" & "+str(int(round(EventCountZero['Wprime2500Right'])))+" & "+str(int(round(EventCountOne['Wprime2500Right'])))+" & "+str(int(round(EventCountGEOne['Wprime2500Right'])))+" & "+str(int(round(EventCountGETwo['Wprime2500Right'])))+" & "+str(int(round(EventCountFinal['Wprime2500Right'])))+"   \\\ \n")
+    #txtfile.write("M(${\PWpr}_R=$) 800 GeV &"+str(int(round(EventCountPre['Wprime800Right'])))+" & "+str(int(round(EventCountZero['Wprime800Right'])))+" & "+str(int(round(EventCountOne['Wprime800Right'])))+" & "+str(int(round(EventCountGEOne['Wprime800Right'])))+" & "+str(int(round(EventCountGETwo['Wprime800Right'])))+" & "+str(int(round(EventCountFinal['Wprime800Right'])))+"   \\\ \n")
+    #txtfile.write("M(${\PWpr}_R=$) 900 GeV &"+str(int(round(EventCountPre['Wprime900Right'])))+" & "+str(int(round(EventCountZero['Wprime900Right'])))+" & "+str(int(round(EventCountOne['Wprime900Right'])))+" & "+str(int(round(EventCountGEOne['Wprime900Right'])))+" & "+str(int(round(EventCountGETwo['Wprime900Right'])))+" & "+str(int(round(EventCountFinal['Wprime900Right'])))+"   \\\ \n")
+    #txtfile.write("M(${\PWpr}_R=$) 1000 GeV &"+str(int(round(EventCountPre['Wprime1000Right'])))+" & "+str(int(round(EventCountZero['Wprime1000Right'])))+" & "+str(int(round(EventCountOne['Wprime1000Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1000Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1000Right'])))+" & "+str(int(round(EventCountFinal['Wprime1000Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 1100 GeV &"+str(int(round(EventCountPre['Wprime1100Right'])))+" & "+str(int(round(EventCountZero['Wprime1100Right'])))+" & "+str(int(round(EventCountOne['Wprime1100Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1100Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1100Right'])))+" & "+str(int(round(EventCountFinal['Wprime1100Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 1200 GeV &"+str(int(round(EventCountPre['Wprime1200Right'])))+" & "+str(int(round(EventCountZero['Wprime1200Right'])))+" & "+str(int(round(EventCountOne['Wprime1200Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1200Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1200Right'])))+" & "+str(int(round(EventCountFinal['Wprime1200Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 1300 GeV &"+str(int(round(EventCountPre['Wprime1300Right'])))+" & "+str(int(round(EventCountZero['Wprime1300Right'])))+" & "+str(int(round(EventCountOne['Wprime1300Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1300Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1300Right'])))+" & "+str(int(round(EventCountFinal['Wprime1300Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 1400 GeV &"+str(int(round(EventCountPre['Wprime1400Right'])))+" & "+str(int(round(EventCountZero['Wprime1400Right'])))+" & "+str(int(round(EventCountOne['Wprime1400Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1400Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1400Right'])))+" & "+str(int(round(EventCountFinal['Wprime1400Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 1500 GeV &"+str(int(round(EventCountPre['Wprime1500Right'])))+" & "+str(int(round(EventCountZero['Wprime1500Right'])))+" & "+str(int(round(EventCountOne['Wprime1500Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1500Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1500Right'])))+" & "+str(int(round(EventCountFinal['Wprime1500Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 1600 GeV &"+str(int(round(EventCountPre['Wprime1600Right'])))+" & "+str(int(round(EventCountZero['Wprime1600Right'])))+" & "+str(int(round(EventCountOne['Wprime1600Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1600Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1600Right'])))+" & "+str(int(round(EventCountFinal['Wprime1600Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 1700 GeV &"+str(int(round(EventCountPre['Wprime1700Right'])))+" & "+str(int(round(EventCountZero['Wprime1700Right'])))+" & "+str(int(round(EventCountOne['Wprime1700Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1700Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1700Right'])))+" & "+str(int(round(EventCountFinal['Wprime1700Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 1800 GeV &"+str(int(round(EventCountPre['Wprime1800Right'])))+" & "+str(int(round(EventCountZero['Wprime1800Right'])))+" & "+str(int(round(EventCountOne['Wprime1800Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1800Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1800Right'])))+" & "+str(int(round(EventCountFinal['Wprime1800Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 1900 GeV &"+str(int(round(EventCountPre['Wprime1900Right'])))+" & "+str(int(round(EventCountZero['Wprime1900Right'])))+" & "+str(int(round(EventCountOne['Wprime1900Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1900Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1900Right'])))+" & "+str(int(round(EventCountFinal['Wprime1900Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 2000 GeV &"+str(int(round(EventCountPre['Wprime2000Right'])))+" & "+str(int(round(EventCountZero['Wprime2000Right'])))+" & "+str(int(round(EventCountOne['Wprime2000Right'])))+" & "+str(int(round(EventCountGEOne['Wprime2000Right'])))+" & "+str(int(round(EventCountGETwo['Wprime2000Right'])))+" & "+str(int(round(EventCountFinal['Wprime2000Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 2100 GeV &"+str(int(round(EventCountPre['Wprime2100Right'])))+" & "+str(int(round(EventCountZero['Wprime2100Right'])))+" & "+str(int(round(EventCountOne['Wprime2100Right'])))+" & "+str(int(round(EventCountGEOne['Wprime2100Right'])))+" & "+str(int(round(EventCountGETwo['Wprime2100Right'])))+" & "+str(int(round(EventCountFinal['Wprime2100Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 2200 GeV &"+str(int(round(EventCountPre['Wprime2200Right'])))+" & "+str(int(round(EventCountZero['Wprime2200Right'])))+" & "+str(int(round(EventCountOne['Wprime2200Right'])))+" & "+str(int(round(EventCountGEOne['Wprime2200Right'])))+" & "+str(int(round(EventCountGETwo['Wprime2200Right'])))+" & "+str(int(round(EventCountFinal['Wprime2200Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 2300 GeV &"+str(int(round(EventCountPre['Wprime2300Right'])))+" & "+str(int(round(EventCountZero['Wprime2300Right'])))+" & "+str(int(round(EventCountOne['Wprime2300Right'])))+" & "+str(int(round(EventCountGEOne['Wprime2300Right'])))+" & "+str(int(round(EventCountGETwo['Wprime2300Right'])))+" & "+str(int(round(EventCountFinal['Wprime2300Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 2500 GeV &"+str(int(round(EventCountPre['Wprime2500Right'])))+" & "+str(int(round(EventCountZero['Wprime2500Right'])))+" & "+str(int(round(EventCountOne['Wprime2500Right'])))+" & "+str(int(round(EventCountGEOne['Wprime2500Right'])))+" & "+str(int(round(EventCountGETwo['Wprime2500Right'])))+" & "+str(int(round(EventCountFinal['Wprime2500Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 2400 GeV &"+str(int(round(EventCountPre['Wprime2400Right'])))+" & "+str(int(round(EventCountZero['Wprime2400Right'])))+" & "+str(int(round(EventCountOne['Wprime2400Right'])))+" & "+str(int(round(EventCountGEOne['Wprime2400Right'])))+" & "+str(int(round(EventCountGETwo['Wprime2400Right'])))+" & "+str(int(round(EventCountFinal['Wprime2400Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 2600 GeV &"+str(int(round(EventCountPre['Wprime2600Right'])))+" & "+str(int(round(EventCountZero['Wprime2600Right'])))+" & "+str(int(round(EventCountOne['Wprime2600Right'])))+" & "+str(int(round(EventCountGEOne['Wprime2600Right'])))+" & "+str(int(round(EventCountGETwo['Wprime2600Right'])))+" & "+str(int(round(EventCountFinal['Wprime2600Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 2700 GeV &"+str(int(round(EventCountPre['Wprime2700Right'])))+" & "+str(int(round(EventCountZero['Wprime2700Right'])))+" & "+str(int(round(EventCountOne['Wprime2700Right'])))+" & "+str(int(round(EventCountGEOne['Wprime2700Right'])))+" & "+str(int(round(EventCountGETwo['Wprime2700Right'])))+" & "+str(int(round(EventCountFinal['Wprime2700Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 2800 GeV &"+str(int(round(EventCountPre['Wprime2800Right'])))+" & "+str(int(round(EventCountZero['Wprime2800Right'])))+" & "+str(int(round(EventCountOne['Wprime2800Right'])))+" & "+str(int(round(EventCountGEOne['Wprime2800Right'])))+" & "+str(int(round(EventCountGETwo['Wprime2800Right'])))+" & "+str(int(round(EventCountFinal['Wprime2800Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 2900 GeV &"+str(int(round(EventCountPre['Wprime2900Right'])))+" & "+str(int(round(EventCountZero['Wprime2900Right'])))+" & "+str(int(round(EventCountOne['Wprime2900Right'])))+" & "+str(int(round(EventCountGEOne['Wprime2900Right'])))+" & "+str(int(round(EventCountGETwo['Wprime2900Right'])))+" & "+str(int(round(EventCountFinal['Wprime2900Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 3000 GeV &"+str(int(round(EventCountPre['Wprime3000Right'])))+" & "+str(int(round(EventCountZero['Wprime3000Right'])))+" & "+str(int(round(EventCountOne['Wprime3000Right'])))+" & "+str(int(round(EventCountGEOne['Wprime3000Right'])))+" & "+str(int(round(EventCountGETwo['Wprime3000Right'])))+" & "+str(int(round(EventCountFinal['Wprime3000Right'])))+"   \\\ \n")
+
     '''
     txtfile.write("{\underline {\\bf ${\PWpr}_L\\rightarrow tb$}}  &  & &  & & \\\ \n")
     txtfile.write("M(${\PWpr}_L=$)800 GeV &"+str(int(round(EventCountPre['Wprime_800_LeftWprime'])))+" & "+str(int(round(EventCountZero['Wprime_800_LeftWprime'])))+" & "+str(int(round(EventCountOne['Wprime_800_LeftWprime'])))+" & "+str(int(round(EventCountGEOne['Wprime_800_LeftWprime'])))+" & "+str(int(round(EventCountGETwo['Wprime_800_LeftWprime'])))+" & "+str(int(round(EventCountFinal['Wprime_800_LeftWprime'])))+"    \\\ \n")

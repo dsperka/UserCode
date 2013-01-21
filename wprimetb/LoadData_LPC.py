@@ -19,11 +19,11 @@ Backgrounds = ['WJets','WW','TTbar_Madgraph','TTbar_Powheg','ZJets_M50','T_t','T
 for bg in Backgrounds:
     RootFiles[bg] = TFile(outdir+bg+".root")
     RootFiles[bg+'_JESUP'] = TFile(outdir+"JESUP/"+bg+"_JESUP.root")
-    RootFiles[bg+'_JESDOWN'] = TFile(outdir+"JESUP/"+bg+"_JESUP.root")
+    RootFiles[bg+'_JESDOWN'] = TFile(outdir+"JESDOWN/"+bg+"_JESDOWN.root")
     RootFiles[bg+'_JERUP'] = TFile(outdir+"JERUP/"+bg+"_JERUP.root")
-    RootFiles[bg+'_JERDOWN'] = TFile(outdir+"JERUP/"+bg+"_JERUP.root")
+    RootFiles[bg+'_JERDOWN'] = TFile(outdir+"JERDOWN/"+bg+"_JERDOWN.root")
     RootFiles[bg+'_BTAGUP'] = TFile(outdir+"BTAGUP/"+bg+"_BTAGUP.root")
-    RootFiles[bg+'_BTAGDOWN'] = TFile(outdir+"BTAGUP/"+bg+"_BTAGUP.root")
+    RootFiles[bg+'_BTAGDOWN'] = TFile(outdir+"BTAGDOWN/"+bg+"_BTAGDOWN.root")
 
     Trees[bg] = RootFiles[bg].Get("ljmet")
     Trees[bg+'_JESUP'] = RootFiles[bg+'_JESUP'].Get("ljmet")
