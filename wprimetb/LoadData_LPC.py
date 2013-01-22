@@ -1,21 +1,22 @@
 from ROOT import TFile
 
-lumi_el = 12211.0 
-lumi_mu = 12211.0 
+lumi_el = 19490.0 
+lumi_mu = 19490.0 
 
-lumiPlot_el= '12.2'
-lumiPlot_mu= '12.2'
-outdir = "/uscms_data/d2/dsperka/8TeV/Samples/04Jan_All/"
+lumiPlot_el= '19.5'
+lumiPlot_mu= '19.5'
+
+outdir = "/uscms_data/d2/dsperka/8TeV/Samples/16Jan_All/"
 ######################################################
 RootFiles = {}
 Trees = {}
 
-RootFiles['Data_el'] = TFile(outdir+"Data_el_12pt2fb.root")
-RootFiles['Data_mu'] = TFile(outdir+"Data_mu_12pt2fb.root")
+RootFiles['Data_el'] = TFile(outdir+"Data_el_19pt5fb.root")
+RootFiles['Data_mu'] = TFile(outdir+"Data_mu_19pt5fb.root")
 Trees['Data_el']  = RootFiles['Data_el'].Get("ljmet")
 Trees['Data_mu']  = RootFiles['Data_mu'].Get("ljmet")
 
-Backgrounds = ['WJets','WW','TTbar_Madgraph','TTbar_Powheg','ZJets_M50','T_t','Tbar_t','T_tW','Tbar_tW','T_s','Tbar_s']
+Backgrounds = ['WJets','WW','TTbar_Madgraph','TTbar_Powheg','ZJets_M50','T_t','Tbar_t','T_tW','Tbar_tW','T_s','Tbar_s','QCD_Pt_80_170_EM','QCD_Pt_170_250_EM','QCD_Pt_250_350_EM','QCD_Pt_350_EM']
 for bg in Backgrounds:
     RootFiles[bg] = TFile(outdir+bg+".root")
     RootFiles[bg+'_JESUP'] = TFile(outdir+"JESUP/"+bg+"_JESUP.root")
@@ -43,7 +44,7 @@ Trees['TTbar_Madgraph_MATCHINGDOWN'] = RootFiles['TTbar_Madgraph_MATCHINGDOWN'].
 Trees['TTbar_Madgraph_SCALEUP'] = RootFiles['TTbar_Madgraph_SCALEUP'].Get("ljmet")
 Trees['TTbar_Madgraph_SCALEDOWN'] = RootFiles['TTbar_Madgraph_SCALEDOWN'].Get("ljmet")
 
-masses = ['1100','1200','1300','1400','1500','1600','1700','1800','1900','2000','2100','2200','2300','2400','2500','2600','2700','2800','2900','3000']
+masses = ['800','900','1000','1100','1200','1300','1400','1500','1600','1700','1800','1900','2000','2100','2200','2300','2400','2500','2600','2700','2800','2900','3000']
 
 for mass in masses:
     for coup in ['Right','Left','Mix']:
@@ -78,6 +79,11 @@ Nevents['T_t'] = 3758227.0
 Nevents['Tbar_t'] = 1935072.0
 Nevents['T_s'] = 259961.0
 Nevents['Tbar_s'] = 139974.0
+Nevents['QCD_Pt_80_170_EM'] =  34542763.0 
+Nevents['QCD_Pt_170_250_EM'] = 31697066.0
+Nevents['QCD_Pt_250_350_EM'] = 34611322.0
+Nevents['QCD_Pt_350_EM'] = 34080562.0
+
 
 Nevents['TTbar_Madgraph_MATCHINGUP'] = 5415010.0
 Nevents['TTbar_Madgraph_MATCHINGDOWN'] = 5476728.0
@@ -85,8 +91,8 @@ Nevents['TTbar_Madgraph_SCALEUP'] = 5009488.0
 Nevents['TTbar_Madgraph_SCALEDOWN'] = 5387181.0
 
 Nevents['Wprime800Right'] = 920654.0
-Nevents['Wprime900Right'] = 1.0
-Nevents['Wprime1000Right'] = 1.0
+Nevents['Wprime900Right'] = 942816.0
+Nevents['Wprime1000Right'] = 907958.0
 Nevents['Wprime1100Right'] = 831508.0
 Nevents['Wprime1200Right'] = 965528.0
 Nevents['Wprime1300Right'] = 881046.0
@@ -170,7 +176,7 @@ for sys in ['JESUP','JESDOWN','JERUP','JERDOWN','BTAGUP','BTAGDOWN']:
 
 #############################################
 xsec = {}
-xsec['WJets'] = 36257.2 # fixme, adding zjets number
+xsec['WJets'] = 37503.0 # fixme, adding zjets number
 xsec['WW'] = 54.838 # CTEQ
 #xsec['TTbar_Madgraph'] = 225.197 # MCFM NLO
 #xsec['TTbar_Powheg'] = 225.197 # MCFM NLO
@@ -189,6 +195,11 @@ xsec['TTbar_Madgraph_MATCHINGUP'] = 234.0
 xsec['TTbar_Madgraph_MATCHINGDOWN'] = 234.0
 xsec['TTbar_Madgraph_SCALEUP'] = 234.0
 xsec['TTbar_Madgraph_SCALEDOWN'] = 234.0
+
+xsec['QCD_Pt_80_170_EM'] = 1191000.0*0.1539
+xsec['QCD_Pt_170_250_EM'] = 30990.0*0.148
+xsec['QCD_Pt_250_350_EM'] = 4250.0*0.131
+xsec['QCD_Pt_350_EM'] = 810.0*0.11
 
 xsec['Wprime800Right'] = 2.3022
 xsec['Wprime900Right'] = 1.3818
