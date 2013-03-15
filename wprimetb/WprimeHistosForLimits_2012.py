@@ -23,52 +23,56 @@ List_Bg = ['WJets','WW','TTbar_Madgraph','ZJets_M50','T_t','Tbar_t','T_tW','Tbar
 ]
 
 
-List_Right = ['Wprime1100Right','Wprime1200Right','Wprime1300Right','Wprime1400Right','Wprime1500Right','Wprime1600Right','Wprime1700Right','Wprime1800Right','Wprime1900Right','Wprime2000Right','Wprime2100Right','Wprime2200Right','Wprime2300Right','Wprime2400Right','Wprime2500Right','Wprime2600Right','Wprime2700Right','Wprime2800Right','Wprime2900Right','Wprime3000Right',
-'Wprime1100Right_JESUP','Wprime1200Right_JESUP','Wprime1300Right_JESUP','Wprime1400Right_JESUP','Wprime1500Right_JESUP','Wprime1600Right_JESUP','Wprime1700Right_JESUP','Wprime1800Right_JESUP','Wprime1900Right_JESUP','Wprime2000Right_JESUP','Wprime2100Right_JESUP','Wprime2200Right_JESUP','Wprime2300Right_JESUP','Wprime2400Right_JESUP','Wprime2500Right_JESUP','Wprime2600Right_JESUP','Wprime2700Right_JESUP','Wprime2800Right_JESUP','Wprime2900Right_JESUP','Wprime3000Right_JESUP', 
-'Wprime1100Right_JESDOWN','Wprime1200Right_JESDOWN','Wprime1300Right_JESDOWN','Wprime1400Right_JESDOWN','Wprime1500Right_JESDOWN','Wprime1600Right_JESDOWN','Wprime1700Right_JESDOWN','Wprime1800Right_JESDOWN','Wprime1900Right_JESDOWN','Wprime2000Right_JESDOWN','Wprime2100Right_JESDOWN','Wprime2200Right_JESDOWN','Wprime2300Right_JESDOWN','Wprime2400Right_JESDOWN','Wprime2500Right_JESDOWN','Wprime2600Right_JESDOWN','Wprime2700Right_JESDOWN','Wprime2800Right_JESDOWN','Wprime2900Right_JESDOWN','Wprime3000Right_JESDOWN', 
-'Wprime1100Right_JERUP','Wprime1200Right_JERUP','Wprime1300Right_JERUP','Wprime1400Right_JERUP','Wprime1500Right_JERUP','Wprime1600Right_JERUP','Wprime1700Right_JERUP','Wprime1800Right_JERUP','Wprime1900Right_JERUP','Wprime2000Right_JERUP','Wprime2100Right_JERUP','Wprime2200Right_JERUP','Wprime2300Right_JERUP','Wprime2400Right_JERUP','Wprime2500Right_JERUP','Wprime2600Right_JERUP','Wprime2700Right_JERUP','Wprime2800Right_JERUP','Wprime2900Right_JERUP','Wprime3000Right_JERUP', 
-'Wprime1100Right_JERDOWN','Wprime1200Right_JERDOWN','Wprime1300Right_JERDOWN','Wprime1400Right_JERDOWN','Wprime1500Right_JERDOWN','Wprime1600Right_JERDOWN','Wprime1700Right_JERDOWN','Wprime1800Right_JERDOWN','Wprime1900Right_JERDOWN','Wprime2000Right_JERDOWN','Wprime2100Right_JERDOWN','Wprime2200Right_JERDOWN','Wprime2300Right_JERDOWN','Wprime2400Right_JERDOWN','Wprime2500Right_JERDOWN','Wprime2600Right_JERDOWN','Wprime2700Right_JERDOWN','Wprime2800Right_JERDOWN','Wprime2900Right_JERDOWN','Wprime3000Right_JERDOWN', 
-'Wprime1100Right_BTAGUP','Wprime1200Right_BTAGUP','Wprime1300Right_BTAGUP','Wprime1400Right_BTAGUP','Wprime1500Right_BTAGUP','Wprime1600Right_BTAGUP','Wprime1700Right_BTAGUP','Wprime1800Right_BTAGUP','Wprime1900Right_BTAGUP','Wprime2000Right_BTAGUP','Wprime2100Right_BTAGUP','Wprime2200Right_BTAGUP','Wprime2300Right_BTAGUP','Wprime2400Right_BTAGUP','Wprime2500Right_BTAGUP','Wprime2600Right_BTAGUP','Wprime2700Right_BTAGUP','Wprime2800Right_BTAGUP','Wprime2900Right_BTAGUP','Wprime3000Right_BTAGUP', 
-'Wprime1100Right_BTAGDOWN','Wprime1200Right_BTAGDOWN','Wprime1300Right_BTAGDOWN','Wprime1400Right_BTAGDOWN','Wprime1500Right_BTAGDOWN','Wprime1600Right_BTAGDOWN','Wprime1700Right_BTAGDOWN','Wprime1800Right_BTAGDOWN','Wprime1900Right_BTAGDOWN','Wprime2000Right_BTAGDOWN','Wprime2100Right_BTAGDOWN','Wprime2200Right_BTAGDOWN','Wprime2300Right_BTAGDOWN','Wprime2400Right_BTAGDOWN','Wprime2500Right_BTAGDOWN','Wprime2600Right_BTAGDOWN','Wprime2700Right_BTAGDOWN','Wprime2800Right_BTAGDOWN','Wprime2900Right_BTAGDOWN','Wprime3000Right_BTAGDOWN', 
+List_Right = ['Wprime800Right','Wprime900Right','Wprime1000Right','Wprime1100Right','Wprime1200Right','Wprime1300Right','Wprime1400Right','Wprime1500Right','Wprime1600Right','Wprime1700Right','Wprime1800Right','Wprime1900Right','Wprime2000Right','Wprime2100Right','Wprime2200Right','Wprime2300Right','Wprime2400Right','Wprime2500Right','Wprime2600Right','Wprime2700Right','Wprime2800Right','Wprime2900Right','Wprime3000Right',
+'Wprime800Right_JESUP','Wprime900Right_JESUP','Wprime1000Right_JESUP','Wprime1100Right_JESUP','Wprime1200Right_JESUP','Wprime1300Right_JESUP','Wprime1400Right_JESUP','Wprime1500Right_JESUP','Wprime1600Right_JESUP','Wprime1700Right_JESUP','Wprime1800Right_JESUP','Wprime1900Right_JESUP','Wprime2000Right_JESUP','Wprime2100Right_JESUP','Wprime2200Right_JESUP','Wprime2300Right_JESUP','Wprime2400Right_JESUP','Wprime2500Right_JESUP','Wprime2600Right_JESUP','Wprime2700Right_JESUP','Wprime2800Right_JESUP','Wprime2900Right_JESUP','Wprime3000Right_JESUP', 
+'Wprime800Right_JESDOWN','Wprime900Right_JESDOWN','Wprime1000Right_JESDOWN','Wprime1100Right_JESDOWN','Wprime1200Right_JESDOWN','Wprime1300Right_JESDOWN','Wprime1400Right_JESDOWN','Wprime1500Right_JESDOWN','Wprime1600Right_JESDOWN','Wprime1700Right_JESDOWN','Wprime1800Right_JESDOWN','Wprime1900Right_JESDOWN','Wprime2000Right_JESDOWN','Wprime2100Right_JESDOWN','Wprime2200Right_JESDOWN','Wprime2300Right_JESDOWN','Wprime2400Right_JESDOWN','Wprime2500Right_JESDOWN','Wprime2600Right_JESDOWN','Wprime2700Right_JESDOWN','Wprime2800Right_JESDOWN','Wprime2900Right_JESDOWN','Wprime3000Right_JESDOWN', 
+'Wprime800Right_JERUP','Wprime900Right_JERUP','Wprime1000Right_JERUP','Wprime1100Right_JERUP','Wprime1200Right_JERUP','Wprime1300Right_JERUP','Wprime1400Right_JERUP','Wprime1500Right_JERUP','Wprime1600Right_JERUP','Wprime1700Right_JERUP','Wprime1800Right_JERUP','Wprime1900Right_JERUP','Wprime2000Right_JERUP','Wprime2100Right_JERUP','Wprime2200Right_JERUP','Wprime2300Right_JERUP','Wprime2400Right_JERUP','Wprime2500Right_JERUP','Wprime2600Right_JERUP','Wprime2700Right_JERUP','Wprime2800Right_JERUP','Wprime2900Right_JERUP','Wprime3000Right_JERUP', 
+'Wprime800Right_JERDOWN','Wprime900Right_JERDOWN','Wprime1000Right_JERDOWN','Wprime1100Right_JERDOWN','Wprime1200Right_JERDOWN','Wprime1300Right_JERDOWN','Wprime1400Right_JERDOWN','Wprime1500Right_JERDOWN','Wprime1600Right_JERDOWN','Wprime1700Right_JERDOWN','Wprime1800Right_JERDOWN','Wprime1900Right_JERDOWN','Wprime2000Right_JERDOWN','Wprime2100Right_JERDOWN','Wprime2200Right_JERDOWN','Wprime2300Right_JERDOWN','Wprime2400Right_JERDOWN','Wprime2500Right_JERDOWN','Wprime2600Right_JERDOWN','Wprime2700Right_JERDOWN','Wprime2800Right_JERDOWN','Wprime2900Right_JERDOWN','Wprime3000Right_JERDOWN', 
+'Wprime800Right_BTAGUP','Wprime900Right_BTAGUP','Wprime1000Right_BTAGUP','Wprime1100Right_BTAGUP','Wprime1200Right_BTAGUP','Wprime1300Right_BTAGUP','Wprime1400Right_BTAGUP','Wprime1500Right_BTAGUP','Wprime1600Right_BTAGUP','Wprime1700Right_BTAGUP','Wprime1800Right_BTAGUP','Wprime1900Right_BTAGUP','Wprime2000Right_BTAGUP','Wprime2100Right_BTAGUP','Wprime2200Right_BTAGUP','Wprime2300Right_BTAGUP','Wprime2400Right_BTAGUP','Wprime2500Right_BTAGUP','Wprime2600Right_BTAGUP','Wprime2700Right_BTAGUP','Wprime2800Right_BTAGUP','Wprime2900Right_BTAGUP','Wprime3000Right_BTAGUP', 
+'Wprime800Right_BTAGDOWN','Wprime900Right_BTAGDOWN','Wprime1000Right_BTAGDOWN','Wprime1100Right_BTAGDOWN','Wprime1200Right_BTAGDOWN','Wprime1300Right_BTAGDOWN','Wprime1400Right_BTAGDOWN','Wprime1500Right_BTAGDOWN','Wprime1600Right_BTAGDOWN','Wprime1700Right_BTAGDOWN','Wprime1800Right_BTAGDOWN','Wprime1900Right_BTAGDOWN','Wprime2000Right_BTAGDOWN','Wprime2100Right_BTAGDOWN','Wprime2200Right_BTAGDOWN','Wprime2300Right_BTAGDOWN','Wprime2400Right_BTAGDOWN','Wprime2500Right_BTAGDOWN','Wprime2600Right_BTAGDOWN','Wprime2700Right_BTAGDOWN','Wprime2800Right_BTAGDOWN','Wprime2900Right_BTAGDOWN','Wprime3000Right_BTAGDOWN', 
 ] 
 
-'''
-List_Right = ['Wprime1100Right','Wprime1200Right','Wprime1300Right','Wprime1400Right','Wprime1500Right','Wprime1600Right','Wprime1700Right','Wprime1800Right','Wprime1900Right','Wprime2000Right','Wprime2100Right','Wprime2400Right','Wprime2500Right','Wprime2700Right','Wprime2900Right',
-'Wprime1100Right_JESUP','Wprime1200Right_JESUP','Wprime1300Right_JESUP','Wprime1400Right_JESUP','Wprime1500Right_JESUP','Wprime1600Right_JESUP','Wprime1700Right_JESUP','Wprime1800Right_JESUP','Wprime1900Right_JESUP','Wprime2000Right_JESUP','Wprime2100Right_JESUP','Wprime2400Right_JESUP','Wprime2500Right_JESUP','Wprime2700Right_JESUP','Wprime2900Right_JESUP',
-'Wprime1100Right_JESDOWN','Wprime1200Right_JESDOWN','Wprime1300Right_JESDOWN','Wprime1400Right_JESDOWN','Wprime1500Right_JESDOWN','Wprime1600Right_JESDOWN','Wprime1700Right_JESDOWN','Wprime1800Right_JESDOWN','Wprime1900Right_JESDOWN','Wprime2000Right_JESDOWN','Wprime2100Right_JESDOWN','Wprime2400Right_JESDOWN','Wprime2500Right_JESDOWN','Wprime2700Right_JESDOWN','Wprime2900Right_JESDOWN',
-'Wprime1100Right_JERUP','Wprime1200Right_JERUP','Wprime1300Right_JERUP','Wprime1400Right_JERUP','Wprime1500Right_JERUP','Wprime1600Right_JERUP','Wprime1700Right_JERUP','Wprime1800Right_JERUP','Wprime1900Right_JERUP','Wprime2000Right_JERUP','Wprime2100Right_JERUP','Wprime2400Right_JERUP','Wprime2500Right_JERUP','Wprime2700Right_JERUP','Wprime2900Right_JERUP',
-'Wprime1100Right_JERDOWN','Wprime1200Right_JERDOWN','Wprime1300Right_JERDOWN','Wprime1400Right_JERDOWN','Wprime1500Right_JERDOWN','Wprime1600Right_JERDOWN','Wprime1700Right_JERDOWN','Wprime1800Right_JERDOWN','Wprime1900Right_JERDOWN','Wprime2000Right_JERDOWN','Wprime2100Right_JERDOWN','Wprime2400Right_JERDOWN','Wprime2500Right_JERDOWN','Wprime2700Right_JERDOWN','Wprime2900Right_JERDOWN',
-'Wprime1100Right_BTAGUP','Wprime1200Right_BTAGUP','Wprime1300Right_BTAGUP','Wprime1400Right_BTAGUP','Wprime1500Right_BTAGUP','Wprime1600Right_BTAGUP','Wprime1700Right_BTAGUP','Wprime1800Right_BTAGUP','Wprime1900Right_BTAGUP','Wprime2000Right_BTAGUP','Wprime2100Right_BTAGUP','Wprime2400Right_BTAGUP','Wprime2500Right_BTAGUP','Wprime2700Right_BTAGUP','Wprime2900Right_BTAGUP',
-'Wprime1100Right_BTAGDOWN','Wprime1200Right_BTAGDOWN','Wprime1300Right_BTAGDOWN','Wprime1400Right_BTAGDOWN','Wprime1500Right_BTAGDOWN','Wprime1600Right_BTAGDOWN','Wprime1700Right_BTAGDOWN','Wprime1800Right_BTAGDOWN','Wprime1900Right_BTAGDOWN','Wprime2000Right_BTAGDOWN','Wprime2100Right_BTAGDOWN','Wprime2400Right_BTAGDOWN','Wprime2500Right_BTAGDOWN','Wprime2700Right_BTAGDOWN','Wprime2900Right_BTAGDOWN',
-]
-'''
+List_ModRight = ['Wprime800Right','Wprime900Right','Wprime1000Right','Wprime1100Right','Wprime1200Right','Wprime1300Right','Wprime1400Right','Wprime1500Right','Wprime1600Right','Wprime1700Right','Wprime1800Right','Wprime1900Right','Wprime2000Right','Wprime2100Right','Wprime2200Right','Wprime2300Right','Wprime2400Right','Wprime2500Right','Wprime2700Right','Wprime2800Right','Wprime2900Right',
+'Wprime800Right_JESUP','Wprime900Right_JESUP','Wprime1000Right_JESUP','Wprime1100Right_JESUP','Wprime1200Right_JESUP','Wprime1300Right_JESUP','Wprime1400Right_JESUP','Wprime1500Right_JESUP','Wprime1600Right_JESUP','Wprime1700Right_JESUP','Wprime1800Right_JESUP','Wprime1900Right_JESUP','Wprime2000Right_JESUP','Wprime2100Right_JESUP','Wprime2200Right_JESUP','Wprime2300Right_JESUP','Wprime2400Right_JESUP','Wprime2500Right_JESUP','Wprime2700Right_JESUP','Wprime2800Right_JESUP','Wprime2900Right_JESUP',
+'Wprime800Right_JESDOWN','Wprime900Right_JESDOWN','Wprime1000Right_JESDOWN','Wprime1100Right_JESDOWN','Wprime1200Right_JESDOWN','Wprime1300Right_JESDOWN','Wprime1400Right_JESDOWN','Wprime1500Right_JESDOWN','Wprime1600Right_JESDOWN','Wprime1700Right_JESDOWN','Wprime1800Right_JESDOWN','Wprime1900Right_JESDOWN','Wprime2000Right_JESDOWN','Wprime2100Right_JESDOWN','Wprime2200Right_JESDOWN','Wprime2300Right_JESDOWN','Wprime2400Right_JESDOWN','Wprime2500Right_JESDOWN','Wprime2700Right_JESDOWN','Wprime2800Right_JESDOWN','Wprime2900Right_JESDOWN',
+'Wprime800Right_JERUP','Wprime900Right_JERUP','Wprime1000Right_JERUP','Wprime1100Right_JERUP','Wprime1200Right_JERUP','Wprime1300Right_JERUP','Wprime1400Right_JERUP','Wprime1500Right_JERUP','Wprime1600Right_JERUP','Wprime1700Right_JERUP','Wprime1800Right_JERUP','Wprime1900Right_JERUP','Wprime2000Right_JERUP','Wprime2100Right_JERUP','Wprime2200Right_JERUP','Wprime2300Right_JERUP','Wprime2400Right_JERUP','Wprime2500Right_JERUP','Wprime2700Right_JERUP','Wprime2800Right_JERUP','Wprime2900Right_JERUP',
+'Wprime800Right_JERDOWN','Wprime900Right_JERDOWN','Wprime1000Right_JERDOWN','Wprime1100Right_JERDOWN','Wprime1200Right_JERDOWN','Wprime1300Right_JERDOWN','Wprime1400Right_JERDOWN','Wprime1500Right_JERDOWN','Wprime1600Right_JERDOWN','Wprime1700Right_JERDOWN','Wprime1800Right_JERDOWN','Wprime1900Right_JERDOWN','Wprime2000Right_JERDOWN','Wprime2100Right_JERDOWN','Wprime2200Right_JERDOWN','Wprime2300Right_JERDOWN','Wprime2400Right_JERDOWN','Wprime2500Right_JERDOWN','Wprime2700Right_JERDOWN','Wprime2800Right_JERDOWN','Wprime2900Right_JERDOWN',
+'Wprime800Right_BTAGUP','Wprime900Right_BTAGUP','Wprime1000Right_BTAGUP','Wprime1100Right_BTAGUP','Wprime1200Right_BTAGUP','Wprime1300Right_BTAGUP','Wprime1400Right_BTAGUP','Wprime1500Right_BTAGUP','Wprime1600Right_BTAGUP','Wprime1700Right_BTAGUP','Wprime1800Right_BTAGUP','Wprime1900Right_BTAGUP','Wprime2000Right_BTAGUP','Wprime2100Right_BTAGUP','Wprime2200Right_BTAGUP','Wprime2300Right_BTAGUP','Wprime2400Right_BTAGUP','Wprime2500Right_BTAGUP','Wprime2700Right_BTAGUP','Wprime2800Right_BTAGUP','Wprime2900Right_BTAGUP',
+'Wprime800Right_BTAGDOWN','Wprime900Right_BTAGDOWN','Wprime1000Right_BTAGDOWN','Wprime1100Right_BTAGDOWN','Wprime1200Right_BTAGDOWN','Wprime1300Right_BTAGDOWN','Wprime1400Right_BTAGDOWN','Wprime1500Right_BTAGDOWN','Wprime1600Right_BTAGDOWN','Wprime1700Right_BTAGDOWN','Wprime1800Right_BTAGDOWN','Wprime1900Right_BTAGDOWN','Wprime2000Right_BTAGDOWN','Wprime2100Right_BTAGDOWN','Wprime2200Right_BTAGDOWN','Wprime2300Right_BTAGDOWN','Wprime2400Right_BTAGDOWN','Wprime2500Right_BTAGDOWN','Wprime2700Right_BTAGDOWN','Wprime2800Right_BTAGDOWN','Wprime2900Right_BTAGDOWN',
+] 
 
-List_Left = ['Wprime1100Left','Wprime1200Left','Wprime1300Left','Wprime1400Left','Wprime1500Left','Wprime1600Left','Wprime1700Left','Wprime1800Left','Wprime1900Left','Wprime2000Left','Wprime2100Left','Wprime2400Left','Wprime2500Left','Wprime2700Left','Wprime2900Left',
-'Wprime1100Left_JESUP','Wprime1200Left_JESUP','Wprime1300Left_JESUP','Wprime1400Left_JESUP','Wprime1500Left_JESUP','Wprime1600Left_JESUP','Wprime1700Left_JESUP','Wprime1800Left_JESUP','Wprime1900Left_JESUP','Wprime2000Left_JESUP','Wprime2100Left_JESUP','Wprime2400Left_JESUP','Wprime2500Left_JESUP','Wprime2700Left_JESUP','Wprime2900Left_JESUP',
-'Wprime1100Left_JESDOWN','Wprime1200Left_JESDOWN','Wprime1300Left_JESDOWN','Wprime1400Left_JESDOWN','Wprime1500Left_JESDOWN','Wprime1600Left_JESDOWN','Wprime1700Left_JESDOWN','Wprime1800Left_JESDOWN','Wprime1900Left_JESDOWN','Wprime2000Left_JESDOWN','Wprime2100Left_JESDOWN','Wprime2400Left_JESDOWN','Wprime2500Left_JESDOWN','Wprime2700Left_JESDOWN','Wprime2900Left_JESDOWN',
-'Wprime1100Left_JERUP','Wprime1200Left_JERUP','Wprime1300Left_JERUP','Wprime1400Left_JERUP','Wprime1500Left_JERUP','Wprime1600Left_JERUP','Wprime1700Left_JERUP','Wprime1800Left_JERUP','Wprime1900Left_JERUP','Wprime2000Left_JERUP','Wprime2100Left_JERUP','Wprime2400Left_JERUP','Wprime2500Left_JERUP','Wprime2700Left_JERUP','Wprime2900Left_JERUP',
-'Wprime1100Left_JERDOWN','Wprime1200Left_JERDOWN','Wprime1300Left_JERDOWN','Wprime1400Left_JERDOWN','Wprime1500Left_JERDOWN','Wprime1600Left_JERDOWN','Wprime1700Left_JERDOWN','Wprime1800Left_JERDOWN','Wprime1900Left_JERDOWN','Wprime2000Left_JERDOWN','Wprime2100Left_JERDOWN','Wprime2400Left_JERDOWN','Wprime2500Left_JERDOWN','Wprime2700Left_JERDOWN','Wprime2900Left_JERDOWN',
-'Wprime1100Left_BTAGUP','Wprime1200Left_BTAGUP','Wprime1300Left_BTAGUP','Wprime1400Left_BTAGUP','Wprime1500Left_BTAGUP','Wprime1600Left_BTAGUP','Wprime1700Left_BTAGUP','Wprime1800Left_BTAGUP','Wprime1900Left_BTAGUP','Wprime2000Left_BTAGUP','Wprime2100Left_BTAGUP','Wprime2400Left_BTAGUP','Wprime2500Left_BTAGUP','Wprime2700Left_BTAGUP','Wprime2900Left_BTAGUP',
-'Wprime1100Left_BTAGDOWN','Wprime1200Left_BTAGDOWN','Wprime1300Left_BTAGDOWN','Wprime1400Left_BTAGDOWN','Wprime1500Left_BTAGDOWN','Wprime1600Left_BTAGDOWN','Wprime1700Left_BTAGDOWN','Wprime1800Left_BTAGDOWN','Wprime1900Left_BTAGDOWN','Wprime2000Left_BTAGDOWN','Wprime2100Left_BTAGDOWN','Wprime2400Left_BTAGDOWN','Wprime2500Left_BTAGDOWN','Wprime2700Left_BTAGDOWN','Wprime2900Left_BTAGDOWN',
+
+List_Left = [
+'Wprime800Left','Wprime900Left','Wprime1000Left','Wprime1100Left','Wprime1200Left','Wprime1300Left','Wprime1400Left','Wprime1500Left','Wprime1600Left','Wprime1700Left','Wprime1800Left','Wprime1900Left','Wprime2000Left','Wprime2100Left','Wprime2200Left','Wprime2300Left','Wprime2400Left','Wprime2500Left','Wprime2700Left','Wprime2800Left','Wprime2900Left',
+'Wprime800Left_JESUP','Wprime900Left_JESUP','Wprime1000Left_JESUP','Wprime1100Left_JESUP','Wprime1200Left_JESUP','Wprime1300Left_JESUP','Wprime1400Left_JESUP','Wprime1500Left_JESUP','Wprime1600Left_JESUP','Wprime1700Left_JESUP','Wprime1800Left_JESUP','Wprime1900Left_JESUP','Wprime2000Left_JESUP','Wprime2100Left_JESUP','Wprime2200Left_JESUP','Wprime2300Left_JESUP','Wprime2400Left_JESUP','Wprime2500Left_JESUP','Wprime2700Left_JESUP','Wprime2800Left_JESUP','Wprime2900Left_JESUP',
+'Wprime800Left_JESDOWN','Wprime900Left_JESDOWN','Wprime1000Left_JESDOWN','Wprime1100Left_JESDOWN','Wprime1200Left_JESDOWN','Wprime1300Left_JESDOWN','Wprime1400Left_JESDOWN','Wprime1500Left_JESDOWN','Wprime1600Left_JESDOWN','Wprime1700Left_JESDOWN','Wprime1800Left_JESDOWN','Wprime1900Left_JESDOWN','Wprime2000Left_JESDOWN','Wprime2100Left_JESDOWN','Wprime2200Left_JESDOWN','Wprime2300Left_JESDOWN','Wprime2400Left_JESDOWN','Wprime2500Left_JESDOWN','Wprime2700Left_JESDOWN','Wprime2800Left_JESDOWN','Wprime2900Left_JESDOWN',
+'Wprime800Left_JERUP','Wprime900Left_JERUP','Wprime1000Left_JERUP','Wprime1100Left_JERUP','Wprime1200Left_JERUP','Wprime1300Left_JERUP','Wprime1400Left_JERUP','Wprime1500Left_JERUP','Wprime1600Left_JERUP','Wprime1700Left_JERUP','Wprime1800Left_JERUP','Wprime1900Left_JERUP','Wprime2000Left_JERUP','Wprime2100Left_JERUP','Wprime2200Left_JERUP','Wprime2300Left_JERUP','Wprime2400Left_JERUP','Wprime2500Left_JERUP','Wprime2700Left_JERUP','Wprime2800Left_JERUP','Wprime2900Left_JERUP',
+'Wprime800Left_JERDOWN','Wprime900Left_JERDOWN','Wprime1000Left_JERDOWN','Wprime1100Left_JERDOWN','Wprime1200Left_JERDOWN','Wprime1300Left_JERDOWN','Wprime1400Left_JERDOWN','Wprime1500Left_JERDOWN','Wprime1600Left_JERDOWN','Wprime1700Left_JERDOWN','Wprime1800Left_JERDOWN','Wprime1900Left_JERDOWN','Wprime2000Left_JERDOWN','Wprime2100Left_JERDOWN','Wprime2200Left_JERDOWN','Wprime2300Left_JERDOWN','Wprime2400Left_JERDOWN','Wprime2500Left_JERDOWN','Wprime2700Left_JERDOWN','Wprime2800Left_JERDOWN','Wprime2900Left_JERDOWN',
+'Wprime800Left_BTAGUP','Wprime900Left_BTAGUP','Wprime1000Left_BTAGUP','Wprime1100Left_BTAGUP','Wprime1200Left_BTAGUP','Wprime1300Left_BTAGUP','Wprime1400Left_BTAGUP','Wprime1500Left_BTAGUP','Wprime1600Left_BTAGUP','Wprime1700Left_BTAGUP','Wprime1800Left_BTAGUP','Wprime1900Left_BTAGUP','Wprime2000Left_BTAGUP','Wprime2100Left_BTAGUP','Wprime2200Left_BTAGUP','Wprime2300Left_BTAGUP','Wprime2400Left_BTAGUP','Wprime2500Left_BTAGUP','Wprime2700Left_BTAGUP','Wprime2800Left_BTAGUP','Wprime2900Left_BTAGUP',
+'Wprime800Left_BTAGDOWN','Wprime900Left_BTAGDOWN','Wprime1000Left_BTAGDOWN','Wprime1100Left_BTAGDOWN','Wprime1200Left_BTAGDOWN','Wprime1300Left_BTAGDOWN','Wprime1400Left_BTAGDOWN','Wprime1500Left_BTAGDOWN','Wprime1600Left_BTAGDOWN','Wprime1700Left_BTAGDOWN','Wprime1800Left_BTAGDOWN','Wprime1900Left_BTAGDOWN','Wprime2000Left_BTAGDOWN','Wprime2100Left_BTAGDOWN','Wprime2200Left_BTAGDOWN','Wprime2300Left_BTAGDOWN','Wprime2400Left_BTAGDOWN','Wprime2500Left_BTAGDOWN','Wprime2700Left_BTAGDOWN','Wprime2800Left_BTAGDOWN','Wprime2900Left_BTAGDOWN',
 ]
 
-List_Mix = ['Wprime1100Mix','Wprime1200Mix','Wprime1300Mix','Wprime1400Mix','Wprime1500Mix','Wprime1600Mix','Wprime1700Mix','Wprime1800Mix','Wprime1900Mix','Wprime2000Mix','Wprime2100Mix','Wprime2400Mix','Wprime2500Mix','Wprime2700Mix','Wprime2900Mix',
-'Wprime1100Mix_JESUP','Wprime1200Mix_JESUP','Wprime1300Mix_JESUP','Wprime1400Mix_JESUP','Wprime1500Mix_JESUP','Wprime1600Mix_JESUP','Wprime1700Mix_JESUP','Wprime1800Mix_JESUP','Wprime1900Mix_JESUP','Wprime2000Mix_JESUP','Wprime2100Mix_JESUP','Wprime2400Mix_JESUP','Wprime2500Mix_JESUP','Wprime2700Mix_JESUP','Wprime2900Mix_JESUP',
-'Wprime1100Mix_JESDOWN','Wprime1200Mix_JESDOWN','Wprime1300Mix_JESDOWN','Wprime1400Mix_JESDOWN','Wprime1500Mix_JESDOWN','Wprime1600Mix_JESDOWN','Wprime1700Mix_JESDOWN','Wprime1800Mix_JESDOWN','Wprime1900Mix_JESDOWN','Wprime2000Mix_JESDOWN','Wprime2100Mix_JESDOWN','Wprime2400Mix_JESDOWN','Wprime2500Mix_JESDOWN','Wprime2700Mix_JESDOWN','Wprime2900Mix_JESDOWN',
-'Wprime1100Mix_JERUP','Wprime1200Mix_JERUP','Wprime1300Mix_JERUP','Wprime1400Mix_JERUP','Wprime1500Mix_JERUP','Wprime1600Mix_JERUP','Wprime1700Mix_JERUP','Wprime1800Mix_JERUP','Wprime1900Mix_JERUP','Wprime2000Mix_JERUP','Wprime2100Mix_JERUP','Wprime2400Mix_JERUP','Wprime2500Mix_JERUP','Wprime2700Mix_JERUP','Wprime2900Mix_JERUP',
-'Wprime1100Mix_JERDOWN','Wprime1200Mix_JERDOWN','Wprime1300Mix_JERDOWN','Wprime1400Mix_JERDOWN','Wprime1500Mix_JERDOWN','Wprime1600Mix_JERDOWN','Wprime1700Mix_JERDOWN','Wprime1800Mix_JERDOWN','Wprime1900Mix_JERDOWN','Wprime2000Mix_JERDOWN','Wprime2100Mix_JERDOWN','Wprime2400Mix_JERDOWN','Wprime2500Mix_JERDOWN','Wprime2700Mix_JERDOWN','Wprime2900Mix_JERDOWN',
-'Wprime1100Mix_BTAGUP','Wprime1200Mix_BTAGUP','Wprime1300Mix_BTAGUP','Wprime1400Mix_BTAGUP','Wprime1500Mix_BTAGUP','Wprime1600Mix_BTAGUP','Wprime1700Mix_BTAGUP','Wprime1800Mix_BTAGUP','Wprime1900Mix_BTAGUP','Wprime2000Mix_BTAGUP','Wprime2100Mix_BTAGUP','Wprime2400Mix_BTAGUP','Wprime2500Mix_BTAGUP','Wprime2700Mix_BTAGUP','Wprime2900Mix_BTAGUP',
-'Wprime1100Mix_BTAGDOWN','Wprime1200Mix_BTAGDOWN','Wprime1300Mix_BTAGDOWN','Wprime1400Mix_BTAGDOWN','Wprime1500Mix_BTAGDOWN','Wprime1600Mix_BTAGDOWN','Wprime1700Mix_BTAGDOWN','Wprime1800Mix_BTAGDOWN','Wprime1900Mix_BTAGDOWN','Wprime2000Mix_BTAGDOWN','Wprime2100Mix_BTAGDOWN','Wprime2400Mix_BTAGDOWN','Wprime2500Mix_BTAGDOWN','Wprime2700Mix_BTAGDOWN','Wprime2900Mix_BTAGDOWN',
+List_Mix = [
+'Wprime800Mix','Wprime900Mix','Wprime1000Mix','Wprime1100Mix','Wprime1200Mix','Wprime1300Mix','Wprime1400Mix','Wprime1500Mix','Wprime1600Mix','Wprime1700Mix','Wprime1800Mix','Wprime1900Mix','Wprime2000Mix','Wprime2100Mix','Wprime2200Mix','Wprime2300Mix','Wprime2400Mix','Wprime2500Mix','Wprime2700Mix','Wprime2800Mix','Wprime2900Mix',
+'Wprime800Mix_JESUP','Wprime900Mix_JESUP','Wprime1000Mix_JESUP','Wprime1100Mix_JESUP','Wprime1200Mix_JESUP','Wprime1300Mix_JESUP','Wprime1400Mix_JESUP','Wprime1500Mix_JESUP','Wprime1600Mix_JESUP','Wprime1700Mix_JESUP','Wprime1800Mix_JESUP','Wprime1900Mix_JESUP','Wprime2000Mix_JESUP','Wprime2100Mix_JESUP','Wprime2200Mix_JESUP','Wprime2300Mix_JESUP','Wprime2400Mix_JESUP','Wprime2500Mix_JESUP','Wprime2700Mix_JESUP','Wprime2800Mix_JESUP','Wprime2900Mix_JESUP',
+'Wprime800Mix_JESDOWN','Wprime900Mix_JESDOWN','Wprime1000Mix_JESDOWN','Wprime1100Mix_JESDOWN','Wprime1200Mix_JESDOWN','Wprime1300Mix_JESDOWN','Wprime1400Mix_JESDOWN','Wprime1500Mix_JESDOWN','Wprime1600Mix_JESDOWN','Wprime1700Mix_JESDOWN','Wprime1800Mix_JESDOWN','Wprime1900Mix_JESDOWN','Wprime2000Mix_JESDOWN','Wprime2100Mix_JESDOWN','Wprime2200Mix_JESDOWN','Wprime2300Mix_JESDOWN','Wprime2400Mix_JESDOWN','Wprime2500Mix_JESDOWN','Wprime2700Mix_JESDOWN','Wprime2800Mix_JESDOWN','Wprime2900Mix_JESDOWN',
+'Wprime800Mix_JERUP','Wprime900Mix_JERUP','Wprime1000Mix_JERUP','Wprime1100Mix_JERUP','Wprime1200Mix_JERUP','Wprime1300Mix_JERUP','Wprime1400Mix_JERUP','Wprime1500Mix_JERUP','Wprime1600Mix_JERUP','Wprime1700Mix_JERUP','Wprime1800Mix_JERUP','Wprime1900Mix_JERUP','Wprime2000Mix_JERUP','Wprime2100Mix_JERUP','Wprime2200Mix_JERUP','Wprime2300Mix_JERUP','Wprime2400Mix_JERUP','Wprime2500Mix_JERUP','Wprime2700Mix_JERUP','Wprime2800Mix_JERUP','Wprime2900Mix_JERUP',
+'Wprime800Mix_JERDOWN','Wprime900Mix_JERDOWN','Wprime1000Mix_JERDOWN','Wprime1100Mix_JERDOWN','Wprime1200Mix_JERDOWN','Wprime1300Mix_JERDOWN','Wprime1400Mix_JERDOWN','Wprime1500Mix_JERDOWN','Wprime1600Mix_JERDOWN','Wprime1700Mix_JERDOWN','Wprime1800Mix_JERDOWN','Wprime1900Mix_JERDOWN','Wprime2000Mix_JERDOWN','Wprime2100Mix_JERDOWN','Wprime2200Mix_JERDOWN','Wprime2300Mix_JERDOWN','Wprime2400Mix_JERDOWN','Wprime2500Mix_JERDOWN','Wprime2700Mix_JERDOWN','Wprime2800Mix_JERDOWN','Wprime2900Mix_JERDOWN',
+'Wprime800Mix_BTAGUP','Wprime900Mix_BTAGUP','Wprime1000Mix_BTAGUP','Wprime1100Mix_BTAGUP','Wprime1200Mix_BTAGUP','Wprime1300Mix_BTAGUP','Wprime1400Mix_BTAGUP','Wprime1500Mix_BTAGUP','Wprime1600Mix_BTAGUP','Wprime1700Mix_BTAGUP','Wprime1800Mix_BTAGUP','Wprime1900Mix_BTAGUP','Wprime2000Mix_BTAGUP','Wprime2100Mix_BTAGUP','Wprime2200Mix_BTAGUP','Wprime2300Mix_BTAGUP','Wprime2400Mix_BTAGUP','Wprime2500Mix_BTAGUP','Wprime2700Mix_BTAGUP','Wprime2800Mix_BTAGUP','Wprime2900Mix_BTAGUP',
+'Wprime800Mix_BTAGDOWN','Wprime900Mix_BTAGDOWN','Wprime1000Mix_BTAGDOWN','Wprime1100Mix_BTAGDOWN','Wprime1200Mix_BTAGDOWN','Wprime1300Mix_BTAGDOWN','Wprime1400Mix_BTAGDOWN','Wprime1500Mix_BTAGDOWN','Wprime1600Mix_BTAGDOWN','Wprime1700Mix_BTAGDOWN','Wprime1800Mix_BTAGDOWN','Wprime1900Mix_BTAGDOWN','Wprime2000Mix_BTAGDOWN','Wprime2100Mix_BTAGDOWN','Wprime2200Mix_BTAGDOWN','Wprime2300Mix_BTAGDOWN','Wprime2400Mix_BTAGDOWN','Wprime2500Mix_BTAGDOWN','Wprime2700Mix_BTAGDOWN','Wprime2800Mix_BTAGDOWN','Wprime2900Mix_BTAGDOWN',
 ]
 
 
 def plot_DataVsMc(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high, ylabel, xlabel, save, wprime, btags, List_to_use):
 
+
+    doTTbarWeight = 'True'
+
     if (channel == 'electron'):      
-        cut = 'jet_0_pt_WprimeCalc >= 120 && jet_1_pt_WprimeCalc >= 40 && elec_1_pt_WprimeCalc > 32 && abs(elec_1_eta_WprimeCalc) < 2.5 && elec_1_RelIso_WprimeCalc < 0.1 && corr_met_WprimeCalc > 20 && Muon_DeltaR_LjetsTopoCalcNew > '+lepjetdR 
+        cut = 'jet_0_pt_WprimeCalc >= 120 && jet_1_pt_WprimeCalc >= 40 && elec_1_pt_WprimeCalc > 50 && abs(elec_1_eta_WprimeCalc) < 2.5 && elec_1_RelIso_WprimeCalc < 0.1 && corr_met_WprimeCalc > 20 && Muon_DeltaR_LjetsTopoCalcNew > '+lepjetdR 
 
     if (channel == 'muon'):      
-        cut = 'jet_0_pt_WprimeCalc >= 120 && jet_1_pt_WprimeCalc >= 40 && muon_1_pt_WprimeCalc > 26 && abs(muon_1_eta_WprimeCalc) < 2.1 && muon_1_RelIso_WprimeCalc < 0.12 && corr_met_WprimeCalc > 20 && Muon_DeltaR_LjetsTopoCalcNew > '+lepjetdR 
+        cut = 'jet_0_pt_WprimeCalc >= 120 && jet_1_pt_WprimeCalc >= 40 && muon_1_pt_WprimeCalc > 50 && abs(muon_1_eta_WprimeCalc) < 2.1 && muon_1_RelIso_WprimeCalc < 0.12 && corr_met_WprimeCalc > 20 && Muon_DeltaR_LjetsTopoCalcNew > '+lepjetdR 
    
     print varName
                  
@@ -79,33 +83,97 @@ def plot_DataVsMc(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high, ylab
     if btags == 'ge2btags': cutbtag = ' && ( (jet_0_tag_WprimeCalc==1 && (jet_1_tag_WprimeCalc + jet_2_tag_WprimeCalc + jet_3_tag_WprimeCalc + jet_4_tag_WprimeCalc + jet_5_tag_WprimeCalc + jet_6_tag_WprimeCalc + jet_7_tag_WprimeCalc + jet_8_tag_WprimeCalc + jet_9_tag_WprimeCalc) >= 1 ) || (jet_1_tag_WprimeCalc==1 && (jet_0_tag_WprimeCalc + jet_2_tag_WprimeCalc + jet_3_tag_WprimeCalc + jet_4_tag_WprimeCalc + jet_5_tag_WprimeCalc + jet_6_tag_WprimeCalc + jet_7_tag_WprimeCalc + jet_8_tag_WprimeCalc + jet_9_tag_WprimeCalc) >= 1 ) ) '
     if btags == 'final': cutbtag = ' && ( (jet_0_tag_WprimeCalc+jet_1_tag_WprimeCalc ) >= 1 )'
     
-    #if btags == 'final': cut = cut + ' && BestTop_LjetsTopoCalcNew > 130 && BestTop_LjetsTopoCalcNew < 210 &&  BestTop_Pt_LjetsTopoCalcNew > '+toppt+' && Jet1Jet2_Pt_LjetsTopoCalcNew > '+j1j2pt
+    if btags == 'final': cut = cut + ' && BestTop_LjetsTopoCalcNew > 130 && BestTop_LjetsTopoCalcNew < 210 &&  BestTop_Pt_LjetsTopoCalcNew > '+toppt+' && Jet1Jet2_Pt_LjetsTopoCalcNew > '+j1j2pt
 
     #if btags == 'final': cut = cut + ' && BestTop_Pt_LjetsTopoCalcNew > '+toppt+' && Jet1Jet2_Pt_LjetsTopoCalcNew > '+j1j2pt
     #if btags == 'final': cut = cut + ' && BestTop_LjetsTopoCalcNew > 130 && BestTop_LjetsTopoCalcNew < 210 && Jet1Jet2_Pt_LjetsTopoCalcNew > '+j1j2pt
-    if btags == 'final': cut = cut + ' && BestTop_LjetsTopoCalcNew > 130 && BestTop_LjetsTopoCalcNew < 210 &&  BestTop_Pt_LjetsTopoCalcNew > '+toppt
+    #if btags == 'final': cut = cut + ' && BestTop_LjetsTopoCalcNew > 130 && BestTop_LjetsTopoCalcNew < 210 &&  BestTop_Pt_LjetsTopoCalcNew > '+toppt
 
     
- 
     cutwbb = ' && n_Bjets_WprimeCalc > 0' # Wb(b)
     cutwcc = ' && n_Bjets_WprimeCalc==0 && n_Cjets_WprimeCalc>0' # Wc(c)
     cutwjj = ' && n_Bjets_WprimeCalc==0 && n_Cjets_WprimeCalc==0' # W+light
 
-    SFWjmu = 1.08*0.85      ## myHF120
-    SFWcmu = 1.06*0.92*1.66  ## myHF120
-    SFWbmu = 1.06*0.92*1.21  ## myHF120
+    #SFWjmu = 1.08*0.85      ## myHF120
+    #SFWcmu = 1.06*0.92*1.66  ## myHF120
+    #SFWbmu = 1.06*0.92*1.21  ## myHF120
 
-    SFWjmuPlus = 1.08*0.85*0.8
-    SFWcmuPlus = 1.06*0.92*1.66*1.27
-    SFWbmuPlus = 1.06*0.92*1.21*1.27
+    #SFWjmuPlus = 1.08*0.85*0.8
+    #SFWcmuPlus = 1.06*0.92*1.66*1.27
+    #SFWbmuPlus = 1.06*0.92*1.21*1.27
 
-    SFWjmuMinus = 1.08*0.85*1.2
-    SFWcmuMinus = 1.06*0.92*1.66*0.73
-    SFWbmuMinus = 1.06*0.92*1.21*0.73
-                       
-    cutzerobtags = ' && ( (jet_0_tag_WprimeCalc+jet_1_tag_WprimeCalc+jet_2_tag_WprimeCalc+jet_3_tag_WprimeCalc+jet_4_tag_WprimeCalc+jet_5_tag_WprimeCalc+jet_6_tag_WprimeCalc+jet_7_tag_WprimeCalc+jet_8_tag_WprimeCalc+jet_9_tag_WprimeCalc) == 0 )'
+    #SFWjmuMinus = 1.08*0.85*1.2
+    #SFWcmuMinus = 1.06*0.92*1.66*0.73
+    #SFWbmuMinus = 1.06*0.92*1.21*0.73
 
-    print wprime
+    #SFWjmu = 0.86      ## myHF120
+    #SFWcmu = 0.95*1.66  ## myHF120
+    #SFWbmu = 0.95*1.21  ## myHF120
+
+    #SFWjmuPlus = 0.86*0.8
+    #SFWcmuPlus = 0.95*1.66*1.27
+    #SFWbmuPlus = 0.95*1.21*1.27
+
+    #SFWjmuMinus = 0.86*1.2
+    #SFWcmuMinus = 0.95*1.66*0.73
+    #SFWbmuMinus = 0.95*1.21*0.73
+
+    #SFWjmu = 0.82      ## myHF120
+    #SFWcmu = 0.93*1.66  ## myHF120
+    #SFWbmu = 0.93*1.21  ## myHF120
+
+    #SFWjmuPlus = 0.82*0.87
+    #SFWcmuPlus = 0.93*1.66*1.15
+    #SFWbmuPlus = 0.93*1.21*1.15
+
+    #SFWjmuMinus = 0.82*1.13
+    #SFWcmuMinus = 0.93*1.66*0.85
+    #SFWbmuMinus = 0.93*1.21*0.85
+
+    #SFWjmu = 0.93  ## myHF120, no SHyFT
+    #SFWcmu = 1.06  ## myHF120, no SHyFT
+    #SFWbmu = 1.06  ## myHF120,no SHyFT
+            
+    #SFWjmuPlus = 0.93*0.8  
+    #SFWcmuPlus = 1.06*1.27  
+    #SFWbmuPlus = 1.06*1.27  
+
+    #SFWjmuMinus = 0.93*1.2
+    #SFWcmuMinus = 1.06*0.73
+    #SFWbmuMinus = 1.06*0.73
+
+    SFWjmu = 0.82        ## myHF120lep50, scale ttbar
+    SFWcmu = 0.98*1.66   ## myHF120lep50, scale ttbar
+    SFWbmu = 0.98*1.21   ## myHF120lep50, scale ttbar
+
+    SFWjmuPlus = 0.82*0.87        ## myHF120lep50, scale ttbar
+    SFWcmuPlus = 0.98*1.66*1.15   ## myHF120lep50, scale ttbar
+    SFWbmuPlus = 0.98*1.21*1.15   ## myHF120lep50, scale ttbar
+            
+    SFWjmuMinus = 0.82*1.13        ## myHF120lep50, scale ttbar
+    SFWcmuMinus = 0.98*1.66*0.85   ## myHF120lep50, scale ttbar
+    SFWbmuMinus = 0.98*1.21*0.85   ## myHF120lep50, scale ttbar
+
+
+    #weight_ttbarminus = '(0.9822-0.00009837*(BestJetJet2W_M_LjetsTopoCalcNew))'
+    #weight_ttbarplus = '(1.168-0.001209*(BestTop_Pt_LjetsTopoCalcNew))'
+    #weight_ttbar = '(0.5*((1.168-0.001209*(BestTop_Pt_LjetsTopoCalcNew))+(0.9822-0.00009837*(BestJetJet2W_M_LjetsTopoCalcNew))))'
+
+    #weight_ttbarminus = '1.0'
+    #weight_ttbarplus = '(1.0/(1.168-0.001209*(BestTop_Pt_LjetsTopoCalcNew)))'
+    #weight_ttbar = '(1.168-0.001209*(BestTop_Pt_LjetsTopoCalcNew))'
+
+    #weight_ttbarminus = '(0.5*((1.098-0.0008829*(BestTop_Pt_LjetsTopoCalcNew))+(1.3-0.001659*(BestTop_Pt_LjetsTopoCalcNew))))'
+    #weight_ttbarplus = '1.0'
+    #weight_ttbar = '(0.5*((1.098-0.0008829*(BestTop_Pt_LjetsTopoCalcNew))+(1.3-0.001659*(BestTop_Pt_LjetsTopoCalcNew))))'
+
+    weight_ttbarminus = '(1.188-0.001124*(BestTop_Pt_LjetsTopoCalcNew))'
+    weight_ttbarplus = '1.0'
+    weight_ttbar = '(5.809*TMath::Landau(BestTop_Pt_LjetsTopoCalcNew,149.1,154))'              
+            
+    cutzerobtags = ' && ( (jet_0_tag_WprimeCalc+jet_1_tag_WprimeCalc+jet_2_tag_WprimeCalc+jet_3_tag_WprimeCalc+jet_4_tag_WprimeCalc+jet_5_tag_WprimeCalc+jet_6_tag_WprimeCalc+jet_7_tag_WprimeCalc+jet_8_tag_WprimeCalc+jet_9_tag_WprimeCalc) == 0 )' 
+ 
+    print wprime 
     #print cut + cutbtag
  
     List = List_to_use
@@ -115,6 +183,8 @@ def plot_DataVsMc(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high, ylab
     Variables0tag = {}
     VariablesHFup = {}
     VariablesHFdown = {}
+    VariablesTTbarShapeUp = {}
+    VariablesTTbarShapeDown = {}  
     VariablesPre = {}
 
     VariablesSmooth = {}
@@ -122,6 +192,8 @@ def plot_DataVsMc(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high, ylab
     VariablesSmooth0tag = {}
     VariablesSmoothHFup = {}
     VariablesSmoothHFdown = {}
+    VariablesSmoothTTbarShapeUp = {}
+    VariablesSmoothTTbarShapeDown = {} 
     VariablesSmoothPre = {}
 
     background = 0
@@ -188,6 +260,9 @@ def plot_DataVsMc(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high, ylab
         w_suffix = 'wp'
 
         if (wprime != 'ModRight'):
+            if (Type.startswith('Wprime800' + wprime)): suffix = w_suffix+'800'
+            if (Type.startswith('Wprime900' + wprime)): suffix = w_suffix+'900'
+            if (Type.startswith('Wprime1000' + wprime)): suffix = w_suffix+'1000'
             if (Type.startswith('Wprime1100' + wprime)): suffix = w_suffix+'1100'
             if (Type.startswith('Wprime1200' + wprime)): suffix = w_suffix+'1200'
             if (Type.startswith('Wprime1300' + wprime)): suffix = w_suffix+'1300'
@@ -218,6 +293,9 @@ def plot_DataVsMc(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high, ylab
 
         else:
 
+            if (Type.startswith('Wprime800Right')): suffix = w_suffix+'800'
+            if (Type.startswith('Wprime900Right')): suffix = w_suffix+'900'
+            if (Type.startswith('Wprime1000Right')): suffix = w_suffix+'1000'
             if (Type.startswith('Wprime1100Right')): suffix = w_suffix+'1100'
             if (Type.startswith('Wprime1200Right')): suffix = w_suffix+'1200'
             if (Type.startswith('Wprime1300Right')): suffix = w_suffix+'1300'
@@ -253,6 +331,9 @@ def plot_DataVsMc(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high, ylab
         histName0tag = prefix+suffix+'varbin'+'__0tag__plus'
         histNameHFup = prefix+suffix+'varbin'+'__hf__plus'
         histNameHFdown = prefix+suffix+'varbin'+'__hf__minus'
+        histNameTTbarShapeUp = prefix+suffix+'varbin'+'__ttbarshape__plus'
+        histNameTTbarShapeDown = prefix+suffix+'varbin'+'__ttbarshape__minus'
+
         histNamePre = prefix+suffix+'varbin'+'Pre'
 
         histNameSmooth = prefix+suffix
@@ -261,6 +342,9 @@ def plot_DataVsMc(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high, ylab
         histNameSmooth0tag = prefix+suffix+'0tag'
         histNameSmoothHFup = prefix+suffix+'__hf__plus'
         histNameSmoothHFdown = prefix+suffix+'__hf__minus'
+        histNameSmoothTTbarShapeUp = prefix+suffix+'__ttbarshape__plus'
+        histNameSmoothTTbarShapeDown = prefix+suffix+'__ttbarshape__minus'
+
         histNameSmoothPre = prefix+suffix+'Pre'
 
         Variables[Type] = TH1D(histName, histName, bin, array('d',xlow))  
@@ -273,14 +357,18 @@ def plot_DataVsMc(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high, ylab
         VariablesSmoothPre[Type].Sumw2()
 
         if (channel=='electron'):
-            weight = 'weight_PU_ABC_PileUpCalc*weight_ElectronEff_WprimeCalc'
-            weightPUup = 'weight_PU_ABC735_PileUpCalc*weight_ElectronEff_WprimeCalc'
-            SF = 0.977
-        if (channel=='muon'):
-            weight = 'weight_PU_ABC_PileUpCalc*weight_MuonEff_WprimeCalc'
-            weightPUup = 'weight_PU_ABC735_PileUpCalc*weight_ElectronEff_WprimeCalc'
+            #weight = 'weight_PU_ABCD_PileUpCalc*weight_ElectronEff_WprimeCalc'
+            #weightPUup = 'weight_PU_ABCD735_PileUpCalc*weight_ElectronEff_53x_WprimeCalc'
+            weight = '( ((0.973*weight_PU_ABCD_PileUpCalc*weight_ElectronEff_53x_WprimeCalc)*(abs(elec_1_eta_WprimeCalc)<1.5)) + ((1.02*weight_PU_ABCD_PileUpCalc*weight_ElectronEff_53x_WprimeCalc)*(abs(elec_1_eta_WprimeCalc)>1.5 && abs(elec_1_eta_WprimeCalc)<2.5)) )'
+            weightPUup = '( ((0.973*weight_PU_ABCD735_PileUpCalc*weight_ElectronEff_53x_WprimeCalc)*(abs(elec_1_eta_WprimeCalc)<1.5)) + ((1.02*weight_PU_ABCD735_PileUpCalc*weight_ElectronEff_53x_WprimeCalc)*(abs(elec_1_eta_WprimeCalc)>1.5 && abs(elec_1_eta_WprimeCalc)<2.5)) )'
             SF = 1.0
-
+        if (channel=='muon'):
+            weight = 'weight_PU_ABCD_PileUpCalc*weight_MuonEff_WprimeCalc'
+            weightPUup = 'weight_PU_ABCD735_PileUpCalc*weight_MuonEff_WprimeCalc'
+            SF = 1.0
+        
+        #if (Type.startswith('TTbar')): SF = 0.95
+        
         if (Type == 'WJets'):
             WccHist = TH1D('WccHist', 'WccHist', bin,array('d',xlow))
             WbbHist = TH1D('WbbHist', 'WbbHist', bin,array('d',xlow))
@@ -309,21 +397,32 @@ def plot_DataVsMc(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high, ylab
             Variables0tag[Type] = TH1D(histName0tag, histName0tag, bin, array('d',xlow))
             VariablesHFup[Type] = TH1D(histNameHFup, histNameHFup, bin, array('d',xlow))
             VariablesHFdown[Type] = TH1D(histNameHFdown, histNameHFdown, bin, array('d',xlow))
+            VariablesTTbarShapeUp[Type] = TH1D(histNameTTbarShapeUp, histNameTTbarShapeUp, bin, array('d',xlow))
+            VariablesTTbarShapeDown[Type] = TH1D(histNameTTbarShapeDown, histNameTTbarShapeDown, bin, array('d',xlow))
+
             VariablesPUup[Type].Sumw2()
             #VariablesPUdown[Type].Sumw2()
             Variables0tag[Type].Sumw2()
             VariablesHFup[Type].Sumw2()
             VariablesHFdown[Type].Sumw2()
+            VariablesTTbarShapeUp[Type].Sumw2()
+            VariablesTTbarShapeDown[Type].Sumw2()
             VariablesSmoothPUup[Type] = TH1D(histNameSmoothPUup, histNameSmoothPUup, bin, array('d',xlow) )
             #VariablesSmoothPUdown[Type] = TH1D(histNameSmoothPUdown, histNameSmoothPUdown, bin, array('d',xlow) )
             VariablesSmooth0tag[Type] = TH1D(histNameSmooth0tag, histNameSmooth0tag, bin, array('d',xlow) )
             VariablesSmoothHFup[Type] = TH1D(histNameSmoothHFup, histNameSmoothHFup, bin, array('d',xlow) )
             VariablesSmoothHFdown[Type] = TH1D(histNameSmoothHFdown, histNameSmoothHFdown, bin, array('d',xlow) )
+            VariablesSmoothTTbarShapeUp[Type] = TH1D(histNameSmoothTTbarShapeUp, histNameSmoothTTbarShapeUp, bin, array('d',xlow) )
+            VariablesSmoothTTbarShapeDown[Type] = TH1D(histNameSmoothTTbarShapeDown, histNameSmoothTTbarShapeDown, bin, array('d',xlow) )
+
             VariablesSmoothPUup[Type].Sumw2()
             #VariablesSmoothPUdown[Type].Sumw2()
             VariablesSmooth0tag[Type].Sumw2()
             VariablesSmoothHFup[Type].Sumw2()
             VariablesSmoothHFdown[Type].Sumw2()   
+            VariablesSmoothTTbarShapeUp[Type].Sumw2()
+            VariablesSmoothTTbarShapeDown[Type].Sumw2()   
+
 
         #print Type
         if (Type.startswith('Data')):
@@ -380,6 +479,16 @@ def plot_DataVsMc(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high, ylab
                 Trees[Type].Draw(var + " >> " + histName0tag, "("+weight+")*("+cut+cutzerobtags+")", 'goff')
                 Trees[Type].Draw(var + " >> " + histNameHFup, "("+weight+")*("+cut+cutbtag+")", 'goff')
                 Trees[Type].Draw(var + " >> " + histNameHFdown, "("+weight+")*("+cut+cutbtag+")", 'goff')
+        elif (Type.startswith('TTbar')):
+            Trees[Type].Draw(var + " >> " + histName, "("+weight+")*("+weight_ttbar+")*("+cut+cutbtag+")", 'goff')
+            if ( (not Type.endswith('UP')) and (not Type.endswith('DOWN')) ):
+                Trees[Type].Draw(var + " >> " + histNamePUup, "("+weightPUup+")*("+weight_ttbar+")*("+cut+cutbtag+")", 'goff')
+                #Trees[Type].Draw(var + " >> " + histNamePUdown, "("+weightPUdown+")*("+cut+cutbtag+")", 'goff')
+                Trees[Type].Draw(var + " >> " + histName0tag, "("+weight+")*("+weight_ttbar+")*("+cut+cutzerobtags+")", 'goff')
+                Trees[Type].Draw(var + " >> " + histNameHFup, "("+weight+")*("+weight_ttbar+")*("+cut+cutbtag+")", 'goff')
+                Trees[Type].Draw(var + " >> " + histNameHFdown, "("+weight+")*("+weight_ttbar+")*("+cut+cutbtag+")", 'goff')
+                Trees[Type].Draw(var + " >> " + histNameTTbarShapeUp, "("+weight+")*("+weight_ttbarplus+")*("+cut+cutbtag+")", 'goff')
+                Trees[Type].Draw(var + " >> " + histNameTTbarShapeDown, "("+weight+")*("+weight_ttbarminus+")*("+cut+cutbtag+")", 'goff')
         else:
             #print 'cut = ',cut+cutbtag
             Trees[Type].Draw(var + " >> " + histName, "("+weight+")*("+cut+cutbtag+")", 'goff')
@@ -399,13 +508,29 @@ def plot_DataVsMc(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high, ylab
             if (channel=='muon'): lumi = lumi_mu
 
             if Variables[Type].Integral() != 0:
-                Variables[Type].Scale ( (SF*lumi*xsec_norm[Type]/Nevents[Type]) ) 
-                if ( (not Type.endswith('UP')) and (not Type.endswith('DOWN')) ): 
+                Variables[Type].Scale ( (SF*lumi*xsec_norm[Type]/Nevents[Type]) )
+                
+                #if (doTTbarSF == 'True' and Type.startswith('TTbar') ):
+                #    f1 = TF1("f1","pol1")
+                #    f1.SetParameter(0,0.9964)
+                #    f1.SetParameter(1,-0.0001151)
+                #    for i in range(Variables[Type].GetNbinsX()):
+                #        x = Variables[Type].GetBinCenter(i)
+                #        sfi = f1.Eval(x)
+                #        Variables[Type].SetBinContent(i,Variables[Type].GetBinContent(i)*sfi)
+                #        print Type,' ',x,' old: ',Variables[Type].GetBinContent(i),' new: ',Variables[Type].GetBinContent(i)*sfi
+                        
+                
+                if ( (not Type.endswith('UP')) and (not Type.endswith('DOWN')) ):
+                    
                     VariablesPUup[Type].Scale ( (SF*lumi*xsec_norm[Type]/Nevents[Type]) ) 
                     #VariablesPUdown[Type].Scale ( (SF*lumi*xsec_norm[Type]/Nevents[Type]) )
                     Variables0tag[Type].Scale ( (SF*lumi*xsec_norm[Type]/Nevents[Type]) )  
                     VariablesHFup[Type].Scale ( (SF*lumi*xsec_norm[Type]/Nevents[Type]) ) 
                     VariablesHFdown[Type].Scale ( (SF*lumi*xsec_norm[Type]/Nevents[Type]) )
+                    VariablesTTbarShapeUp[Type].Scale ( (SF*lumi*xsec_norm[Type]/Nevents[Type]) ) 
+                    VariablesTTbarShapeDown[Type].Scale ( (SF*lumi*xsec_norm[Type]/Nevents[Type]) )
+
                 VariablesPre[Type].Scale ( (SF*lumi*xsec_norm[Type]/Nevents[Type]) ) 
    
 
@@ -430,6 +555,11 @@ def plot_DataVsMc(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high, ylab
                 VariablesSmoothHFdown[Type].SetBinContent(x,VariablesHFdown[Type].GetBinContent(x) )
                 VariablesSmoothHFup[Type].SetBinError(x,VariablesHFup[Type].GetBinError(x)  )
                 VariablesSmoothHFdown[Type].SetBinError(x,VariablesHFdown[Type].GetBinError(x) )
+                VariablesSmoothTTbarShapeUp[Type].SetBinContent(x,VariablesTTbarShapeUp[Type].GetBinContent(x)  )
+                VariablesSmoothTTbarShapeDown[Type].SetBinContent(x,VariablesTTbarShapeDown[Type].GetBinContent(x) )
+                VariablesSmoothTTbarShapeUp[Type].SetBinError(x,VariablesTTbarShapeUp[Type].GetBinError(x)  )
+                VariablesSmoothTTbarShapeDown[Type].SetBinError(x,VariablesTTbarShapeDown[Type].GetBinError(x) )
+
         VariablesSmooth[Type].SetEntries(Variables[Type].GetEntries() )
         VariablesSmoothPre[Type].SetEntries(VariablesPre[Type].GetEntries() )
         if ( (not Type.endswith('UP')) and (not Type.endswith('DOWN')) ):
@@ -438,6 +568,8 @@ def plot_DataVsMc(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high, ylab
             VariablesSmooth0tag[Type].SetEntries(Variables0tag[Type].GetEntries() )
             VariablesSmoothHFup[Type].SetEntries(VariablesHFup[Type].GetEntries() )
             VariablesSmoothHFdown[Type].SetEntries(VariablesHFdown[Type].GetEntries() )
+            VariablesSmoothTTbarShapeUp[Type].SetEntries(VariablesTTbarShapeUp[Type].GetEntries() )
+            VariablesSmoothTTbarShapeDown[Type].SetEntries(VariablesTTbarShapeDown[Type].GetEntries() )
 
         if (Type.startswith('Data')):
             print 'EVENTS FOR  Data  = ',int(VariablesSmooth[Type].Integral())
@@ -460,6 +592,8 @@ def plot_DataVsMc(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high, ylab
                         if (VariablesSmooth0tag[Type].GetBinContent(x) < 0.000001 ): VariablesSmooth0tag[Type].SetBinContent(x,0.00001)
                         if (VariablesSmoothHFup[Type].GetBinContent(x) < 0.000001 ): VariablesSmoothHFup[Type].SetBinContent(x,0.00001)
                         if (VariablesSmoothHFdown[Type].GetBinContent(x) < 0.000001 ): VariablesSmoothHFdown[Type].SetBinContent(x,0.00001)
+                        if (VariablesSmoothTTbarShapeUp[Type].GetBinContent(x) < 0.000001 ): VariablesSmoothTTbarShapeUp[Type].SetBinContent(x,0.00001)
+                        if (VariablesSmoothTTbarShapeDown[Type].GetBinContent(x) < 0.000001 ): VariablesSmoothTTbarShapeDown[Type].SetBinContent(x,0.00001)
 
             print 'SCALED EVENTS FOR ',Type,'  = ',Variables[Type].Integral()
             if ( (not Type.startswith('T')) and (not Type.startswith('Wprime')) ):
@@ -768,10 +902,16 @@ def plot_DataVsMc(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high, ylab
     VariablesSmoothPUup['TTbar_MadgraphDown'].SetName(chan+"invmass_"+btags+"__ttbar__PU__minus")
     VariablesSmoothPUup['TTbar_MadgraphDown'].SetTitle(chan+"invmass_"+btags+"__ttbar__PU__minus")
     VariablesSmoothPUup['TTbar_MadgraphDown'].Write()
+    VariablesSmoothPUup['T_sDown'] = VariablesSmooth['T_s'].Clone()
+    VariablesSmoothPUup['T_sDown'].SetName(chan+"invmass_"+btags+"__topstb__PU__minus")
+    VariablesSmoothPUup['T_sDown'].SetTitle(chan+"invmass_"+btags+"__topstb__PU__minus")
+    if (wprime == 'ModRight'): VariablesSmoothPUup['T_sDown'].Write()
+            
  
-
-    masses = ['1100','1200','1300','1400','1500','1600','1700','1800','1900','2000','2100','2200','2300','2400','2500','2600','2700','2800','2900','3000']
-    #masses = ['1100','1200','1300','1400','1500','1600','1700','1800','1900','2000','2100','2400','2500','2700','2900']
+    if (wprime == 'Right'):
+        masses = ['800','900','1000','1100','1200','1300','1400','1500','1600','1700','1800','1900','2000','2100','2200','2300','2400','2500','2600','2700','2800','2900','3000']
+    else:
+        masses = ['800','900','1000','1100','1200','1300','1400','1500','1600','1700','1800','1900','2000','2100','2200','2300','2400','2500','2700','2800','2900']
     for mass in masses:
         if (wprime != 'ModRight'):
             VariablesSmooth['Wprime' + mass + wprime].Write()
@@ -880,6 +1020,27 @@ def plot_DataVsMc(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high, ylab
     VariablesSmoothHFdown['WJets'].SetTitle(chan+"invmass_"+btags+"__wjets__hf__minus")
     VariablesSmoothHFdown['WJets'].Write()
 
+    VariablesSmoothTTbarShapeUp['TTbar_Madgraph'].Add(VariablesSmooth['T_t'])
+    VariablesSmoothTTbarShapeUp['TTbar_Madgraph'].SetName(chan+"invmass_"+btags+"__ttbar__shape__plus")
+    VariablesSmoothTTbarShapeUp['TTbar_Madgraph'].SetTitle(chan+"invmass_"+btags+"__ttbar__shape__plus")
+    VariablesSmoothTTbarShapeDown['TTbar_Madgraph'].Add(VariablesSmooth['T_t'])
+    VariablesSmoothTTbarShapeDown['TTbar_Madgraph'].SetName(chan+"invmass_"+btags+"__ttbar__shape__minus")
+    VariablesSmoothTTbarShapeDown['TTbar_Madgraph'].SetTitle(chan+"invmass_"+btags+"__ttbar__shape__minus")
+
+    if (wprime == 'Left' or wprime == 'Mix'): 
+        VariablesSmoothTTbarShapeUp['TTbar_Madgraph'].Write()
+        VariablesSmoothTTbarShapeDown['TTbar_Madgraph'].Write()
+    else:
+        if ( wprime == 'ModRight' ):
+            VariablesSmoothTTbarShapeUp['TTbar_Madgraph'].Write()
+            VariablesSmoothTTbarShapeDown['TTbar_Madgraph'].Write()
+        elif (wprime == 'Right'):
+            VariablesSmoothTTbarShapeUp['TTbar_Madgraph'].Add(VariablesSmooth['T_s'])
+            VariablesSmoothTTbarShapeUp['TTbar_Madgraph'].Write()
+            VariablesSmoothTTbarShapeDown['TTbar_Madgraph'].Add(VariablesSmooth['T_s'])
+            VariablesSmoothTTbarShapeDown['TTbar_Madgraph'].Write()
+
+
 
   
 #wprime = 'Right'
@@ -888,12 +1049,20 @@ var = 'BestJetJet2W_M_LjetsTopoCalcNew'; high = 4000; xaxis = "W' invariant mass
 #btags = 0
 #btagstr = '0btags'
 btags = 'final'
-xlow  = [ 200, 300,  400, 500, 600, 700, 800, 900,  1000, 1100, 1200,  1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2500, 4000]
+xlow  = [ 100, 300,  400, 500, 600, 700, 800, 900,  1000, 1100, 1200,  1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2200, 4000]
+#xlow  = [ 100, 300,  400, 500, 600, 700, 800, 900,  1000, 1100, 1200,  1300, 1400, 1500, 1600, 1700, 1800, 4000]
+#xlow  = [ 100, 300,  400, 500, 600, 700, 800, 900,  1000, 1100, 1200,  1300, 1400, 1500, 1600, 1700, 1800, 2000, 4000]
+
+
 bins = len(xlow)-1 
 
 List_DataBgEl_RightWprime = copy.copy(List_DataEl) 
 List_DataBgEl_RightWprime.extend(List_Bg) 
 List_DataBgEl_RightWprime.extend(List_Right) 
+
+List_DataBgEl_ModRightWprime = copy.copy(List_DataEl) 
+List_DataBgEl_ModRightWprime.extend(List_Bg) 
+List_DataBgEl_ModRightWprime.extend(List_ModRight) 
 
 List_DataBgEl_LeftWprime = copy.copy(List_DataEl) 
 List_DataBgEl_LeftWprime.extend(List_Bg) 
@@ -907,6 +1076,10 @@ List_DataBgMu_RightWprime = copy.copy(List_DataMu)
 List_DataBgMu_RightWprime.extend(List_Bg) 
 List_DataBgMu_RightWprime.extend(List_Right) 
 
+List_DataBgMu_ModRightWprime = copy.copy(List_DataMu) 
+List_DataBgMu_ModRightWprime.extend(List_Bg) 
+List_DataBgMu_ModRightWprime.extend(List_ModRight) 
+
 List_DataBgMu_LeftWprime = copy.copy(List_DataMu) 
 List_DataBgMu_LeftWprime.extend(List_Bg) 
 List_DataBgMu_LeftWprime.extend(List_Left) 
@@ -919,45 +1092,45 @@ List_DataBgMu_MixWprime.extend(List_Mix)
 channel = 'electron'
 
 wprime = 'ModRight'
-#f = TFile("RootFiles_For2DLimits_19Jan/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03.root","RECREATE")
-#f.cd() 
-#plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgEl_RightWprime) 
+f = TFile("RootFiles_For2DLimits_06Mar_finalbins_scaleTTbarTopPtEMU750_landau/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03_lep50.root","RECREATE")
+f.cd() 
+plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgEl_RightWprime) 
 
 wprime = 'Right'
-f = TFile("RootFiles_For2DLimits_19Jan/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03.root","RECREATE")
+f = TFile("RootFiles_For2DLimits_06Mar_finalbins_scaleTTbarTopPtEMU750_landau/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03_lep50.root","RECREATE")
 f.cd() 
 plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgEl_RightWprime) 
 
 wprime = 'Left'
-#f = TFile("RootFiles_For2DLimits_19Jan/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03.root","RECREATE")
-#f.cd() 
-#plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgEl_LeftWprime) 
+f = TFile("RootFiles_For2DLimits_06Mar_finalbins_scaleTTbarTopPtEMU750_landau/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03_lep50.root","RECREATE")
+f.cd() 
+plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgEl_LeftWprime) 
 
 wprime = 'Mix'
-#f = TFile("RootFiles_For2DLimits_19Jan/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03.root","RECREATE")
-#f.cd() 
-#plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgEl_MixWprime) 
+f = TFile("RootFiles_For2DLimits_06Mar_finalbins_scaleTTbarTopPtEMU750_landau/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03_lep50.root","RECREATE")
+f.cd() 
+plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgEl_MixWprime) 
 
 
 channel = 'muon'
 
 wprime = 'ModRight'
-#f = TFile("RootFiles_For2DLimits_19Jan/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03.root","RECREATE")
-#f.cd() 
-#plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgMu_RightWprime) 
+f = TFile("RootFiles_For2DLimits_06Mar_finalbins_scaleTTbarTopPtEMU750_landau/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03_lep50.root","RECREATE")
+f.cd() 
+plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgMu_RightWprime) 
 
 wprime = 'Right'
-f = TFile("RootFiles_For2DLimits_19Jan/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03.root","RECREATE")
+f = TFile("RootFiles_For2DLimits_06Mar_finalbins_scaleTTbarTopPtEMU750_landau/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03_lep50.root","RECREATE")
 f.cd() 
 plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgMu_RightWprime) 
 
 wprime = 'Left'
-#f = TFile("RootFiles_For2DLimits_19Jan/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03.root","RECREATE")
-#f.cd() 
-#plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgMu_LeftWprime) 
+f = TFile("RootFiles_For2DLimits_06Mar_finalbins_scaleTTbarTopPtEMU750_landau/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03_lep50.root","RECREATE")
+f.cd() 
+plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgMu_LeftWprime) 
 
 wprime = 'Mix'
-#f = TFile("RootFiles_For2DLimits_19Jan/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03.root","RECREATE")
-#f.cd() 
-#plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgMu_MixWprime) 
+f = TFile("RootFiles_For2DLimits_06Mar_finalbins_scaleTTbarTopPtEMU750_landau/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_85_140_dr03_lep50.root","RECREATE")
+f.cd() 
+plot_DataVsMc(channel,var, '85', '140', '0.3', bins, xlow, high, yaxis, xaxis , save, wprime, btags, List_DataBgMu_MixWprime) 
 

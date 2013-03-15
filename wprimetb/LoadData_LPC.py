@@ -1,18 +1,18 @@
 from ROOT import TFile
 
-lumi_el = 19490.0 
-lumi_mu = 19490.0 
+lumi_el = 19624.0 
+lumi_mu = 19624.0 
 
-lumiPlot_el= '19.5'
-lumiPlot_mu= '19.5'
+lumiPlot_el= '19.6'
+lumiPlot_mu= '19.6'
 
-outdir = "/uscms_data/d2/dsperka/8TeV/Samples/16Jan_All/"
+outdir = "/uscms_data/d2/dsperka/8TeV/Samples/07Feb_All/"
 ######################################################
 RootFiles = {}
 Trees = {}
 
-RootFiles['Data_el'] = TFile(outdir+"Data_el_19pt5fb.root")
-RootFiles['Data_mu'] = TFile(outdir+"Data_mu_19pt5fb.root")
+RootFiles['Data_el'] = TFile(outdir+"Data_el_19pt6fb.root")
+RootFiles['Data_mu'] = TFile(outdir+"Data_mu_19pt6fb.root")
 Trees['Data_el']  = RootFiles['Data_el'].Get("ljmet")
 Trees['Data_mu']  = RootFiles['Data_mu'].Get("ljmet")
 

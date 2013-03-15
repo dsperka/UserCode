@@ -46,13 +46,18 @@ def FillTables(channel, varName, bin, low, high):
     backgroundGEOne = 0
     backgroundGETwo = 0
     backgroundFinal = 0
+   
+    doqcd = 'False'
 
     if (channel == 'electron'):
-        List = ['Data_el','ZJets_M50','WW', 'WJets', 'T_t', 'Tbar_t', 'T_tW', 'Tbar_tW', 'T_s', 'Tbar_s', 'TTbar_Madgraph']
+        if doqcd == 'True':
+            List = ['Data_el','ZJets_M50','WW', 'WJets', 'T_t', 'Tbar_t', 'T_tW', 'Tbar_tW', 'T_s', 'Tbar_s', 'TTbar_Madgraph','QCD_Pt_80_170_EM','QCD_Pt_170_250_EM','QCD_Pt_250_350_EM','QCD_Pt_350_EM']
+        else:
+            List = ['Data_el','ZJets_M50','WW', 'WJets', 'T_t', 'Tbar_t', 'T_tW', 'Tbar_tW', 'T_s', 'Tbar_s', 'TTbar_Madgraph']
     if (channel == 'muon'):
         List = ['Data_mu','ZJets_M50','WW', 'WJets', 'T_t', 'Tbar_t', 'T_tW', 'Tbar_tW', 'T_s', 'Tbar_s', 'TTbar_Madgraph']
 
-    SignalList = ['Wprime1100Right','Wprime1200Right','Wprime1300Right','Wprime1400Right','Wprime1500Right','Wprime1600Right','Wprime1700Right','Wprime1800Right','Wprime1900Right','Wprime2000Right','Wprime2100Right','Wprime2200Right','Wprime2300Right','Wprime2400Right','Wprime2500Right','Wprime2600Right','Wprime2700Right','Wprime2800Right','Wprime2900Right','Wprime3000Right']
+    SignalList = ['Wprime800Right','Wprime900Right','Wprime1000Right','Wprime1100Right','Wprime1200Right','Wprime1300Right','Wprime1400Right','Wprime1500Right','Wprime1600Right','Wprime1700Right','Wprime1800Right','Wprime1900Right','Wprime2000Right','Wprime2100Right','Wprime2200Right','Wprime2300Right','Wprime2400Right','Wprime2500Right','Wprime2600Right','Wprime2700Right','Wprime2800Right','Wprime2900Right','Wprime3000Right']
     List.extend(SignalList)
 
 
@@ -61,11 +66,11 @@ def FillTables(channel, varName, bin, low, high):
 
         if (channel == 'electron'):      
             #cut = 'jet_0_pt_WprimeCalc >= 100 && jet_1_pt_WprimeCalc >= 40 && elec_1_pt_WprimeCalc > 32 && abs(elec_1_eta_WprimeCalc) < 2.5 && elec_1_RelIso_WprimeCalc < 0.1 && corr_met_WprimeCalc > 20' 
-            cut = 'jet_0_pt_WprimeCalc >= 120 && jet_1_pt_WprimeCalc >= 40 && elec_1_pt_WprimeCalc > 32 && abs(elec_1_eta_WprimeCalc) < 2.5 && elec_1_RelIso_WprimeCalc < 0.1 && corr_met_WprimeCalc > 20 && Muon_DeltaR_LjetsTopoCalcNew > 0.3' 
-
+            #cut = 'jet_0_pt_WprimeCalc >= 120 && jet_1_pt_WprimeCalc >= 40 && elec_1_pt_WprimeCalc > 32 && abs(elec_1_eta_WprimeCalc) < 2.5 && elec_1_RelIso_WprimeCalc < 0.1 && corr_met_WprimeCalc > 20 && Muon_DeltaR_LjetsTopoCalcNew > 0.3' 
+            cut = 'jet_0_pt_WprimeCalc >= 120 && jet_1_pt_WprimeCalc >= 40 && elec_1_pt_WprimeCalc > 50 && abs(elec_1_eta_WprimeCalc) < 2.5 && elec_1_RelIso_WprimeCalc < 0.1 && corr_met_WprimeCalc > 20 &&  Muon_DeltaR_LjetsTopoCalcNew > 0.3' 
         if (channel == 'muon'):      
             #cut = 'jet_0_pt_WprimeCalc >= 100 && jet_1_pt_WprimeCalc >= 40 && muon_1_pt_WprimeCalc > 26 && abs(muon_1_eta_WprimeCalc) < 2.1 && muon_1_RelIso_WprimeCalc < 0.12 && corr_met_WprimeCalc > 20'
-            cut = 'jet_0_pt_WprimeCalc >= 120 && jet_1_pt_WprimeCalc >= 40 && muon_1_pt_WprimeCalc > 26 && abs(muon_1_eta_WprimeCalc) < 2.1 && muon_1_RelIso_WprimeCalc < 0.12 && corr_met_WprimeCalc > 20 && Muon_DeltaR_LjetsTopoCalcNew > 0.3'
+            cut = 'jet_0_pt_WprimeCalc >= 120 && jet_1_pt_WprimeCalc >= 40 && muon_1_pt_WprimeCalc > 50 && abs(muon_1_eta_WprimeCalc) < 2.1 && muon_1_RelIso_WprimeCalc < 0.12 && corr_met_WprimeCalc > 20 && Muon_DeltaR_LjetsTopoCalcNew > 0.3'
         
 
 
@@ -89,15 +94,28 @@ def FillTables(channel, varName, bin, low, high):
         #SFWjmu = 1.05*0.85       ## myHF
         #SFWcmu = 1.25*0.92*1.66  ## myHF
         #SFWbmu = 1.25*0.92*1.21  ## myHF
-        SFWjmu = 1.08*0.85      ## myHF120
-        SFWcmu = 1.06*0.92*1.66  ## myHF120
-        SFWbmu = 1.06*0.92*1.21  ## myHF120
+        #SFWjmu = 1.08*0.85      ## myHF120
+        #SFWcmu = 1.06*0.92*1.66  ## myHF120
+        #SFWbmu = 1.06*0.92*1.21  ## myHF120
+        #SFWjmu = 0.86*1.0   ## myHF120
+        #SFWcmu = 0.95*1.66  ## myHF120
+        #SFWbmu = 0.95*1.21  ## myHF120
+        #SFWjmu = 0.82        ## myHF120lep50
+        #SFWcmu = 0.93*1.66   ## myHF120lep50 
+        #SFWbmu = 0.93*1.21   ## myHF120lep50
+        SFWjmu = 0.81        ## myHF120lep50
+        SFWcmu = 0.99*1.66   ## myHF120lep50
+        SFWbmu = 0.99*1.21   ## myHF120lep50                 
         #SFWjmu = 1.0   ## noHF
         #SFWcmu = 1.66  ## noHF
         #SFWbmu = 1.21  ## noHF
+      
+        
 
+                        
         if (channel=='electron'):
-            weight = 'weight_PU_ABCD_PileUpCalc*weight_ElectronEff_53x_WprimeCalc'
+            #weight = 'weight_PU_ABCD_PileUpCalc*weight_ElectronEff_53x_WprimeCalc'
+            weight = '( ((0.973*weight_PU_ABCD_PileUpCalc*weight_ElectronEff_53x_WprimeCalc)*(abs(elec_1_eta_WprimeCalc)<1.5)) + ((1.02*weight_PU_ABCD_PileUpCalc*weight_ElectronEff_53x_WprimeCalc)*(abs(elec_1_eta_WprimeCalc)>1.5 && abs(elec_1_eta_WprimeCalc)<2.5)) )'
         if (channel=='muon'):
             weight = 'weight_PU_ABCD_PileUpCalc*weight_MuonEff_WprimeCalc'
 
@@ -111,7 +129,7 @@ def FillTables(channel, varName, bin, low, high):
             WbbHist[cutlabel] = TH1D('WbbHist'+histName, 'WbbHist'+histName, bin, low, high)
 
             SF = 1.0    
-            if (channel=='electron'): SF = 0.977
+            #if (channel=='electron'): SF = 0.977
 
             if cutlabel == 'preselection': VariablesPre[Type] = TH1D(histName, histName, bin, low, high)
             if cutlabel == 'zerobtags': VariablesZero[Type] = TH1D(histName, histName, bin, low, high)
@@ -146,6 +164,8 @@ def FillTables(channel, varName, bin, low, high):
                 #if cutlabel == 'final':
                 #    VariablesFinal[Type].Add(WbbHist)
                 #    VariablesFinal[Type].Add(WccHist)
+            elif Type.startswith('TTbar'):
+                Trees[Type].Draw(var + " >> " + histName, "0.95*("+weight+")*(" + cut + ")", 'goff')
             else:
                 Trees[Type].Draw(var + " >> " + histName, "("+weight+")*(" + cut + ")", 'goff')
                 #if (Type.startswith("TTbar")):
@@ -161,7 +181,9 @@ def FillTables(channel, varName, bin, low, high):
             if (not Type.startswith('Data')):
                 if cutlabel == 'preselection':
                     if VariablesPre[Type].Integral() != 0:
+                       #print "Preselection "+Type+" Before scaling "+str(VariablesPre[Type].Integral())  
                        VariablesPre[Type].Scale ( (SF*lumi*xsec[Type]/Nevents[Type]) )
+                       #print "Preselection "+Type+" After scaling "+str(VariablesPre[Type].Integral())
                        if Type.startswith('WJets'): 
                            WbbHist[cutlabel].Scale ( (SF*lumi*xsec[Type]/Nevents[Type]) )
                            WccHist[cutlabel].Scale ( (SF*lumi*xsec[Type]/Nevents[Type]) )
@@ -199,6 +221,7 @@ def FillTables(channel, varName, bin, low, high):
                 if cutlabel == 'preselection':
                     if Type != 'T_s' and Type != 'Tbar_s' and (not Type.startswith('Wprime')): backgroundPre += VariablesPre[Type].Integral()
                     EventCountPre[Type] = VariablesPre[Type].Integral()
+                    #print "EventCounPre "+Type+" "+str(EventCountPre[Type])
                     if Type.startswith('WJets'): 
                         EventCountPre['Wbb'] = WbbHist[cutlabel].Integral()
                         EventCountPre['Wcc'] = WccHist[cutlabel].Integral()
@@ -261,8 +284,32 @@ def FillTables(channel, varName, bin, low, high):
                     EventCountFinal[Type] = VariablesFinal[Type].Integral()
             j=j+1
 
-        
-            
+    if (channel == 'electron' and doqcd == 'True'):
+        EventCountPre['QCD_Pt_80_170_EM'] += EventCountPre['QCD_Pt_170_250_EM']
+        EventCountPre['QCD_Pt_80_170_EM'] += EventCountPre['QCD_Pt_250_350_EM']
+        EventCountPre['QCD_Pt_80_170_EM'] += EventCountPre['QCD_Pt_350_EM']
+      
+        EventCountZero['QCD_Pt_80_170_EM'] += EventCountZero['QCD_Pt_170_250_EM']
+        EventCountZero['QCD_Pt_80_170_EM'] += EventCountZero['QCD_Pt_250_350_EM']
+        EventCountZero['QCD_Pt_80_170_EM'] += EventCountZero['QCD_Pt_350_EM']
+      
+        EventCountOne['QCD_Pt_80_170_EM'] += EventCountOne['QCD_Pt_170_250_EM']
+        EventCountOne['QCD_Pt_80_170_EM'] += EventCountOne['QCD_Pt_250_350_EM']
+        EventCountOne['QCD_Pt_80_170_EM'] += EventCountOne['QCD_Pt_350_EM']
+      
+        EventCountGEOne['QCD_Pt_80_170_EM'] += EventCountGEOne['QCD_Pt_170_250_EM']
+        EventCountGEOne['QCD_Pt_80_170_EM'] += EventCountGEOne['QCD_Pt_250_350_EM']
+        EventCountGEOne['QCD_Pt_80_170_EM'] += EventCountGEOne['QCD_Pt_350_EM']
+      
+        EventCountGETwo['QCD_Pt_80_170_EM'] += EventCountGETwo['QCD_Pt_170_250_EM']
+        EventCountGETwo['QCD_Pt_80_170_EM'] += EventCountGETwo['QCD_Pt_250_350_EM']
+        EventCountGETwo['QCD_Pt_80_170_EM'] += EventCountGETwo['QCD_Pt_350_EM']
+      
+        EventCountFinal['QCD_Pt_80_170_EM'] += EventCountFinal['QCD_Pt_170_250_EM']
+        EventCountFinal['QCD_Pt_80_170_EM'] += EventCountFinal['QCD_Pt_250_350_EM']
+        EventCountFinal['QCD_Pt_80_170_EM'] += EventCountFinal['QCD_Pt_350_EM']
+      
+
     if (channel == 'electron'): suffix = 'el'
     if (channel == 'muon'): suffix = 'mu'
 
@@ -273,7 +320,7 @@ def FillTables(channel, varName, bin, low, high):
     txtfile.write("	Number of selected data, and background  events in the "+channel+" channel. \n")
     txtfile.write("For the background samples, the expectation is computed\n")
     txtfile.write("corresponding to an integrated luminosity of $"+str(lumi)+" \pbinv$.\n")
-    txtfile.write("\label{tab:"+channel+"_cut_flow_bkg}\n") 
+    txtfile.write("\label{tab:"+suffix+"_cut_flow_bkg}\n") 
     txtfile.write("        }\n")
     txtfile.write("\\begin{tabular}{l|c|c|c|c|c|c}\n")
     txtfile.write("\hline\n")
@@ -296,6 +343,8 @@ def FillTables(channel, varName, bin, low, high):
     txtfile.write("$W(\\rightarrow)\ell\\nu$+b jets &"+str(int(round(EventCountPre['Wbb'])))+" & "+str(int(round(EventCountZero['Wbb'])))+" & "+str(int(round(EventCountOne['Wbb'])))+" & "+str(int(round(EventCountGEOne['Wbb'])))+" & "+str(int(round(EventCountGETwo['Wbb'])))+"  & "+str(int(round(EventCountFinal['Wbb'])))+"  \\\ \n")
     txtfile.write("$Z/\gamma^*(\\rightarrow\ell\ell$)+jets &"+str(int(round(EventCountPre['ZJets_M50'])))+" & "+str(int(round(EventCountZero['ZJets_M50'])))+" & "+str(int(round(EventCountOne['ZJets_M50'])))+" & "+str(int(round(EventCountGEOne['ZJets_M50'])))+" & "+str(int(round(EventCountGETwo['ZJets_M50'])))+"  & "+str(int(round(EventCountFinal['ZJets_M50'])))+" \\\ \n")
     txtfile.write("$WW$ &"+str(int(round(EventCountPre['WW'])))+" & "+str(int(round(EventCountZero['WW'])))+" & "+str(int(round(EventCountOne['WW'])))+" & "+str(int(round(EventCountGEOne['WW'])))+" & "+str(int(round(EventCountGETwo['WW'])))+"  & "+str(int(round(EventCountFinal['WW'])))+" \\\ \n")
+    if (channel=='electron' and doqcd == 'True'):
+        txtfile.write("$QCD$ &"+str(int(round(EventCountPre['QCD_Pt_80_170_EM'])))+" & "+str(int(round(EventCountZero['QCD_Pt_80_170_EM'])))+" & "+str(int(round(EventCountOne['QCD_Pt_80_170_EM'])))+" & "+str(int(round(EventCountGEOne['QCD_Pt_80_170_EM'])))+" & "+str(int(round(EventCountGETwo['QCD_Pt_80_170_EM'])))+"  & "+str(int(round(EventCountFinal['QCD_Pt_80_170_EM'])))+" \\\ \n")
     txtfile.write("{\\bf Total Background} &"+str(int(round(backgroundPre)))+" & "+str(int(round(backgroundZero)))+" & "+str(int(round(backgroundOne)))+" & "+str(int(round(backgroundGEOne)))+" & "+str(int(round(backgroundGETwo)))+" & "+str(int(round(backgroundFinal)))+" \\\ \hline\n")
     txtfile.write("{\\bf MC / Data} &"+str(float(round(backgroundPre/EventCountPre['Data_'+suffix], 3)))+" & "+str(float(round(backgroundZero/EventCountZero['Data_'+suffix], 3)))+" & "+str(float(round(backgroundOne/EventCountOne['Data_'+suffix], 3)))+" & "+str(float(round(backgroundGEOne/EventCountGEOne['Data_'+suffix], 3)))+" & "+str(float(round(backgroundGETwo/EventCountGETwo['Data_'+suffix], 3)))+" & "+str(float(round(backgroundFinal/EventCountFinal['Data_'+suffix], 3)))+" \\\ \hline\n")
     txtfile.write("\hline\n")
@@ -321,7 +370,7 @@ def FillTables(channel, varName, bin, low, high):
     txtfile.write("       Number of selected  signal events in the "+channel+" channel.\n")
     txtfile.write("For the  signal samples, the expectation is computed\n")
     txtfile.write("corresponding to an integrated luminosity of $"+str(lumi)+" \pbinv$.\n")
-    txtfile.write("\label{tab:el_cut_flow_Wprime}\n")
+    txtfile.write("\label{tab:"+suffix+"_cut_flow_Wprime}\n")
     txtfile.write("        }\n")
     txtfile.write("\\begin{tabular}{l|c|c|c|c|c|c} \n")
     txtfile.write("\hline \n")
@@ -332,9 +381,9 @@ def FillTables(channel, varName, bin, low, high):
     txtfile.write("\multicolumn{6}{l}{\\bf Signal:}     \\\ \hline \n")
     txtfile.write("$tb$ & "+str(int(round(EventCountPre['T_s'])))+" & "+str(int(round(EventCountZero['T_s'])))+" & "+str(int(round(EventCountOne['T_s'])))+" & "+str(int(round(EventCountGEOne['T_s'])))+" & "+str(int(round(EventCountGETwo['T_s'])))+" & "+str(int(round(EventCountFinal['T_s'])))+"    \\\ \n")
     txtfile.write("{\underline {\\bf ${\PWpr}_R\\rightarrow tb$}} & &  &  & & \\\ \n")
-    #txtfile.write("M(${\PWpr}_R=$) 800 GeV &"+str(int(round(EventCountPre['Wprime800Right'])))+" & "+str(int(round(EventCountZero['Wprime800Right'])))+" & "+str(int(round(EventCountOne['Wprime800Right'])))+" & "+str(int(round(EventCountGEOne['Wprime800Right'])))+" & "+str(int(round(EventCountGETwo['Wprime800Right'])))+" & "+str(int(round(EventCountFinal['Wprime800Right'])))+"   \\\ \n")
-    #txtfile.write("M(${\PWpr}_R=$) 900 GeV &"+str(int(round(EventCountPre['Wprime900Right'])))+" & "+str(int(round(EventCountZero['Wprime900Right'])))+" & "+str(int(round(EventCountOne['Wprime900Right'])))+" & "+str(int(round(EventCountGEOne['Wprime900Right'])))+" & "+str(int(round(EventCountGETwo['Wprime900Right'])))+" & "+str(int(round(EventCountFinal['Wprime900Right'])))+"   \\\ \n")
-    #txtfile.write("M(${\PWpr}_R=$) 1000 GeV &"+str(int(round(EventCountPre['Wprime1000Right'])))+" & "+str(int(round(EventCountZero['Wprime1000Right'])))+" & "+str(int(round(EventCountOne['Wprime1000Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1000Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1000Right'])))+" & "+str(int(round(EventCountFinal['Wprime1000Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 800 GeV &"+str(int(round(EventCountPre['Wprime800Right'])))+" & "+str(int(round(EventCountZero['Wprime800Right'])))+" & "+str(int(round(EventCountOne['Wprime800Right'])))+" & "+str(int(round(EventCountGEOne['Wprime800Right'])))+" & "+str(int(round(EventCountGETwo['Wprime800Right'])))+" & "+str(int(round(EventCountFinal['Wprime800Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 900 GeV &"+str(int(round(EventCountPre['Wprime900Right'])))+" & "+str(int(round(EventCountZero['Wprime900Right'])))+" & "+str(int(round(EventCountOne['Wprime900Right'])))+" & "+str(int(round(EventCountGEOne['Wprime900Right'])))+" & "+str(int(round(EventCountGETwo['Wprime900Right'])))+" & "+str(int(round(EventCountFinal['Wprime900Right'])))+"   \\\ \n")
+    txtfile.write("M(${\PWpr}_R=$) 1000 GeV &"+str(int(round(EventCountPre['Wprime1000Right'])))+" & "+str(int(round(EventCountZero['Wprime1000Right'])))+" & "+str(int(round(EventCountOne['Wprime1000Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1000Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1000Right'])))+" & "+str(int(round(EventCountFinal['Wprime1000Right'])))+"   \\\ \n")
     txtfile.write("M(${\PWpr}_R=$) 1100 GeV &"+str(int(round(EventCountPre['Wprime1100Right'])))+" & "+str(int(round(EventCountZero['Wprime1100Right'])))+" & "+str(int(round(EventCountOne['Wprime1100Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1100Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1100Right'])))+" & "+str(int(round(EventCountFinal['Wprime1100Right'])))+"   \\\ \n")
     txtfile.write("M(${\PWpr}_R=$) 1200 GeV &"+str(int(round(EventCountPre['Wprime1200Right'])))+" & "+str(int(round(EventCountZero['Wprime1200Right'])))+" & "+str(int(round(EventCountOne['Wprime1200Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1200Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1200Right'])))+" & "+str(int(round(EventCountFinal['Wprime1200Right'])))+"   \\\ \n")
     txtfile.write("M(${\PWpr}_R=$) 1300 GeV &"+str(int(round(EventCountPre['Wprime1300Right'])))+" & "+str(int(round(EventCountZero['Wprime1300Right'])))+" & "+str(int(round(EventCountOne['Wprime1300Right'])))+" & "+str(int(round(EventCountGEOne['Wprime1300Right'])))+" & "+str(int(round(EventCountGETwo['Wprime1300Right'])))+" & "+str(int(round(EventCountFinal['Wprime1300Right'])))+"   \\\ \n")
@@ -393,6 +442,23 @@ def FillTables(channel, varName, bin, low, high):
     txtfile.write("\end{center}\n")
     txtfile.write("\end{table}\n")
     
+
+    masses = ['800','900','1000','1100','1200','1300','1400','1500','1600','1700','1800','1900','2000','2100','2200','2300','2400','2500','2600','2700','2800','2900','3000']
+
+    print channel
+    print 'Double_t eventcount_pre[23] = {'
+    for m in masses:
+        print str(EventCountPre['Wprime'+m+'Right'])+','
+    print '};'
+    print 'Double_t eventcount_final[23] = {'
+    for m in masses:
+        print str(EventCountFinal['Wprime'+m+'Right'])+','
+    print '};'
+    print 'Double_t signal_LumiXsecOver4[23] = {'
+    for m in masses:
+        print str(lumi_el*xsec['Wprime'+m+'Right']/4.0)+','
+    print '};'
+
 
 channel = 'electron'
 var = 'elec_1_pt_WprimeCalc'; bin =50; low = 0; high = 7000; 
