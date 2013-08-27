@@ -1,4 +1,4 @@
-// @(#)root/tmva $Id: TMVAnalysis_wjets.C,v 1.4 2010/01/06 20:20:46 kukartse Exp $
+// @(#)root/tmva $Id: WPrimeAnalyisTraining.cxx,v 1.2 2013/01/02 03:47:53 dsperka Exp $
 /**********************************************************************************
  * Project   : TMVA - a Root-integrated toolkit for multivariate data analysis    *
  * Package   : TMVA                                                               *
@@ -207,7 +207,10 @@ void TMVAnalysis( TString myMethodList = "" ,TString infname = "",TString tag = 
   string string_nTrainSignal = static_cast<ostringstream*>( &(ostringstream() << nTrainSignal) )->str();
   std::cout <<"entries = "<< signal->GetEntries() <<", "<<string_nTrainSignal<<" for training "<< std::endl;
 
-  TTree *bkgndwjets = (TTree*)input->Get("wjets");
+  TTree *bkgndw1jets = (TTree*)input->Get("w1jets");
+  TTree *bkgndw2jets = (TTree*)input->Get("w2jets");
+  TTree *bkgndw3jets = (TTree*)input->Get("w3jets");
+  TTree *bkgndw4jets = (TTree*)input->Get("w4jets");
   TTree *bkgndTtbar = (TTree*)input->Get("ttbar");
   TTree *bkgndTchan = (TTree*)input->Get("t");
   TTree *bkgndTchanb = (TTree*)input->Get("bt");
@@ -219,17 +222,20 @@ void TMVAnalysis( TString myMethodList = "" ,TString infname = "",TString tag = 
   TTree *bkgndZJets = (TTree*)input->Get("zjets"); 
   
   Double_t signalWeight     = 1.0;
-   
+
   std::cout<<"coupling = "<<coupl<<std::endl;
 
-  int nTrainBackground = bkgndwjets->GetEntries()+bkgndTtbar->GetEntries()+bkgndTchan->GetEntries()+bkgndTchanb->GetEntries()+bkgndTWchan->GetEntries()+bkgndTWchanb->GetEntries()+bkgndWW->GetEntries()+bkgndZJets->GetEntries(); 
+  int nTrainBackground = bkgndw1jets->GetEntries()+bkgndw2jets->GetEntries()+bkgndw3jets->GetEntries()+bkgndw4jets->GetEntries()+bkgndTtbar->GetEntries()+bkgndTchan->GetEntries()+bkgndTchanb->GetEntries()+bkgndTWchan->GetEntries()+bkgndTWchanb->GetEntries()+bkgndWW->GetEntries()+bkgndZJets->GetEntries(); 
   if (coupl == "R") nTrainBackground += (bkgndSchan->GetEntries()+bkgndSchanb->GetEntries());
 
   std::cout << "=====Total Background for training ======" << std::endl;
   string string_nTrainBackground = static_cast<ostringstream*>( &(ostringstream() << floor(0.50*nTrainBackground) ) )->str();
   std::cout <<"entries = "<< nTrainBackground <<", "<<string_nTrainBackground<<" for training "<< std::endl;
 
-  Double_t bkgndwjetsWeight    = 1.0;
+  Double_t bkgndw1jetsWeight    = 1.0;
+  Double_t bkgndw2jetsWeight    = 1.0;
+  Double_t bkgndw3jetsWeight    = 1.0;
+  Double_t bkgndw4jetsWeight    = 1.0;
   Double_t bkgndTtbarWeight    = 1.0;
   Double_t bkgndTchanWeight    = 1.0;
   Double_t bkgndTchanWeightb   = 1.0;
@@ -244,34 +250,43 @@ void TMVAnalysis( TString myMethodList = "" ,TString infname = "",TString tag = 
   double scalebk = 1000.0;
 
   if (chan == "mu"){
-    bkgndwjetsWeight   = (1.0/bkgndwjets->GetEntries()) *scalebk*19062.;
-    bkgndTtbarWeight   =   (1.0/bkgndTtbar->GetEntries())* scalebk*45491.;
-    bkgndTchanWeight   =  (1.0/bkgndTchan->GetEntries()) * scalebk*2052.;
-    bkgndTchanWeightb  =  (1.0/bkgndTchanb->GetEntries())* scalebk*1048.;
-    bkgndSchanWeight   =  (1.0/bkgndSchan->GetEntries()) *scalebk*230.;
-    bkgndSchanWeightb  =   (1.0/bkgndSchanb->GetEntries())*scalebk*108.;
-    bkgndTWchanWeight  =  (1.0/bkgndTWchan->GetEntries()) *scalebk*1319.;
-    bkgndTWchanWeightb =  (1.0/bkgndTWchanb->GetEntries())*scalebk*1357.;
-    bkgndzjetsWeight   =  (1.0/bkgndZJets->GetEntries()) *scalebk*1547.;
-    bkgndwwWeight      = (1.0/bkgndWW->GetEntries())* scalebk*192;
-    cout << " weight " << bkgndTtbarWeight <<  " " << bkgndwjetsWeight << endl;
+    // For W+jets, the expected yield without residual H.F. correction since they get weighted by weight_WJets
+    bkgndw1jetsWeight  = (1.0/bkgndw1jets->GetEntries()) *scalebk*21.;
+    bkgndw2jetsWeight  = (1.0/bkgndw2jets->GetEntries()) *scalebk*6345.;
+    bkgndw3jetsWeight  = (1.0/bkgndw3jets->GetEntries()) *scalebk*6987.;
+    bkgndw4jetsWeight  = (1.0/bkgndw4jets->GetEntries()) *scalebk*8871.;
+    bkgndTtbarWeight   = (1.0/bkgndTtbar->GetEntries())* scalebk*43770.;
+    bkgndTchanWeight   = (1.0/bkgndTchan->GetEntries()) * scalebk*1746.;
+    bkgndTchanWeightb  = (1.0/bkgndTchanb->GetEntries())* scalebk*916.;
+    bkgndSchanWeight   = (1.0/bkgndSchan->GetEntries()) *scalebk*207.;
+    bkgndSchanWeightb  = (1.0/bkgndSchanb->GetEntries())*scalebk*92.;
+    bkgndTWchanWeight  = (1.0/bkgndTWchan->GetEntries()) *scalebk*1502.;
+    bkgndTWchanWeightb = (1.0/bkgndTWchanb->GetEntries())*scalebk*1531.;
+    bkgndzjetsWeight   = (1.0/bkgndZJets->GetEntries()) *scalebk*1578.;
+    bkgndwwWeight      = (1.0/bkgndWW->GetEntries())* scalebk*226;
   }
   if (chan == "el"){
-    bkgndwjetsWeight   = (1.0/bkgndwjets->GetEntries()) *scalebk*17288.;
-    bkgndTtbarWeight   =   (1.0/bkgndTtbar->GetEntries())* scalebk*41389.;
-    bkgndTchanWeight   =  (1.0/bkgndTchan->GetEntries()) * scalebk*1715.;
-    bkgndTchanWeightb  =  (1.0/bkgndTchanb->GetEntries())* scalebk*848.;
-    bkgndSchanWeight   =  (1.0/bkgndSchan->GetEntries()) *scalebk*204.;
-    bkgndSchanWeightb  =   (1.0/bkgndSchanb->GetEntries())*scalebk*72.;
-    bkgndTWchanWeight  =  (1.0/bkgndTWchan->GetEntries()) *scalebk*1202.;
-    bkgndTWchanWeightb =  (1.0/bkgndTWchanb->GetEntries())*scalebk*1224.;
-    bkgndzjetsWeight   =  (1.0/bkgndZJets->GetEntries()) *scalebk*1345.;
-    bkgndwwWeight      = (1.0/bkgndWW->GetEntries())* scalebk*173.;
-    cout << " weight " << bkgndTtbarWeight <<  " " << bkgndwjetsWeight << endl;
+    // For W+jets, the expected yield without residual H.F. correction since they get weighted by weight_WJets
+    bkgndw1jetsWeight  = (1.0/bkgndw1jets->GetEntries()) *scalebk*23.;
+    bkgndw2jetsWeight  = (1.0/bkgndw2jets->GetEntries()) *scalebk*6078.;
+    bkgndw3jetsWeight  = (1.0/bkgndw3jets->GetEntries()) *scalebk*6876.;
+    bkgndw4jetsWeight  = (1.0/bkgndw4jets->GetEntries()) *scalebk*8433.;
+    bkgndTtbarWeight   = (1.0/bkgndTtbar->GetEntries())* scalebk*42673.;
+    bkgndTchanWeight   = (1.0/bkgndTchan->GetEntries()) * scalebk*1653.;
+    bkgndTchanWeightb  = (1.0/bkgndTchanb->GetEntries())* scalebk*831.;
+    bkgndSchanWeight   = (1.0/bkgndSchan->GetEntries()) *scalebk*194.;
+    bkgndSchanWeightb  = (1.0/bkgndSchanb->GetEntries())*scalebk*75.;
+    bkgndTWchanWeight  = (1.0/bkgndTWchan->GetEntries()) *scalebk*1433.;
+    bkgndTWchanWeightb = (1.0/bkgndTWchanb->GetEntries())*scalebk*1501.;
+    bkgndzjetsWeight   = (1.0/bkgndZJets->GetEntries()) *scalebk*1575.;
+    bkgndwwWeight      = (1.0/bkgndWW->GetEntries())* scalebk*216.;
   }
    
   if (tag != "GE2BTag"){
-    factory->AddBackgroundTree( bkgndwjets, bkgndwjetsWeight );
+    factory->AddBackgroundTree( bkgndw1jets, bkgndw1jetsWeight );
+    factory->AddBackgroundTree( bkgndw2jets, bkgndw2jetsWeight );
+    factory->AddBackgroundTree( bkgndw3jets, bkgndw3jetsWeight );
+    factory->AddBackgroundTree( bkgndw4jets, bkgndw4jetsWeight );
     factory->AddBackgroundTree( bkgndZJets, bkgndzjetsWeight);
     factory->AddBackgroundTree( bkgndWW, bkgndwwWeight);
   }
@@ -284,17 +299,17 @@ void TMVAnalysis( TString myMethodList = "" ,TString infname = "",TString tag = 
   factory->AddBackgroundTree( bkgndTWchan, bkgndTWchanWeight);
   factory->AddBackgroundTree( bkgndTWchanb, bkgndTWchanWeightb);
      
-  signalWeight = (1./signal->GetEntries())*(bkgndwjetsWeight + bkgndzjetsWeight + bkgndwwWeight + bkgndTtbarWeight + bkgndTchanWeight + bkgndTchanWeightb + bkgndTWchanWeight + bkgndTWchanWeightb + bkgndSchanWeight + bkgndSchanWeightb);
+  signalWeight = (1./signal->GetEntries())*(bkgndw1jetsWeight + bkgndw2jetsWeight + bkgndw3jetsWeight + bkgndw4jetsWeight + bkgndzjetsWeight + bkgndwwWeight + bkgndTtbarWeight + bkgndTchanWeight + bkgndTchanWeightb + bkgndTWchanWeight + bkgndTWchanWeightb + bkgndSchanWeight + bkgndSchanWeightb);
 
   factory->AddSignalTree( signal, signalWeight );
   
   if (chan == "mu") {
     cout << "---- applying weights -------" << endl ;
-    factory->SetWeightExpression("(1000.*weight_WJets_WprimeCalc*weight_PU_ABC_PileUpCalc*weight_MuonEff_WprimeCalc)");
+    factory->SetWeightExpression("(1000.*weight_WJets_WprimeCalc*weight_TopPt_WprimeCalc*weight_PU_ABCD_PileUpCalc*weight_MuonEff_WprimeCalc)");
   }
   if (chan == "el") {
     cout << "---- applying weights -------" << endl ;
-    factory->SetWeightExpression("(1000.*weight_WJets_WprimeCalc*weight_PU_ABC_PileUpCalc*weight_ElectronEff_WprimeCalc)");
+    factory->SetWeightExpression("(1000.*weight_WJets_WprimeCalc*weight_TopPt_WprimeCalc*weight_PU_ABCD_PileUpCalc*weight_ElectronEff_53x_WprimeCalc)");
   }
    
   // Define the input variables that shall be used for the MVA training
@@ -338,7 +353,6 @@ void TMVAnalysis( TString myMethodList = "" ,TString infname = "",TString tag = 
     } else {
     cout << "Could not open variable list: " << varlist << endl;
   }
-   
 
   // Book the variables to be used in the training
   for (unsigned int i=0; i < varname.size(); i++) {
@@ -408,8 +422,12 @@ void TMVAnalysis( TString myMethodList = "" ,TString infname = "",TString tag = 
       //factory->BookMethod( TMVA::Types::kBDT, "BDT","!H:!V:NTrees=400:nEventsMin=400:MaxDepth=3:BoostType=AdaBoost:SeparationType=GiniIndex:nCuts=20:PruneMethod=NoPruning" );
       //factory->BookMethod( TMVA::Types::kBDT, "BDT","H:V:NTrees=400:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.2:SeparationType=GiniIndex:nCuts=20:PruneMethod=NoPruning" );
       //factory->BookMethod( TMVA::Types::kBDT, "BDT","!H:V:NTrees=700:BoostType=AdaBoost:AdaBoostBeta=0.2:SeparationType=GiniIndex:nCuts=20"); // Shabnam
-      factory->BookMethod( TMVA::Types::kBDT, "BDT","!H:V:NTrees=500:BoostType=AdaBoost:AdaBoostBeta=0.2:SeparationType=GiniIndex:nCuts=20:nEventsMin=10000");                 
-
+      //factory->BookMethod( TMVA::Types::kBDT, "BDT","!H:V:NTrees=500:BoostType=AdaBoost:AdaBoostBeta=0.2:SeparationType=GiniIndex:nCuts=20:nEventsMin=10000");
+      //factory->BookMethod( TMVA::Types::kBDT, "BDT","!H:V:NTrees=500:BoostType=AdaBoost:AdaBoostBeta=0.2:SeparationType=GiniIndex:nCuts=20:nEventsMin=10000");
+      factory->BookMethod( TMVA::Types::kBDT, "BDT","!H:!V:NTrees=400:nEventsMin=300:MaxDepth=2:BoostType=AdaBoost:AdaBoostBeta=0.12:SeparationType=MisClassificationError:nCuts=-1:PruneMethod=NoPruning");  //new settings
+      //factory->BookMethod( TMVA::Types::kBDT, "BDT","!H:!V:NTrees=400:nEventsMin=150:BoostType=AdaBoost:AdaBoostBeta=0.2:SeparationType=GiniIndex:nCuts=-1:PruneMethod=NoPruning");  //2011 analysis
+      //factory->BookMethod( TMVA::Types::kBDT, "BDT","!H:!V:NTrees=400:BoostType=AdaBoost:AdaBoostBeta=0.2:SeparationType=GiniIndex" );  //old settings
+      //factory->BookMethod( TMVA::Types::kBDT, "BDT","!H:!V:NTrees=400:BoostType=AdaBoost:AdaBoostBeta=0.2:SeparationType=MisClassificationError" );  //testing
   }
 
   // ---- Now you can tell the factory to train, test, and evaluate the MVAs
