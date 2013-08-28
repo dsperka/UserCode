@@ -13,13 +13,13 @@ from LoadData_LPC import *
 List_DataEl = ['Data_el']
 List_DataMu = ['Data_mu']
 
-List_Bg = ['WJets','WW','TTbar_Madgraph','ZJets_M50','T_t','Tbar_t','T_tW','Tbar_tW','T_s','Tbar_s',
-'WJets_JESUP','WW_JESUP','TTbar_Madgraph_JESUP','ZJets_M50_JESUP','T_t_JESUP','Tbar_t_JESUP','T_tW_JESUP','Tbar_tW_JESUP','T_s_JESUP','Tbar_s_JESUP',
-'WJets_JESDOWN','WW_JESDOWN','TTbar_Madgraph_JESDOWN','ZJets_M50_JESDOWN','T_t_JESDOWN','Tbar_t_JESDOWN','T_tW_JESDOWN','Tbar_tW_JESDOWN','T_s_JESDOWN','Tbar_s_JESDOWN',
-'WJets_JERUP','WW_JERUP','TTbar_Madgraph_JERUP','ZJets_M50_JERUP','T_t_JERUP','Tbar_t_JERUP','T_tW_JERUP','Tbar_tW_JERUP','T_s_JERUP','Tbar_s_JERUP',
-'WJets_JERDOWN','WW_JERDOWN','TTbar_Madgraph_JERDOWN','ZJets_M50_JERDOWN','T_t_JERDOWN','Tbar_t_JERDOWN','T_tW_JERDOWN','Tbar_tW_JERDOWN','T_s_JERDOWN','Tbar_s_JERDOWN',
-'WJets_BTAGUP','WW_BTAGUP','TTbar_Madgraph_BTAGUP','ZJets_M50_BTAGUP','T_t_BTAGUP','Tbar_t_BTAGUP','T_tW_BTAGUP','Tbar_tW_BTAGUP','T_s_BTAGUP','Tbar_s_BTAGUP',
-'WJets_BTAGDOWN','WW_BTAGDOWN','TTbar_Madgraph_BTAGDOWN','ZJets_M50_BTAGDOWN','T_t_BTAGDOWN','Tbar_t_BTAGDOWN','T_tW_BTAGDOWN','Tbar_tW_BTAGDOWN','T_s_BTAGDOWN','Tbar_s_BTAGDOWN',
+List_Bg = ['WJets','W1Jets','W2Jets','W3Jets','W4Jets','WW','TTbar_Madgraph','ZJets_M50','T_t','Tbar_t','T_tW','Tbar_tW','T_s','Tbar_s',
+'WJets_JESUP','W1Jets_JESUP','W2Jets_JESUP','W3Jets_JESUP','W4Jets_JESUP','WW_JESUP','TTbar_Madgraph_JESUP','ZJets_M50_JESUP','T_t_JESUP','Tbar_t_JESUP','T_tW_JESUP','Tbar_tW_JESUP','T_s_JESUP','Tbar_s_JESUP',
+'WJets_JESDOWN','W1Jets_JESDOWN','W2Jets_JESDOWN','W3Jets_JESDOWN','W4Jets_JESDOWN','WW_JESDOWN','TTbar_Madgraph_JESDOWN','ZJets_M50_JESDOWN','T_t_JESDOWN','Tbar_t_JESDOWN','T_tW_JESDOWN','Tbar_tW_JESDOWN','T_s_JESDOWN','Tbar_s_JESDOWN',
+'WJets_JERUP','W1Jets_JERUP','W2Jets_JERUP','W3Jets_JERUP','W4Jets_JERUP','WW_JERUP','TTbar_Madgraph_JERUP','ZJets_M50_JERUP','T_t_JERUP','Tbar_t_JERUP','T_tW_JERUP','Tbar_tW_JERUP','T_s_JERUP','Tbar_s_JERUP',
+'WJets_JERDOWN','W1Jets_JERDOWN','W2Jets_JERDOWN','W3Jets_JERDOWN','W4Jets_JERDOWN','WW_JERDOWN','TTbar_Madgraph_JERDOWN','ZJets_M50_JERDOWN','T_t_JERDOWN','Tbar_t_JERDOWN','T_tW_JERDOWN','Tbar_tW_JERDOWN','T_s_JERDOWN','Tbar_s_JERDOWN',
+'WJets_BTAGUP','W1Jets_BTAGUP','W2Jets_BTAGUP','W3Jets_BTAGUP','W4Jets_BTAGUP','WW_BTAGUP','TTbar_Madgraph_BTAGUP','ZJets_M50_BTAGUP','T_t_BTAGUP','Tbar_t_BTAGUP','T_tW_BTAGUP','Tbar_tW_BTAGUP','T_s_BTAGUP','Tbar_s_BTAGUP',
+'WJets_BTAGDOWN','W1Jets_BTAGDOWN','W2Jets_BTAGDOWN','W3Jets_BTAGDOWN','W4Jets_BTAGDOWN','WW_BTAGDOWN','TTbar_Madgraph_BTAGDOWN','ZJets_M50_BTAGDOWN','T_t_BTAGDOWN','Tbar_t_BTAGDOWN','T_tW_BTAGDOWN','Tbar_tW_BTAGDOWN','T_s_BTAGDOWN','Tbar_s_BTAGDOWN',
 'TTbar_Madgraph_MATCHINGUP','TTbar_Madgraph_MATCHINGDOWN','TTbar_Madgraph_SCALEUP','TTbar_Madgraph_SCALEDOWN',
 ]
 
@@ -58,10 +58,6 @@ def create_yields_list(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high,
 
     if (channel == 'electron'): ch = '_el'
     if (channel == 'muon'): ch = '_mu'
-
-    doQCD = True
-    if (channel == 'electron' and doQCD):
-        List_to_use.extend(['QCD_Pt_80_170_EM','QCD_Pt_170_250_EM','QCD_Pt_250_350_EM','QCD_Pt_350_EM',]]])
 
     pyfile = open("yields_For2DLimits_06Jun_finalbins_ScaleGenTopPt_QCD/"+channel+"_"+save+"_Wprime"+wprime+"_Histos-"+btags+"_dr03_lep50.py","w") 
         
@@ -149,6 +145,7 @@ def create_yields_list(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high,
 
     nominalwprime = 'False'
 
+    print List
     for Type in List:
     
         if (channel == 'electron'):
@@ -159,12 +156,12 @@ def create_yields_list(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high,
         suffix = ''
         
         if (Type=='Data_el' or Type=='Data_mu'): suffix = 'DATA' + Type
-        if (Type=='WJets'): suffix = 'wjets' + Type
+        if (Type=='WJets' or re.match('W[1-4]Jets',Type)): suffix = 'wjets' + Type
         if (Type=='WW'): suffix = 'scaledntb' + Type
         if (Type=='ZJets_M50' or Type=='WW' or Type=='T_t' or Type=='Tbar_t' or Type=='T_tW' or Type=='Tbar_tW'): suffix = 'scaledntb' + Type
         if (Type=='TTbar_Madgraph'): suffix = 'ttbar' + Type
         if (Type=='T_s' or Type=='Tbar_s'): suffix = 'tb' + Type
-
+        
         if (Type== 'WJets_JESUP'): suffix = 'wjets_jesUp' + Type
         if (Type=='TTbar_Madgraph_JESUP' or Type=='WW_JESUP' or Type=='ZJets_M50_JESUP' or Type=='T_t_JESUP' or Type=='Tbar_t_JESUP' or Type=='T_tW_JESUP' or Type=='Tbar_tW_JESUP'): suffix = 'scaledntb_jesUp' + Type
         if (Type=='TTbar_Madgraph_JESUP'): suffix = 'scaledall_jesUp' + Type
@@ -204,6 +201,14 @@ def create_yields_list(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high,
         if (Type == 'TTbar_Madgraph_SCALEDOWN'): suffix = 'ttbar__q2scale__mins'
         if (Type == 'TTbar_Madgraph_MATCHINGUP'): suffix = 'ttbar__matching__plus'
         if (Type == 'TTbar_Madgraph_MATCHINGDOWN'): suffix = 'ttbar__matching__minus'
+
+        if (Type.startswith('QCD')): suffix = 'qcd' + Type
+        if (Type.startswith('QCD') and Type.endswith('JESUP')): suffix = 'qcd_jesUp' + Type
+        if (Type.startswith('QCD') and Type.endswith('JESDOWN')): suffix = 'qcd_jesDown' + Type
+        if (Type.startswith('QCD') and Type.endswith('JERUP')): suffix = 'qcd_jerUp' + Type
+        if (Type.startswith('QCD') and Type.endswith('JERDOWN')): suffix = 'qcd_jerDown' + Type
+        if (Type.startswith('QCD') and Type.endswith('BTAGUP')): suffix = 'qcd_btagUp' + Type
+        if (Type.startswith('QCD') and Type.endswith('BTAGDOWN')): suffix = 'qcd_btagDown' + Type
 
         w_suffix = 'wp'
 
@@ -297,7 +302,7 @@ def create_yields_list(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high,
             weightPUup = 'weight_PU_ABCD735_PileUpCalc*weight_MuonEff_WprimeCalc'
             SF = 1.0
                 
-        if (Type == 'WJets'):
+        if ( Type == 'WJets' or re.match('W[1-4]Jets',Type)):
             WccHist = TH1D('WccHist', 'WccHist', bin,array('d',xlow))
             WbbHist = TH1D('WbbHist', 'WbbHist', bin,array('d',xlow))
             WccHist.Sumw2()
@@ -336,13 +341,13 @@ def create_yields_list(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high,
             VariablesTTbarShapeUp[Type].Sumw2()
             VariablesTTbarShapeDown[Type].Sumw2()
 
-
-        #print Type
+        
+        print Type,histName
         if (Type.startswith('Data')):
             Trees[Type].Draw(var + " >> " + histName, "(" + cut + cutbtag + ")", 'goff')
             # 0 tag for data-driven shape
             Trees[Type].Draw(var + " >> " + histName0tag, "(" + cut + cutzerobtags + ")", 'goff')
-        elif (Type.startswith('WJets')): 
+        elif (Type == 'WJets' or re.match('W[1-4]Jets',Type)): 
 
             Trees[Type].Draw(var+" >> "+histName,"("+weight+")*("+str(SFWjmu)+")*("+cut+cutwjj+cutbtag+")",'goff')
             Trees[Type].Draw(var+" >> "+"WbbHist","("+weight+")*("+str(SFWbmu)+")*("+cut+cutwbb+cutbtag+")",'goff')
@@ -369,7 +374,7 @@ def create_yields_list(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high,
                 Trees[Type].Draw(var+" >> "+"WccHistHFdown","("+weight+")*("+str(SFWcmuMinus)+")*("+cut+cutwcc+cutbtag+")",'goff')
                 VariablesHFdown[Type].Add(WbbHistHFdown)
                 VariablesHFdown[Type].Add(WccHistHFdown)
-        elif (not Type.startswith('T')):
+        elif ( (not Type.startswith('T')) and (not Type.startswith('QCD')) ):
             Trees[Type].Draw(var + " >> " + histNamePre, "("+weight+")*("+cut+")", 'goff')
             Trees[Type].Draw(var + " >> " + histName, "("+weight+")*("+cut+cutbtag+")", 'goff')
             if ( (not Type.endswith('UP')) and (not Type.endswith('DOWN')) ):                      
@@ -439,6 +444,14 @@ def create_yields_list(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high,
             line = line.replace('Data','data')
         if 'WJets' in line:
             line = line.replace('WJets','wjets')
+        if 'W1Jets' in line:
+            line = line.replace('W1Jets','w1jets')
+        if 'W2Jets' in line:
+            line = line.replace('W2Jets','w2jets')
+        if 'W3Jets' in line:
+            line = line.replace('W3Jets','w3jets')
+        if 'W4Jets' in line:
+            line = line.replace('W4Jets','w4jets')
         if 'ZJets_M50' in line:
             line = line.replace('ZJets_M50','zjets')
         if 'WW' in line:
@@ -455,14 +468,14 @@ def create_yields_list(channel,varName, toppt, j1j2pt, lepjetdR, bin, low, high,
             line = line.replace('Tbar_s','bs')
         if 'TTbar_Madgraph' in line:
             line = line.replace('TTbar_Madgraph','ttbar')
-        #if 'QCD_Pt_80_170_EM' in line:
-        #    line = line.replace('QCD_Pt_80_170_EM','qcd80to170EM')
-        #if 'QCD_Pt_170_250_EM' in line:
-        #    line = line.replace('QCD_Pt_170_250_EM','qcd170to250EM')
-        #if 'QCD_Pt_250_350_EM' in line:
-        #    line = line.replace('QCD_Pt_250_350_EM','qcd250to350EM')
-        #if 'QCD_Pt_350_EM' in line:
-        #    line = line.replace('QCD_Pt_350_EM','qcd350EM')
+        if 'QCD_Pt_80_170_EM' in line:
+            line = line.replace('QCD_Pt_80_170_EM','qcd80to170')
+        if 'QCD_Pt_170_250_EM' in line:
+            line = line.replace('QCD_Pt_170_250_EM','qcd170to250')
+        if 'QCD_Pt_250_350_EM' in line:
+            line = line.replace('QCD_Pt_250_350_EM','qcd250to350')
+        if 'QCD_Pt_350_EM' in line:
+            line = line.replace('QCD_Pt_350_EM','qcd350')
         if 'Wprime' in line:
             line = line.replace('Wprime','wp')
         if 'Right' in line:
@@ -485,7 +498,11 @@ xlow  = [ 100, 300,  400, 500, 600, 700, 800, 900,  1000, 1100, 1200,  1300, 140
 bins = len(xlow)-1 
 
 List_DataBgEl_RightWprime = copy.copy(List_DataEl) 
-List_DataBgEl_RightWprime.extend(List_Bg) 
+List_DataBgEl_RightWprime.extend(List_Bg)
+doQCD = True
+if (doQCD):
+    List_DataBgEl_RightWprime.extend(['QCD_Pt_80_170_EM','QCD_Pt_170_250_EM','QCD_Pt_250_350_EM','QCD_Pt_350_EM','QCD_Pt_80_170_EM_JESUP','QCD_Pt_170_250_EM_JESUP','QCD_Pt_250_350_EM_JESUP','QCD_Pt_350_EM_JESUP','QCD_Pt_80_170_EM_JESDOWN','QCD_Pt_170_250_EM_JESDOWN','QCD_Pt_250_350_EM_JESDOWN','QCD_Pt_350_EM_JESDOWN','QCD_Pt_80_170_EM_JERDOWN','QCD_Pt_170_250_EM_JERDOWN','QCD_Pt_250_350_EM_JERDOWN','QCD_Pt_350_EM_JERDOWN','QCD_Pt_80_170_EM_JERUP','QCD_Pt_170_250_EM_JERUP','QCD_Pt_250_350_EM_JERUP','QCD_Pt_350_EM_JERUP','QCD_Pt_80_170_EM_BTAGDOWN','QCD_Pt_170_250_EM_BTAGDOWN','QCD_Pt_250_350_EM_BTAGDOWN','QCD_Pt_350_EM_BTAGDOWN','QCD_Pt_80_170_EM_BTAGUP','QCD_Pt_170_250_EM_BTAGUP','QCD_Pt_250_350_EM_BTAGUP','QCD_Pt_350_EM_BTAGUP'])
+                
 List_DataBgEl_RightWprime.extend(List_Right) 
 
 List_DataBgMu_RightWprime = copy.copy(List_DataMu) 
