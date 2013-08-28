@@ -15,7 +15,7 @@
 //#include "cuts20percent.h"
 #include "cuts.h"
 
-void Makeroot_allnew () {
+void Makeroot () {
   
   TString outfile;
   bool ifsys = true;
